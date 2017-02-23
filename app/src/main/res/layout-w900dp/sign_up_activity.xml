@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg_large_withlogo">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/view"
+        android:layout_marginLeft="52dip"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/button_background"
+            android:text="@string/back"
+            android:textColor="@color/editTextBackgroundWhite"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/yellow"
+            android:textStyle="normal" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dip"
+            android:ems="10"
+            android:maxLines="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/username"
+            android:paddingLeft="5dip" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dip"
+            android:ems="10"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/email"
+            android:paddingLeft="5dip"
+             />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/password"
+            android:paddingLeft="5dip"
+             />
+
+
+        <Button
+            android:layout_width="150dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/button_background"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/sign_up"
+            android:textAllCaps="true"
+            android:textColor="@color/editTextBackgroundWhite"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

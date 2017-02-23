@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg_large_withlogo">
+
+
+
+<View
+    android:id="@+id/view"
+    android:layout_width="1dp"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="100dip"
+        android:layout_marginLeft="100dip"
+        android:layout_toRightOf="@+id/view">
+
+
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:text="New To Expense Manager?"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:id="@+id/textVieww"
+                android:textColor="#d4e157"
+                android:textStyle="bold"
+                android:gravity="center_vertical"/>
+
+            <Button
+                android:text="@string/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sign_up"
+                android:background="@drawable/button_background"
+                android:textStyle="bold"
+                android:textColor="@color/editTextBackgroundWhite"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:text="Login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/texwtView2"
+                android:textColor="#d4e157"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:inputType="textPersonName"
+                android:text=""
+                android:ems="10"
+                android:maxLines="1"
+                android:layout_marginTop="23dp"
+                android:id="@+id/editwText"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginBottom="20dp"
+                android:hint="Username"
+                android:paddingLeft="6dp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:inputType="textPersonName"
+                android:text=""
+                android:ems="10"
+                android:maxLines="1"
+                android:id="@+id/editwText2"
+                android:background="@drawable/edit_text_background"
+                android:hint="Password"
+                android:paddingLeft="6dp"/>
+            <Button
+                android:text="Login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginbtn"
+                android:background="@drawable/button_background"
+                android:textStyle="bold"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:textColor="@color/editTextBackgroundWhite"
+                android:layout_marginTop="25dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="50dp">
+
+            <Button
+                android:text="Forgot Password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/forgot_password"
+                android:background="@drawable/button_background"
+                android:textColor="@color/yellow"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:text="Use Pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/use_pin"
+                android:background="@drawable/button_background"
+                android:textColor="@color/yellow"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </RelativeLayout>
