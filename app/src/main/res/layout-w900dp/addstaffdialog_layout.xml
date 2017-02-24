@@ -41,7 +41,7 @@
             android:text="Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/ssddsd"
             android:textColor="#1fb598"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -53,7 +53,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
-            android:id="@+id/editText3"
+            android:id="@+id/staffname"
             android:background="@drawable/edit_text_border"
             android:layout_marginTop="20dp"
             android:layout_weight="0.12" />
