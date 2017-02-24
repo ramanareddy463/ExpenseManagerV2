@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="15dp"
     android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
+    android:layout_marginRight="50dp"
     android:background="@drawable/edit_text_background">
 
     <LinearLayout
@@ -22,42 +22,174 @@
             android:orientation="vertical" android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.45"
             android:gravity="center_vertical" >
             <TextView
-                android:text="TextView"
+                android:text="Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/category"
-                android:gravity="center_vertical"/>
+                android:id="@+id/staffname"
+                android:gravity="center_vertical"
+                android:textColor="#1fb598"
+                android:textSize="16sp"/>
 
             <TextView
-                android:text="TextView"
+                android:text="Senior Assistant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/when"
-                android:gravity="center_vertical" />
+                android:id="@+id/designation"
+                android:gravity="center_vertical"
+                android:textColor="#1fb598"
+                android:textSize="16sp"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical" android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.35"
             android:gravity="center_vertical" >
             <TextView
-                android:text="TextView"
+                android:text="MON to FRI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/yy"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:textColor="#1fb598"
+                android:textSize="16sp"/>
 
             <TextView
-                android:text="TextView"
+                android:text="10:00 to 18:00"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/hhhh"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:textColor="#1fb598"
+                android:textSize="16sp"/>
     </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.1"
+            android:gravity="center_vertical|right"
+            android:background="#1fb598">
+            <TextView
+                android:text="Edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/gggyy"
+                android:gravity="center_vertical|center"
+                android:textColor="#fff"
+                android:textSize="16sp"/>
+
+
         </LinearLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:gravity="left"
+       android:layout_marginTop="15dp"
+        android:weightSum="1">
+        <TextView
+            android:text="88 61 79 77 91"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ykoy"
+            android:gravity="center_vertical|center"
+            android:layout_weight="0.4"
+            android:textColor="#1fb598"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:text="$50/hr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hhoohh"
+            android:gravity="center_vertical|center"
+            android:layout_weight="0.4"
+            android:textColor="#1fb598"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    <View
+    android:text="TextView"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#c3c3c3"
+        android:layout_marginTop="6dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp" >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/circular_view"
+            android:id="@+id/imafffgeView3"
+            />
+
+        <TextView
+            android:text="JhonDoe@gmail.com"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hhojjjjohh"
+            android:gravity="center_vertical"
+            android:layout_weight="0.3"
+            android:paddingLeft="10dp"
+            android:textColor="#1fb598"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp" >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/circular_view"
+            android:id="@+id/imafffgeVffiew3"
+            />
+
+        <TextView
+            android:text="#123, north road,oakley,victory 45673"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hhojjfffjjohh"
+            android:gravity="center_vertical"
+            android:layout_weight="0.3"
+            android:paddingLeft="10dp"
+            android:textColor="#1fb598"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp" >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/circular_view"
+            android:id="@+id/imaffffssffgeView3"
+            />
+
+        <TextView
+            android:text="10/01/2016 to present"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hhojgjijjjohh"
+            android:gravity="center_vertical"
+            android:layout_weight="0.3"
+            android:paddingLeft="10dp"
+            android:textColor="#1fb598"
+            android:textSize="16sp"/>
+    </LinearLayout>
 </LinearLayout>

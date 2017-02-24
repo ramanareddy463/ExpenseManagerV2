@@ -7,6 +7,7 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
+<<<<<<< HEAD
         sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.2.0_f271036eff469f1ea2e908454534fb9b5acdd610.jar" />
     </item>
@@ -36,6 +37,46 @@
         revision="25.0.1"
         sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\support-annotations-25.2.0_ec562ebf025abe0822eeed69fd5e35d354c3008c.jar" />
+=======
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.2.0_50d52e150cbd7394d7c65977d66e91fd5a422994\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_cd3671d831237e770842c2d6fbc3f2c5eff6c383\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.2.0_5cb9389304df05f8553425faf22e93e75d75ae34\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\design\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.2.0_646ba111286125054146e2f6e78e9fa7834c3016\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.2.0_8a653366ed1468259c34c57c0320e1abace91f05\classes.dex" />
+>>>>>>> 49cdbb7e0e9000a269ee67e378a8b987a3ea58f9
     </item>
     <item
         is-multidex="false"
@@ -47,9 +88,33 @@
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.2.0_8ba061d1dfd915ac822f049114cf45cb5bdff422.jar" />
     </item>
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Ramana\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
         jumboMode="false"
+=======
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\transition\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.2.0_84eca2829baaf58a48d7d304363164e4d6436bd0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.2.0_ae3e58f492ff373e03b1982e8f9de2a61451ba3a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+>>>>>>> 49cdbb7e0e9000a269ee67e378a8b987a3ea58f9
         optimize="true"
         revision="25.0.1"
         sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
@@ -65,6 +130,7 @@
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.2.0_2445e5ccb889fca1b1fe536098e3ad50cd98ade5.jar" />
     </item>
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Ramana\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
         jumboMode="false"
@@ -81,6 +147,24 @@
         revision="25.0.1"
         sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.2.0_4d26b3217a2338ee09a81341b75abd4b073b1e0d.jar" />
+=======
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_3f01a0ed049e1d546d6f69a508002467692f1307\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.2.0_a931089a37374b832f932795390db0f476c4bd96\classes.dex" />
+>>>>>>> 49cdbb7e0e9000a269ee67e378a8b987a3ea58f9
     </item>
     <item
         is-multidex="false"
@@ -92,6 +176,7 @@
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.thoughtbot-expandablerecyclerview-1.0_c165a280e348938fb7091eb632365138667c60ed.jar" />
     </item>
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Ramana\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.2.0\jars\classes.jar"
         jumboMode="false"
@@ -99,6 +184,15 @@
         revision="25.0.1"
         sha1="152de8da301561dcb0946471697a420d8f7a68c5">
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.2.0_fd108961a0dd1e8e24067940f2bab34087e78cac.jar" />
+=======
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_3985545a15fc051c4b55bbc4789fc012fb284b30\classes.dex" />
+>>>>>>> 49cdbb7e0e9000a269ee67e378a8b987a3ea58f9
     </item>
     <item
         is-multidex="false"
@@ -110,6 +204,7 @@
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.2.0_b31167acc1ce77b2310c2c8b0270a871449f0070.jar" />
     </item>
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Ramana\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
         jumboMode="false"
@@ -126,6 +221,132 @@
         revision="25.0.1"
         sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
         <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.2.0_b46a2b9a2e001b82b1d0ff1696b9f669a8da86fd.jar" />
+=======
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\studio_sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_e188a87a15986d165a190e9d96dfdadb18a214ed\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.2.0_204daf4d1407c27104b552e5ccd22ccd85da2027\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1a2a81ece05d23cb756c17b257ac6d044b62b22b">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_44bf899071c4b712ec7b4f6ef86258273e0213fb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_de7ad4e3bf6b023f97e0ece9016da9cc1bacc252\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_6318d731634e3577fd7a029f270ae4c9daed6661\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_37dfe344e2c73e4ae81000a28d3275cd62806f7b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_a16311927a266312a76dbaeb44ddb859163bd112\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.2.0_f18e0956466f447982fa3c454c22099e4f3bb0c8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_e4ff96d713526d3fbdb8b9fa4f1636ca2e114e61\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fcbbb467a81da2cc68f5098cefa5200d1847e827">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5657ef4644572a8b2ee492dfe3bc82fa629af65a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_7417d22539ee4ad538ee6cca104b05f233215973\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.2.0_d895fe0415090cd1c567f45a2eaaa9311842ff94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="174a5f7a192ed31f0a85d39677480c6d13b6efd9">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_0eb48fea2020594ae70ce8cab07383fa8156eca6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpenseManagerVer2\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_950f6d27fd1c9449be0997a377859a692de1480d\classes.dex" />
+>>>>>>> 49cdbb7e0e9000a269ee67e378a8b987a3ea58f9
     </item>
 
 </items>

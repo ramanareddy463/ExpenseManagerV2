@@ -36,6 +36,7 @@
                 android:textSize="30sp"/>
 
             <ListView
+                android:id="@+id/stafflist"
                 android:layout_width="802dp"
                 android:layout_height="400dp"
                 android:layout_marginLeft="30dp"

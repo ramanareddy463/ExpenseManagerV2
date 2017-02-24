@@ -44,9 +44,27 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/price"
-            android:layout_weight="0.1"
+            android:layout_weight="0.3"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
             />
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.1"
+            android:gravity="center_vertical|right"
+            android:background="#1fb598">
+            <TextView
+                android:text="Edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/gggyy"
+                android:gravity="center_vertical|center"
+                android:textColor="#fff"
+                android:textSize="16sp"/>
+
+
+        </LinearLayout>
         </LinearLayout>
 </LinearLayout>
