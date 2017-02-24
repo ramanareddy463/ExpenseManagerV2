@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "expmanager.idea.spark.in.expensemanager"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -26,6 +26,8 @@ dependencies {
     })
 
     compile 'com.android.support:design:25.2.0'
+    compile 'com.thoughtbot:expandablerecyclerview:1.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
 
 
     testCompile 'junit:junit:4.12'
