@@ -8,13 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.Arrays;
 import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.R;
-import expmanager.idea.spark.in.expensemanager.adapters.ExpanseAdapter;
+import expmanager.idea.spark.in.expensemanager.adapters.TodayExpenseAdapter;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseGroup;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
 
@@ -22,18 +22,26 @@ import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
  * Created by Ramana.Reddy on 2/24/2017.
  */
 
-public class ExpanseFragment extends Fragment {
+public class ExpenseFragment extends Fragment implements View.OnClickListener {
 
-    public ExpanseAdapter adapter;
+    public TodayExpenseAdapter adapter;
+    public TodayExpenseAdapter weekAdapter;
+    private ImageView imgAddExpense;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.expanse,
+        View rootView = inflater.inflate(R.layout.expense,
                 container, false);
+
+        imgAddExpense = (ImageView) rootView.findViewById(R.id.img_add_expense);
+        imgAddExpense.setOnClickListener(this);
 
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+
+        RecyclerView recyclerViewWeek = (RecyclerView)rootView.findViewById(R.id.recycler_view_week);
+        LinearLayoutManager layoutManagerWeek = new LinearLayoutManager(getActivity());
 
         // RecyclerView has some built in animations to it, using the DefaultItemAnimator.
         // Specifically when you call notifyItemChanged() it does a fade animation for the changing
@@ -43,9 +51,14 @@ public class ExpanseFragment extends Fragment {
             ((DefaultItemAnimator) animator).setSupportsChangeAnimations(false);
         }
 
-        adapter = new ExpanseAdapter(makeExpansesList());
+        adapter = new TodayExpenseAdapter(makeExpansesList());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        weekAdapter = new TodayExpenseAdapter(makeExpansesList());
+        recyclerViewWeek.setLayoutManager(layoutManagerWeek);
+        recyclerViewWeek.setAdapter(weekAdapter);
+
 
         return rootView;
     }
@@ -67,5 +80,14 @@ public class ExpanseFragment extends Fragment {
         return new ExpanseGroup("Grocery Today",makeExpanseItems(),"3 items","$40.00");
     }
 
+    @Override
+    public void onClick(View view) {
 
+        if(view.getId()==R.id.img_add_expense){
+
+            AddExpenseFragment fragmentorg = new AddExpenseFragment();
+            getFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragmentorg).commit();
+
+        }
+    }
 }

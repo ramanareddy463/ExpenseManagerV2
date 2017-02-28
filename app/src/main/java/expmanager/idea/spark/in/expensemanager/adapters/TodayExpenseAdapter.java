@@ -12,35 +12,35 @@ import java.util.List;
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseGroup;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
-import expmanager.idea.spark.in.expensemanager.utils.ExpanseChildViewHolder;
-import expmanager.idea.spark.in.expensemanager.utils.ExpanseTitleViewHolder;
+import expmanager.idea.spark.in.expensemanager.utils.ExpenseChildViewHolder;
+import expmanager.idea.spark.in.expensemanager.utils.ExpenseTitleViewHolder;
 
 /**
  * Created by Ramana.Reddy on 2/24/2017.
  */
 
-public class ExpanseAdapter   extends ExpandableRecyclerViewAdapter<ExpanseTitleViewHolder, ExpanseChildViewHolder> {
+public class TodayExpenseAdapter extends ExpandableRecyclerViewAdapter<ExpenseTitleViewHolder, ExpenseChildViewHolder> {
 
-    public ExpanseAdapter(List<? extends ExpandableGroup> groups) {
+    public TodayExpenseAdapter(List<? extends ExpandableGroup> groups) {
         super(groups);
     }
 
     @Override
-    public ExpanseTitleViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
+    public ExpenseTitleViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.expanse_group, parent, false);
-        return new ExpanseTitleViewHolder(view);
+                .inflate(R.layout.expense_group, parent, false);
+        return new ExpenseTitleViewHolder(view);
     }
 
     @Override
-    public ExpanseChildViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
+    public ExpenseChildViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.expanse_child, parent, false);
-        return new ExpanseChildViewHolder(view);
+                .inflate(R.layout.expense_child, parent, false);
+        return new ExpenseChildViewHolder(view);
     }
 
     @Override
-    public void onBindChildViewHolder(ExpanseChildViewHolder holder, int flatPosition,
+    public void onBindChildViewHolder(ExpenseChildViewHolder holder, int flatPosition,
                                       ExpandableGroup group, int childIndex) {
 
         final ExpanseItem artist = ((ExpanseItem) group.getItems().get(childIndex));
@@ -48,7 +48,7 @@ public class ExpanseAdapter   extends ExpandableRecyclerViewAdapter<ExpanseTitle
     }
 
     @Override
-    public void onBindGroupViewHolder(ExpanseTitleViewHolder holder, int flatPosition,
+    public void onBindGroupViewHolder(ExpenseTitleViewHolder holder, int flatPosition,
                                       ExpandableGroup group) {
 
         ExpanseGroup expanseGroup = (ExpanseGroup) group;

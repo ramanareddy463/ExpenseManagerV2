@@ -16,14 +16,14 @@ import static android.view.animation.Animation.RELATIVE_TO_SELF;
  * Created by Ramana.Reddy on 2/24/2017.
  */
 
-public class ExpanseTitleViewHolder extends GroupViewHolder {
+public class ExpenseTitleViewHolder extends GroupViewHolder {
 
     private TextView childTitle;
     private TextView childItems;
     private TextView childCost;
     private ImageView arrow;
 
-    public ExpanseTitleViewHolder(View itemView) {
+    public ExpenseTitleViewHolder(View itemView) {
         super(itemView);
         childTitle = (TextView) itemView.findViewById(R.id.title);
         childItems = (TextView) itemView.findViewById(R.id.items);

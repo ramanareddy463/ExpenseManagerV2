@@ -6,8 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-import expmanager.idea.spark.in.expensemanager.fragments.ExpanseFragment;
-import expmanager.idea.spark.in.expensemanager.fragments.OrganizationFragment;
+import expmanager.idea.spark.in.expensemanager.fragments.ExpenseFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.StaffProfileFragment;
 
 
@@ -25,7 +24,7 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
         initializeControls();
 
 
-        ExpanseFragment fragmentorg = new ExpanseFragment();
+        ExpenseFragment fragmentorg = new ExpenseFragment();
         getFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragmentorg).commit();
 
 

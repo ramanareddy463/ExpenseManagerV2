@@ -4,11 +4,9 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    >
+    android:orientation="horizontal">
 
-    <include layout="@layout/admin_sidebar"
-         />
+    <include layout="@layout/admin_sidebar" />
 
     <FrameLayout
         android:id="@+id/admin_content_frame"
