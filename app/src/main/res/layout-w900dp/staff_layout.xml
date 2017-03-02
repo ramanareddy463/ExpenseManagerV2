@@ -4,18 +4,14 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    >
+    android:orientation="horizontal">
 
-    <include layout="@layout/staff_sidebar"
-        />
+    <include layout="@layout/staff_sidebar" />
 
     <FrameLayout
         android:id="@+id/staff_content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
 
