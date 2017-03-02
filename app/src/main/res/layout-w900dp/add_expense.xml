@@ -71,15 +71,9 @@
                 android:layout_height="match_parent"
                 android:background="#000000">
 
-
-
-
             </ScrollView>
 
-
-
         </RelativeLayout>
-
 
     </LinearLayout>
 
