@@ -7,8 +7,8 @@
         android:id="@+id/linear_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="300dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="350dp"
         android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
@@ -29,7 +29,7 @@
             android:id="@+id/img_add_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="150dp"
             android:src="@mipmap/ic_launcher" />
 
     </LinearLayout>
@@ -38,16 +38,18 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/linear_header"
+        android:layout_alignRight="@id/linear_header"
         android:layout_below="@id/linear_header" />
 
     <LinearLayout
         android:id="@+id/linear_week_expense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="300dp"
-        android:layout_marginTop="50dp"
         android:layout_below="@+id/recycler_view"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="350dp"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -66,7 +68,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="120dp"
             android:src="@mipmap/ic_launcher" />
 
     </LinearLayout>
@@ -75,6 +77,158 @@
         android:id="@+id/recycler_view_week"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/linear_week_expense"
+        android:layout_alignRight="@id/linear_week_expense"
         android:layout_below="@id/linear_week_expense" />
+
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/linear_header"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/recycler_view"
+        android:background="@color/yellow"
+        android:src="@mipmap/ic_launcher" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/img_arrow"
+        android:background="@color/yellow">
+
+        <TextView
+            android:id="@+id/txt_hi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="HI!"
+            android:textColor="@color/greenTextColor"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/txt_product_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txt_hi"
+            android:layout_below="@id/txt_hi"
+            android:text="@string/today_expense_text"
+            android:textColor="@color/greenTextColor" />
+
+        <View
+            android:id="@+id/view_above_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txt_product_desc"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_today_products"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignLeft="@+id/txt_hi"
+            android:layout_below="@id/view_above_recycler_view" />
+
+        <View
+            android:id="@+id/view_below_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/recycler_view_today_products"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:text="ok"
+            android:gravity="center_horizontal"
+            android:textSize="18dp"
+            android:textColor="@color/greenTextColor"
+            android:layout_below="@id/view_below_recycler_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="Expense list"
+            android:textSize="18dp"
+            android:textColor="@color/greenTextColor"
+            android:layout_below="@id/view_below_recycler_view"/>
+
+        <TextView
+            android:id="@+id/txt_reports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:text="Reports"
+            android:textSize="18dp"
+            android:textColor="@color/greenTextColor"
+            android:layout_below="@id/view_below_recycler_view"/>
+
+        <RelativeLayout
+            android:id="@+id/rel_tangible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_reports"
+            android:background="#B3DE60">
+
+            <TextView
+                android:id="@+id/txt_add_to_tangible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Do you want to add these as tangible from now on"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"/>
+
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:layout_below="@+id/txt_add_to_tangible"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"/>
+
+            <ImageView
+                android:id="@+id/img_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:layout_below="@+id/txt_add_to_tangible"
+                android:layout_toLeftOf="@+id/img_close"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"/>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="History/Log"
+            android:gravity="center_vertical"
+            android:textSize="18dp"
+            android:layout_below="@id/rel_tangible"/>
+
+
+    </RelativeLayout>
 
 </RelativeLayout>

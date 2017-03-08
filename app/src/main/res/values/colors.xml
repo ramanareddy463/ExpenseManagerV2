@@ -10,5 +10,6 @@
     <color name="blue">#2CD499</color>
     <color name="blue1">#4A1C8A</color>
     <color name="transparentGray">#889c9b9b</color>
+    <color name="greenTextColor">#4b7970</color>
 
 </resources>
