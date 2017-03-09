@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/title_expense_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Expense History"
+        android:textColor="@color/greenTextColor"
+        android:textSize="22dp"/>
+
+    <TextView
+        android:id="@+id/month_expense_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBottom="@id/title_expense_history"
+        android:padding="5dp"
+        android:text="jan 2017"
+        android:layout_toRightOf="@id/title_expense_history"/>
+
+    <TextView
+        android:id="@+id/search_expense_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBottom="@id/title_expense_history"
+        android:padding="5dp"
+        android:text="jan 2017"
+        android:layout_toRightOf="@id/month_expense_history"/>
+
+    <expmanager.idea.spark.in.expensemanager.utils.PagerContainer
+        android:id="@+id/pager_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/title_expense_history">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="550dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"/>
+
+
+    </expmanager.idea.spark.in.expensemanager.utils.PagerContainer>
+    
+
+
+
+</RelativeLayout>
