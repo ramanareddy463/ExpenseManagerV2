@@ -34,5 +34,18 @@
         <item>monthly</item>
     </string-array>
 
-
+    <string-array name="months">
+        <item>JAN 2017</item>
+        <item>FEB 2017</item>
+        <item>MAR 2017</item>
+        <item>APR 2017</item>
+        <item>MAY 2017</item>
+        <item>JUN 2017</item>
+        <item>JUL 2017</item>
+        <item>AUG 2017</item>
+        <item>SEP 2017</item>
+        <item>OCT 2017</item>
+        <item>NOV 2017</item>
+        <item>DEC 2017</item>
+    </string-array>
 </resources>

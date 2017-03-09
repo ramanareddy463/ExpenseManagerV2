@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="#ffffff"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -83,14 +84,14 @@
 
     <ImageView
         android:id="@+id/img_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignTop="@+id/linear_header"
         android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
         android:layout_toEndOf="@+id/recycler_view"
         android:background="@color/yellow"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/right_white" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -183,7 +184,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_reports"
-            android:background="#B3DE60">
+            android:background="#F3fe7b">
 
             <TextView
                 android:id="@+id/txt_add_to_tangible"

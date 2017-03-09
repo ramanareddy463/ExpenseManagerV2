@@ -1,19 +1,17 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
 
-import android.graphics.Color;
 import android.os.Bundle;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.utils.PagerContainer;
@@ -25,6 +23,7 @@ import expmanager.idea.spark.in.expensemanager.utils.PagerContainer;
 public class ExpenseHistoryFragment extends Fragment {
 
     PagerContainer mContainer;
+    private Spinner monthExpenseHistory;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,10 +32,15 @@ public class ExpenseHistoryFragment extends Fragment {
                 container, false);
 
         mContainer = (PagerContainer) rootView.findViewById(R.id.pager_container);
+        monthExpenseHistory = (Spinner) rootView.findViewById(R.id.month_expense_history);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.months, R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        monthExpenseHistory.setAdapter(adapter);
 
         ViewPager pager = (ViewPager) rootView.findViewById(R.id.view_pager);//mContainer.getViewPager();
-        MyPagerAdapter adapter = new MyPagerAdapter(getFragmentManager());
-        pager.setAdapter(adapter);
+        MyPagerAdapter monthAdapter= new MyPagerAdapter(getFragmentManager());
+        pager.setAdapter(monthAdapter);
         //Necessary or the pager will only have one extra page to show
         // make this at least however many pages you can see
         pager.setOffscreenPageLimit(adapter.getCount());
@@ -51,7 +55,7 @@ public class ExpenseHistoryFragment extends Fragment {
         return rootView;
     }
 
-    private class MyPagerAdapter extends FragmentPagerAdapter {
+    private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
@@ -70,6 +74,14 @@ public class ExpenseHistoryFragment extends Fragment {
 
             return new ExpenseHistoryViewPagerFragment();
         }
+//        @Override
+//        public int getItemPosition(Object object) {
+//            return POSITION_NONE;
+//        }
+//        @Override
+//        public void destroyItem(ViewGroup container, int position, Object object) {
+//            ((ViewPager)container).removeView((View)object);
+//        }
     }
 
 

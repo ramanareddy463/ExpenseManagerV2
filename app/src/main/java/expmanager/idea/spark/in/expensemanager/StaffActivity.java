@@ -26,7 +26,7 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
 
 
         ExpenseFragment fragmentorg = new ExpenseFragment();
-        getFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragmentorg).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragmentorg).commit();
 
 
     }
