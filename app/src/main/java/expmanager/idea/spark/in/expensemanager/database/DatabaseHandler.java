@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import expmanager.idea.spark.in.expensemanager.model.Sales;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
 import expmanager.idea.spark.in.expensemanager.model.TanExpenses;
 
@@ -29,6 +30,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Contacts table name
     private static final String TABLE_TANEXPENSE = "tanexpenses";
     private static final String TABLE_STAFFDETAILS = "staffdetails";
+    private static final String TABLE_SALES = "salesdetails";
 
 
     // Category  Table Columns names
@@ -47,6 +49,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_STAFFSTARTDATE = "staff_startdate";
     private static final String KEY_STAFFPRICE= "price_perhr";
 
+    private static final String SALE_NAME = "saletype";
+    private static final String SALE_DATE = "saledate";
+    private static final String SALE_PRICE = "saleamount";
+
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -62,6 +68,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_PRICE + " TEXT"
                 + ")";
 
+        String CREATE_SALE_TABLE = "CREATE TABLE " + TABLE_SALES + "("
+                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + SALE_NAME + " TEXT,"
+                + SALE_DATE + " TEXT,"
+                + SALE_PRICE + " TEXT"
+                + ")";
+
         String CREATE_STAFF_TABLE = "CREATE TABLE " + TABLE_STAFFDETAILS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY,"
                 + KEY_STAFFNAME + " TEXT,"
@@ -75,6 +88,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_TANEXPENSE_TABLE);
         db.execSQL(CREATE_STAFF_TABLE);
+        db.execSQL(CREATE_SALE_TABLE);
 
     }
 
@@ -84,6 +98,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_TANEXPENSE);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_STAFFDETAILS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SALES);
 
         // Create tables again
         onCreate(db);
@@ -217,6 +232,47 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         // return contact list
         return staffList;
+    }
+
+
+    // Adding new products
+    public  void addSalesDetails(Sales contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(SALE_NAME, contact.getSaletype());
+        values.put(SALE_DATE, contact.getDate());
+        values.put(SALE_PRICE, contact.getSameamount());
+
+        // Inserting Row
+        db.insert(TABLE_SALES, null, values);
+        db.close(); // Closing database connection
+    }
+
+
+    // Getting All Contacts
+    public List<Sales> getAllSalesDetails() {
+        List<Sales> contactList = new ArrayList<Sales>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_SALES;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Sales contact = new Sales();
+                contact.setSaletype(cursor.getString(1));
+                contact.setDate(cursor.getString(2));
+                contact.setSameamount(cursor.getString(3));
+                // Adding contact to list
+                contactList.add(contact);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return contactList;
     }
 
 }

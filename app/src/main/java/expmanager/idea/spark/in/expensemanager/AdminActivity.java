@@ -11,6 +11,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.AdminTangibleExpenses;
 import expmanager.idea.spark.in.expensemanager.fragments.DashBoardFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseHistoryFragment;
+import expmanager.idea.spark.in.expensemanager.fragments.SalesFragment;
 
 
 /**
@@ -22,7 +23,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.ExpenseHistoryFragment;
 
 
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageButton btnexpense,btntanexpense,btnhistory,btndashboard,btnstaff,btnprofile;
+    ImageButton btnexpense,btntanexpense,btnhistory,btndashboard,btnstaff,btnprofile,btnsales;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
         btnprofile = (ImageButton) findViewById(R.id.btnprofile);
         btnprofile.setOnClickListener(this);
+
+        btnsales = (ImageButton) findViewById(R.id.btnsales);
+        btnsales.setOnClickListener(this);
 
 
     }
@@ -87,6 +91,12 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnhistory:
                 ExpenseHistoryFragment fragExpenseHistory = new ExpenseHistoryFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragExpenseHistory).commit();
+
+                break;
+
+            case R.id.btnsales:
+                SalesFragment fragsales = new SalesFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragsales).commit();
 
                 break;
 

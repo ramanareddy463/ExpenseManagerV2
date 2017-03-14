@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,7 +26,7 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
 
     public TodayExpenseAdapter adapter;
     public TodayExpenseAdapter weekAdapter;
-    private ImageView imgAddExpense;
+    private Button imgAddocrExpense, addexpbtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,8 +34,11 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.expense,
                 container, false);
 
-        imgAddExpense = (ImageView) rootView.findViewById(R.id.img_add_expense);
-        imgAddExpense.setOnClickListener(this);
+        imgAddocrExpense = (Button) rootView.findViewById(R.id.img_ocr_expense);
+        imgAddocrExpense.setOnClickListener(this);
+
+        addexpbtn = (Button) rootView.findViewById(R.id.img_add_expense);
+        addexpbtn.setOnClickListener(this);
 
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -83,9 +86,14 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == R.id.img_add_expense) {
+        if (view.getId() == R.id.img_ocr_expense) {
 
             AddExpenseFragment fragmentorg = new AddExpenseFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
+
+        } else if(view.getId() == R.id.img_add_expense){
+
+            AddExpenseManualFragment fragmentorg = new AddExpenseManualFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
 
         }

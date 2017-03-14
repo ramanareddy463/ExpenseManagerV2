@@ -12,4 +12,8 @@
     <color name="transparentGray">#889c9b9b</color>
     <color name="greenTextColor">#4b7970</color>
     <color name="transparent_background">#00FF0000</color>
+
+    <color name="grey05">#ACA899</color>
+    <color name="greytext">#F1EDEE</color>
+    <color name="greenlay">#167e5d</color>
 </resources>

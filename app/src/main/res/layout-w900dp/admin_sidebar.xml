@@ -68,6 +68,13 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/profile" />
+                <ImageButton
+                    android:id="@+id/btnsales"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/sales" />
             </LinearLayout>
 
             <ImageButton
