@@ -117,6 +117,6 @@ public class SessionManager {
      * **/
     // Get Token
     public String getAuthToken(){
-        return pref.getString(KEY_TOKEN, " ");
+        return pref.getString(KEY_TOKEN, "");
     }
 }

@@ -1,8 +1,11 @@
 package expmanager.idea.spark.in.expensemanager.network;
 
+import expmanager.idea.spark.in.expensemanager.model.AddTangibleExpenseRequest;
+import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationRequest;
 import expmanager.idea.spark.in.expensemanager.model.ForgotPassword;
 import expmanager.idea.spark.in.expensemanager.model.LoginRequest;
 import expmanager.idea.spark.in.expensemanager.model.SignUpRequest;
+import expmanager.idea.spark.in.expensemanager.model.UpdateTangibleExpense;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -10,6 +13,7 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 /**
@@ -54,32 +58,48 @@ public class RetrofitApi {
 
     public interface GitHubService {
 
-
          /*
          * LOGIN
          */
-
         @POST(ServerURLModel.USER_LOGIN)
         Call<ResponseBody> loginExpenseManager(@Body LoginRequest requestModel);
 
          /*
          * USER_SIGN_UP
          */
-
         @POST(ServerURLModel.USER_SIGN_UP)
         Call<ResponseBody> SignUpExpenseManager(@Body SignUpRequest requestModel);
-
-
 
          /*
          * FORGOT_PASSWORD
          */
-
         @POST(ServerURLModel.FORGOT_PASSWORD)
         Call<ResponseBody> ForgotPasswordExpenseManager(@Body ForgotPassword requestModel);
 
+        /*
+         * CREATE_ORGANISATION
+         */
+        @POST(ServerURLModel.CREATE_ORGANISATION)
+        Call<ResponseBody> CreateOrganisation(@Header("Authtoken") String auth, @Body CreateOrganisationRequest requestModel);
+
+         /*
+         * ADD_TANGIBLE_EXPENSE
+         */
+        @POST(ServerURLModel.ADD_TANGIBLE_EXPENSE)
+        Call<ResponseBody> AddTangibleExpense(@Header("Authtoken") String auth, @Body AddTangibleExpenseRequest requestModel);
 
 
+         /*
+          * GET_TANGIBLE_EXPENSE
+         */
+        @POST(ServerURLModel.GET_TANGIBLE_EXPENSE)
+        Call<ResponseBody> GetTangibleExpense(@Header("Authtoken") String auth);
+
+        /*
+         * ADD_TANGIBLE_EXPENSE
+         */
+        @POST(ServerURLModel.UPDATE_TANGIBLE_EXPENSE)
+        Call<ResponseBody> UpdateTangibleExpense(@Header("Authtoken") String auth, @Body UpdateTangibleExpense requestModel);
 
 
 //        /*

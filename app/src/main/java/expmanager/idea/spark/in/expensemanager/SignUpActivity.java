@@ -1,5 +1,6 @@
 package expmanager.idea.spark.in.expensemanager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import java.io.IOException;
+
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseHistoryFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.StaffProfileFragment;
+import expmanager.idea.spark.in.expensemanager.model.LoginResponse;
 import expmanager.idea.spark.in.expensemanager.model.SignUpRequest;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -62,8 +69,26 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-                            Toast.makeText(SignUpActivity.this,"Sign up successfully completed",Toast.LENGTH_SHORT).show();
-                            finish();
+                            if (response.isSuccessful()) {
+
+                                Gson gson = new Gson();
+                                try {
+                                    LoginResponse loginResponse = gson.fromJson(response.body().string(), LoginResponse.class);
+                                    SessionManager sessionManager = new SessionManager(SignUpActivity.this);
+                                    sessionManager.createLoginSession(loginResponse.getToken());
+
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
+                                Intent i = new Intent(SignUpActivity.this, MainActivity.class);
+                                startActivity(i);
+                                finish();
+
+                            } else {
+
+                                Toast.makeText(SignUpActivity.this, "Oops something went wrong", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
 
