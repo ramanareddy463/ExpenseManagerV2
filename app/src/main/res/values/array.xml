@@ -48,4 +48,9 @@
         <item>NOV 2017</item>
         <item>DEC 2017</item>
     </string-array>
+
+    <string-array name="saletype">
+        <item>Sales</item>
+        <item>Other as values</item>
+    </string-array>
 </resources>

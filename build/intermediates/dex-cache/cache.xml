@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.1\27293c440d2085cde1d859528aff6e7d3b6ae40\retrofit-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.1_9ed58570869bd2a3f7e824f046d7f4b466c76f0a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_ffa9f47ebc258c0dc2c6c5fd137d6519a54a6399\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.2.0\a56f28d5b7fab623c6c1d2afa08dd496d873ac21\logging-interceptor-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.2.0_18e6ffad9d039f89db12d0b1aed2cf1e98154172\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_a2022ea7ff9f506b1d4ae907b6f8e47ffe9d706a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_4c47c17e0bfafe197c181081fefaf207c338a492\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="69be236032fc4f0aeb52176408498220d991aea3">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5657ef4644572a8b2ee492dfe3bc82fa629af65a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.1\2780d858273ce1bb90f6b12e1ef0d40f7741fca\converter-gson-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02780d858273ce1bb90f6b12e1ef0d40f7741fca">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.1_382f191d693f135eacc10996cc01a4ffb36275bb\classes.dex" />
+    </item>
+
+</items>
