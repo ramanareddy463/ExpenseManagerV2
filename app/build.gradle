@@ -2,7 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
+
+    buildToolsVersion "25.0.2"
+
     buildToolsVersion '25.0.2'
+
     defaultConfig {
         applicationId "expmanager.idea.spark.in.expensemanager"
         minSdkVersion 19
