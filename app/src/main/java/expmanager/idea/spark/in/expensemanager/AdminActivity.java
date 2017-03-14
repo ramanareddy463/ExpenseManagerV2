@@ -10,6 +10,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.AdminProfileFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.AdminTangibleExpenses;
 import expmanager.idea.spark.in.expensemanager.fragments.DashBoardFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseFragment;
+import expmanager.idea.spark.in.expensemanager.fragments.ExpenseHistoryFragment;
 
 
 /**
@@ -30,7 +31,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
         initializeControls();
         ExpenseFragment fragmentorg = new ExpenseFragment();
-        getFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
 
     }
 
@@ -62,25 +63,31 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.btnexpense:
                 ExpenseFragment fragmentorg = new ExpenseFragment();
-                getFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
 
                 break;
             case R.id.btnprofile:
                 AdminProfileFragment fragprofile = new AdminProfileFragment();
-                getFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragprofile).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragprofile).commit();
                 break;
 
             case R.id.btndashboard:
                 DashBoardFragment fragdashboard = new DashBoardFragment();
-                getFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragdashboard).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragdashboard).commit();
                 break;
             case R.id.btntanexpense:
                 AdminTangibleExpenses fragtanexp = new AdminTangibleExpenses();
-                getFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragtanexp).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragtanexp).commit();
                 break;
             case R.id.btnstaff:
                 AdminAddStaffFragment fragstaff= new AdminAddStaffFragment();
-                getFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragstaff).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragstaff).commit();
+                break;
+
+            case R.id.btnhistory:
+                ExpenseHistoryFragment fragExpenseHistory = new ExpenseHistoryFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragExpenseHistory).commit();
+
                 break;
 
         }

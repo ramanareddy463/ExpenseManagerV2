@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseFragment;
+import expmanager.idea.spark.in.expensemanager.fragments.ExpenseHistoryFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.StaffProfileFragment;
 
 
@@ -25,7 +26,7 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
 
 
         ExpenseFragment fragmentorg = new ExpenseFragment();
-        getFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragmentorg).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragmentorg).commit();
 
 
     }
@@ -55,6 +56,12 @@ public class StaffActivity extends AppCompatActivity implements View.OnClickList
             case R.id.staffprofile:
                 StaffProfileFragment fragprofile = new StaffProfileFragment();
                 getFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragprofile).commit();
+
+                break;
+
+            case R.id.staffhistory:
+                ExpenseHistoryFragment fragExpenseHistory = new ExpenseHistoryFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragExpenseHistory).commit();
 
                 break;
 
