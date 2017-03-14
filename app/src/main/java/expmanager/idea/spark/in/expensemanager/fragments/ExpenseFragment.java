@@ -1,7 +1,6 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,10 +37,10 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
         imgAddExpense = (ImageView) rootView.findViewById(R.id.img_add_expense);
         imgAddExpense.setOnClickListener(this);
 
-        RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
-        RecyclerView recyclerViewWeek = (RecyclerView)rootView.findViewById(R.id.recycler_view_week);
+        RecyclerView recyclerViewWeek = (RecyclerView) rootView.findViewById(R.id.recycler_view_week);
         LinearLayoutManager layoutManagerWeek = new LinearLayoutManager(getActivity());
 
         // RecyclerView has some built in animations to it, using the DefaultItemAnimator.
@@ -65,29 +64,29 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
     }
 
     public static List<ExpanseItem> makeExpanseItems() {
-        ExpanseItem item1 = new ExpanseItem("Olive oil", "2 lt","$10.00");
-        ExpanseItem item2 = new ExpanseItem("Sugar", "5 kg","$20.00");
-        ExpanseItem item3 = new ExpanseItem("Carrots", "5 kg","$10.00");
-
+        ExpanseItem item1 = new ExpanseItem("Olive oil", "2 lt", "$10.00");
+        ExpanseItem item2 = new ExpanseItem("Sugar", "5 kg", "$20.00");
+        ExpanseItem item3 = new ExpanseItem("Carrots", "5 kg", "$10.00");
 
         return Arrays.asList(item1, item2, item3);
     }
 
     public static List<ExpanseGroup> makeExpansesList() {
         return Arrays.asList(makeExpanseGroup(),
-        makeExpanseGroup());
+                makeExpanseGroup());
     }
+
     public static ExpanseGroup makeExpanseGroup() {
-        return new ExpanseGroup("Grocery Today",makeExpanseItems(),"3 items","$40.00");
+        return new ExpanseGroup("Grocery Today", makeExpanseItems(), "3 items", "$40.00");
     }
 
     @Override
     public void onClick(View view) {
 
-        if(view.getId()==R.id.img_add_expense){
+        if (view.getId() == R.id.img_add_expense) {
 
             AddExpenseFragment fragmentorg = new AddExpenseFragment();
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.staff_content_frame, fragmentorg).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
 
         }
     }

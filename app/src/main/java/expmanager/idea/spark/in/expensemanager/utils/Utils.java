@@ -1,9 +1,11 @@
 package expmanager.idea.spark.in.expensemanager.utils;
 
 import android.content.Context;
+import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
+
 
 /**
  * Created by Haresh.Veldurty on 2/21/2017.
@@ -17,5 +19,11 @@ public class Utils {
         Display display = wm.getDefaultDisplay();
         display.getMetrics(metrics);
         return metrics;
+    }
+
+    public static String getDeviceId(Context context){
+
+        return Settings.Secure.getString(context.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
     }
 }

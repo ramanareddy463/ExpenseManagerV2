@@ -1,6 +1,7 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
@@ -31,6 +32,7 @@ public class ExpenseHistoryFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.expense_history,
                 container, false);
 
+
         mContainer = (PagerContainer) rootView.findViewById(R.id.pager_container);
         monthExpenseHistory = (Spinner) rootView.findViewById(R.id.month_expense_history);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -39,7 +41,7 @@ public class ExpenseHistoryFragment extends Fragment {
         monthExpenseHistory.setAdapter(adapter);
 
         ViewPager pager = (ViewPager) rootView.findViewById(R.id.view_pager);//mContainer.getViewPager();
-        MyPagerAdapter monthAdapter= new MyPagerAdapter(getFragmentManager());
+        MyPagerAdapter monthAdapter = new MyPagerAdapter(getFragmentManager());
         pager.setAdapter(monthAdapter);
         //Necessary or the pager will only have one extra page to show
         // make this at least however many pages you can see

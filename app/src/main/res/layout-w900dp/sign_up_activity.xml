@@ -40,6 +40,7 @@
             android:textStyle="normal" />
 
         <EditText
+            android:id="@+id/user_name_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="30dip"
@@ -51,6 +52,7 @@
 
 
         <EditText
+            android:id="@+id/email_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="20dip"
@@ -61,6 +63,7 @@
 
 
         <EditText
+            android:id="@+id/password_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="20dip"
@@ -71,6 +74,7 @@
 
 
         <Button
+            android:id="@+id/btn_sign_up"
             android:layout_width="150dip"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"

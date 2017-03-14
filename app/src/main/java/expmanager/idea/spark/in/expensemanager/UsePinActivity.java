@@ -46,7 +46,7 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(UsePinActivity.this, LoginActivty.class);
+                Intent i = new Intent(UsePinActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }
