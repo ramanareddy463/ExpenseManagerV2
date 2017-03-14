@@ -91,7 +91,7 @@ android:layout_marginTop="50dp"
                 android:id="@+id/view_above_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/txt_product_desc"
+
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@android:color/darker_gray" />
@@ -100,7 +100,6 @@ android:layout_marginTop="50dp"
                 android:id="@+id/view_below_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/recycler_view_today_products"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@android:color/darker_gray" />
