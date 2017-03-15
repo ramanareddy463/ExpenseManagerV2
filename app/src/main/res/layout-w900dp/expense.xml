@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:text="Todays Expense"
             android:textColor="@color/blue"
             android:textSize="22dp"
@@ -42,7 +42,7 @@
             android:id="@+id/img_ocr_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
             android:drawableLeft="@drawable/add"
             android:text="Scan"
             android:textSize="18sp"
@@ -76,7 +76,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:text="This Week Expense"
             android:textColor="@color/blue"
             android:textSize="22dp"

@@ -132,7 +132,8 @@
         android:layout_height="1dp"
         android:layout_marginTop="6dp"
         android:background="#c3c3c3"
-        android:text="TextView" />
+        android:text="TextView"
+        android:visibility="invisible"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -140,7 +141,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/imafffgeView3"
@@ -166,7 +168,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/imafffgeVffiew3"
@@ -192,7 +195,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/imaffffssffgeView3"

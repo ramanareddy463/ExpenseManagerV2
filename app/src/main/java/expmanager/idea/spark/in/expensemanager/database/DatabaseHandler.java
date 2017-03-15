@@ -30,7 +30,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Contacts table name
     private static final String TABLE_TANEXPENSE = "tanexpenses";
     private static final String TABLE_STAFFDETAILS = "staffdetails";
-    private static final String TABLE_SALES = "salesdetails";
+    private static final String TABLE_SALES = "sales";
 
 
     // Category  Table Columns names

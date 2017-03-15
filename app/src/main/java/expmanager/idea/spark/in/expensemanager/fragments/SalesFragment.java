@@ -90,10 +90,9 @@ public class SalesFragment extends Fragment {
                             amountsale.getText().toString());
 
                     AddSaleRequest addSaleRequest = new AddSaleRequest();
-                    addSaleRequest.setAmount(Integer.parseInt(amountsale.getText().toString()));
-                    addSaleRequest.setDate(datesale.getText().toString());
                     addSaleRequest.setSaleType(typespinner.getSelectedItem().toString());
-
+                    addSaleRequest.setDate(datesale.getText().toString());
+                    addSaleRequest.setAmount(Integer.parseInt(amountsale.getText().toString()));
 
 
                     SessionManager sessionManager = new SessionManager(getActivity());
