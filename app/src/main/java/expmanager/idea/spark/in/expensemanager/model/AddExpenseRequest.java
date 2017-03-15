@@ -19,7 +19,7 @@ public class AddExpenseRequest {
 
     @SerializedName("amount")
     @Expose
-    private Integer amount;
+    private int amount;
 
     @SerializedName("category")
     @Expose
@@ -45,11 +45,11 @@ public class AddExpenseRequest {
         this.date = date;
     }
 
-    public Integer getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
