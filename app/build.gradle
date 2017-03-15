@@ -2,10 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+
+    buildToolsVersion "25.0.2"
+
+    buildToolsVersion '25.0.2'
+
     defaultConfig {
         applicationId "expmanager.idea.spark.in.expensemanager"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -26,7 +30,14 @@ dependencies {
     })
 
     compile 'com.android.support:design:25.2.0'
+    compile 'com.thoughtbot:expandablerecyclerview:1.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'org.achartengine:achartengine:1.2.0'
 
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
 
     testCompile 'junit:junit:4.12'
 

@@ -15,10 +15,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 
+import java.util.List;
+
 import expmanager.idea.spark.in.expensemanager.R;
+import expmanager.idea.spark.in.expensemanager.adapters.MyStaffDetailsAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
+import expmanager.idea.spark.in.expensemanager.model.Staff;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
 
 /**
@@ -26,9 +32,13 @@ import expmanager.idea.spark.in.expensemanager.utils.Utils;
  */
 
 public class StaffFragment extends Fragment {
-   Button addstaffbtn,cancelstaffdialog,addtanexptoDb;
+   Button addstaffbtn,cancelstaffdialog,addstafftoDb;
+    EditText staffname;
     Spinner spinnershift1,spinnershift2,spinnertime1,spinnertime2,spinnersal;
     DatabaseHandler db;
+    ListView stafflist;
+    List<Staff> list,staff_list;
+    public static MyStaffDetailsAdapter adapt;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +61,7 @@ public class StaffFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.stafffragment_layout,
                 container, false);
+        db = new DatabaseHandler(getActivity());
         addstaffbtn = (Button) rootView.findViewById(R.id.addstaffbtn);
         addstaffbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,8 +69,12 @@ public class StaffFragment extends Fragment {
                 openAddStaffDialog();
             }
         });
-
-
+        stafflist = (ListView) rootView.findViewById(R.id.stafflist);
+        list = db.getAllStaff();
+        if(list != null) {
+            adapt = new MyStaffDetailsAdapter(getActivity(), R.layout.list_staff_item, list);
+            stafflist.setAdapter(adapt);
+        }
         return rootView;
     }
 
@@ -84,6 +99,9 @@ public class StaffFragment extends Fragment {
         spinnertime1 = (Spinner) dialog.findViewById(R.id.spinnertime1);
         spinnertime2 = (Spinner) dialog.findViewById(R.id.spinnertime2);
         spinnersal = (Spinner) dialog.findViewById(R.id.spinnersal);
+        addstafftoDb  = (Button) dialog.findViewById(R.id.addstafftodb);
+        staffname = (EditText) dialog.findViewById(R.id.staffname);
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.weekArray, R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
@@ -115,6 +133,20 @@ public class StaffFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+            }
+        });
+
+        addstafftoDb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(!staffname.getText().toString().isEmpty() ) {
+                    Staff insertstaff = new Staff(staffname.getText().toString());
+                    db.addStaff(insertstaff);
+                    StaffFragment.adapt.add(insertstaff);
+                    StaffFragment.adapt.notifyDataSetChanged();
+                    dialog.dismiss();
+                }
             }
         });
 

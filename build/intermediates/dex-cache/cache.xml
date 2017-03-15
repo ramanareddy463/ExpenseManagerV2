@@ -3,138 +3,210 @@
 
     <item
         is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/jars/classes.jar"
+        jar="/Users/kveldurty/.android/build-cache/a5efeef04418036b84a2689d432131676df935b1/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.2.0_308917060e6b72b5075bf8a47ddb189e56bea1d3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.2.0_e2d94723ec908f235447d9c009991a45ad7604c7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.2.0_06fba5368f60dc43a179b8d799517111eae90d56/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.2.0_496a484c6ec442ab9f5d8a8f7a9e97f256d3ba9d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.2.0_157312f0ab091ac40b400444ae92c774cfa9fa6f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.2.0_d8c67d980e24938fc859e318b3033ff4dbc5e23d/classes.dex" />
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c659ffd20d8f82c1dd15419762613b39776b8d8b/classes.dex" />
     </item>
     <item
         is-multidex="true"
         jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="61cee66b00c273ab2ac662f63a0961e0fdaf96c0">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_44e0313ab80011eb2a6fb150cdff913f87ea1110/classes.dex" />
+        revision="25.0.2"
+        sha1="30d5700c6e0acfd66e33763397bd1ba962af4d43">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_44e0313ab80011eb2a6fb150cdff913f87ea1110/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
+        jar="/Users/kveldurty/.android/build-cache/1f1c2e09fab7f450ac1cb3d1d0912d6ba4409b09/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.2.0_e919173187994a784830df86b6ca1b3fd9a44806/classes.dex" />
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bdd870f23612728da32817575e21515773f683a2/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/design/25.2.0/jars/classes.jar"
+        jar="/Users/kveldurty/.android/build-cache/40852980f10551a3f6918f4c9f9d34fee49c9bd4/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.2.0_53fe87cdaac6a960175a69bb0574155f04b0d08d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/transition/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
+        revision="25.0.2"
         sha1="e51c2f662bb72419632af5192553c37e33890a99">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.2.0_13e0bac4cdd66027cd87730f5e7aad5629a9eaa8/classes.dex" />
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_784e2486cbde61d81cbb6b465315b97149c5787b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
+        jar="/Users/kveldurty/.android/build-cache/2c4a6df31577be7707aacd4e65ae664b617a7ca5/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.2.0_a17629159a5353e09f0a3c586efcb64039bbf782/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.2.0_b1d0544fd1ef441327d6b8d402f7281e11bd481d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.2.0_3c3fc23d7c38ac8b76b575050e406073568c3dc4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
+        revision="25.0.2"
         sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.2.0_9d55f13626d7f0c9bd0046fca9df259ce9637e45/classes.dex" />
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8cfddf4d1ee0e8f0309af2a23866b559aa30c820/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/cb6c04d849b36a77618ca945c6fa3a5a79177ad5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b2f9bb4cb0adc66626b83b6f9010a18e43066a94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_860efda9864d65f7d3104c429b7cc5c7f261e075/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_0888931d1893e8d8c1efd03b6eeef71b26682a86/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/0821f845b780fc941caa63c1e8db8cae6d4d86e2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2f07dbb9ddbec77c251c0cf2b58bf5d1dc99c616/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.gradle/caches/modules-2/files-2.1/org.achartengine/achartengine/1.2.0/1bd51fadf0ff57472b9c0bb3955a28fc0fbc97b8/achartengine-1.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1bd51fadf0ff57472b9c0bb3955a28fc0fbc97b8">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/achartengine-1.2.0_84f08cf51d0472f121a755f32cd4b3804b1675ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.2.0/a56f28d5b7fab623c6c1d2afa08dd496d873ac21/logging-interceptor-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/logging-interceptor-3.2.0_fc7955ac334784ea76faefb46d18afd5074c74cb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/5140d43409c7516a5c2ccca04479c784136ce0ac/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4d2e82efa015aa074560d5a1449395222883d69c/classes.dex" />
     </item>
     <item
         is-multidex="true"
         jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="4613d25019c708b85e359268f6b341a3412de3c9">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_61a8cf098ba44e4131cff19bce7c264ace1ce4f7/classes.dex" />
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_61a8cf098ba44e4131cff19bce7c264ace1ce4f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.1/2780d858273ce1bb90f6b12e1ef0d40f7741fca/converter-gson-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02780d858273ce1bb90f6b12e1ef0d40f7741fca">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.1_134f6a38fcd24cd8b52f86146d8c65410cc15821/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/8501bc3365ce3bd24c326d4c28237eabe5ebaf7f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2954876d4d9342faa84cb6340bc80f1a67b5b16c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_56f148989f8b43ef5f8d5c4b2568c9be77dc97a4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/29748b52fb00a204a4b2b206d21fb91e8451124a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3fc139dfb8d410b59cee6dccd06d82b14d38aee5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/7ef9b88a5167af97d601b3b2a3fa10bf1525fa56/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8fe42209bc8c0f8a05aa1328c6abfafb1cd66fe9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/55c3b8577e044125dfd393c12be42cd61d63a496/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="03918956d8b93c57537794c5893aecb53e3de7a4">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_656d962822c19cb4bc121fc58e43075b2d9791f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.2.0_157312f0ab091ac40b400444ae92c774cfa9fa6f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/c79880efa04fcfa398f1602c3ea18f56987fd0df/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_74e8dd9b5dec61fbf417646bfd1ba0e87afefa3e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.android/build-cache/5c1b97210541728de667a0768a0526cdec5795fb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f834ca8d4d04093fca63cf4b26e8092e51ff8a1d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kveldurty/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.1/27293c440d2085cde1d859528aff6e7d3b6ae40/retrofit-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
+        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.1_3248813ef40db348e6e393da31606875fa58278a/classes.dex" />
     </item>
 
 </items>

@@ -9,37 +9,44 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/header_logo"
-            android:id="@+id/imageView2"
-            android:background="#000"/>
+            android:background="#000"
+            app:srcCompat="@drawable/header_logo" />
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@drawable/menu_bg_gradient">
+            android:background="@drawable/menu_bg_gradient"
+            android:orientation="vertical">
+
             <LinearLayout
 
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <ImageButton android:id="@+id/staffexpense"
+
+                <ImageButton
+                    android:id="@+id/staffexpense"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/expense"
-                    />
-                <ImageButton android:id="@+id/staffhistory"
+                    android:background="@drawable/expense" />
+
+                <ImageButton
+                    android:id="@+id/staffhistory"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/history"
-                    />
-                <ImageButton android:id="@+id/stafftanexpense"
+                    android:background="@drawable/history" />
+
+                <ImageButton
+                    android:id="@+id/stafftanexpense"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
@@ -51,21 +58,18 @@
             </LinearLayout>
 
 
-
-            <ImageButton android:id="@+id/staffprofile"
+            <ImageButton
+                android:id="@+id/staffprofile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:background="@drawable/staff"
-
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="30dp"/>
+
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/staff" />
         </RelativeLayout>
     </LinearLayout>
-
-
-
 
 
 </FrameLayout>
