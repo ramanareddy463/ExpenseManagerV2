@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
+import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 
 /**
  * Created by kveldurty on 2/20/17.
@@ -29,11 +30,22 @@ DatabaseHandler db;
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(SplashScreen.this, LoginActivity.class);
-                startActivity(i);
+                SessionManager sessionManager = new SessionManager(SplashScreen.this);
 
-                // close this activity
-                finish();
+                if(sessionManager.getAuthToken().isEmpty()) {
+                    Intent i = new Intent(SplashScreen.this, LoginActivity.class);
+                    startActivity(i);
+
+                    // close this activity
+                    finish();
+                }else {
+
+                    Intent i = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(i);
+
+                    // close this activity
+                    finish();
+                }
             }
         }, 3000);
     }

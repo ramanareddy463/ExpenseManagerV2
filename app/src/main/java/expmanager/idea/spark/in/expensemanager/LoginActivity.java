@@ -16,6 +16,7 @@ import java.io.IOException;
 import expmanager.idea.spark.in.expensemanager.model.LoginRequest;
 import expmanager.idea.spark.in.expensemanager.model.LoginResponse;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
 import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
 import okhttp3.ResponseBody;
@@ -53,6 +54,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if (!NetworkUtils.getInstance().isNetworkAvailable(LoginActivity.this)) {
+
+                    Toast.makeText(LoginActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if ((!userName.getText().toString().isEmpty()) && (!password.getText().toString().isEmpty())) {
 
                     LoginRequest loginRequest = new LoginRequest(userName.getText().toString(), password.getText().toString(), Utils.getDeviceId(LoginActivity.this));
@@ -66,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                                 try {
                                     LoginResponse loginResponse = gson.fromJson(response.body().string(), LoginResponse.class);
                                     SessionManager sessionManager = new SessionManager(LoginActivity.this);
-                                    sessionManager.createLoginSession(loginResponse.getToken());
+                                    sessionManager.createLoginSession(loginResponse.getToken(),loginResponse.getUser().getUsername(),loginResponse.getUser().getEmail());
 
                                 } catch (IOException e) {
                                     e.printStackTrace();

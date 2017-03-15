@@ -48,13 +48,18 @@ public class SessionManager {
     /**
      * Create login session
      * */
-    public void createLoginSession(String token){
+    public void createLoginSession(String token,String name,String email){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
         // Storing name in pref
         editor.putString(KEY_TOKEN, token);
 
+        // Storing name in pref
+        editor.putString(KEY_NAME, name);
+
+        // Storing name in pref
+        editor.putString(KEY_EMAIL, email);
         // commit changes
         editor.commit();
     }
@@ -117,6 +122,15 @@ public class SessionManager {
      * **/
     // Get Token
     public String getAuthToken(){
-        return pref.getString(KEY_TOKEN, " ");
+        return pref.getString(KEY_TOKEN, "");
     }
+
+    public String getUserName(){
+        return pref.getString(KEY_NAME, "");
+    }
+
+    public String getEmailId(){
+        return pref.getString(KEY_EMAIL, "");
+    }
+
 }

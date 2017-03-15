@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -16,16 +17,32 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import java.io.IOException;
 import java.util.List;
 
+import expmanager.idea.spark.in.expensemanager.AdminActivity;
 import expmanager.idea.spark.in.expensemanager.R;
+import expmanager.idea.spark.in.expensemanager.UsePinActivity;
 import expmanager.idea.spark.in.expensemanager.adapters.MyStaffDetailsAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
+import expmanager.idea.spark.in.expensemanager.model.AddStaffRequest;
+import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationResponse;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
+import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Haresh.Veldurty on 2/22/2017.
@@ -33,11 +50,15 @@ import expmanager.idea.spark.in.expensemanager.utils.Utils;
 
 public class StaffFragment extends Fragment {
    Button addstaffbtn,cancelstaffdialog,addstafftoDb;
-    EditText staffname;
+    EditText staffname,started,salary;
     Spinner spinnershift1,spinnershift2,spinnertime1,spinnertime2,spinnersal;
     DatabaseHandler db;
     ListView stafflist;
     List<Staff> list,staff_list;
+    ImageView done;
+
+    private ProgressBar progressBar;
+
     public static MyStaffDetailsAdapter adapt;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,11 +91,24 @@ public class StaffFragment extends Fragment {
             }
         });
         stafflist = (ListView) rootView.findViewById(R.id.stafflist);
+        progressBar = (ProgressBar) rootView.findViewById(R.id.progress_bar);
+        done = (ImageView) rootView.findViewById(R.id.complete);
         list = db.getAllStaff();
         if(list != null) {
             adapt = new MyStaffDetailsAdapter(getActivity(), R.layout.list_staff_item, list);
             stafflist.setAdapter(adapt);
         }
+
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), AdminActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
         return rootView;
     }
 
@@ -101,7 +135,9 @@ public class StaffFragment extends Fragment {
         spinnersal = (Spinner) dialog.findViewById(R.id.spinnersal);
         addstafftoDb  = (Button) dialog.findViewById(R.id.addstafftodb);
         staffname = (EditText) dialog.findViewById(R.id.staffname);
-
+        started = (EditText) dialog.findViewById(R.id.started);
+        salary = (EditText) dialog.findViewById(R.id.salary);
+        started.setText(Utils.getDateTime());
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.weekArray, R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
@@ -141,11 +177,95 @@ public class StaffFragment extends Fragment {
             public void onClick(View v) {
 
                 if(!staffname.getText().toString().isEmpty() ) {
-                    Staff insertstaff = new Staff(staffname.getText().toString());
-                    db.addStaff(insertstaff);
-                    StaffFragment.adapt.add(insertstaff);
-                    StaffFragment.adapt.notifyDataSetChanged();
+                    final Staff insertstaff = new Staff();
+
+                    AddStaffRequest addStaffRequest = new AddStaffRequest();
+
+                    addStaffRequest.setName(staffname.getText().toString());
+                    addStaffRequest.setShiftDayFrom(spinnershift1.getSelectedItem().toString());
+                    addStaffRequest.setShiftDayTo(spinnershift2.getSelectedItem().toString());
+                    addStaffRequest.setShiftTimeFrom(spinnertime1.getSelectedItem().toString());
+                    addStaffRequest.setShiftTimeTo(spinnertime2.getSelectedItem().toString());
+                    addStaffRequest.setStarted(started.getText().toString());
+                    addStaffRequest.setSalary(Integer.parseInt(salary.getText().toString()));
+                    addStaffRequest.setSalaryType(spinnersal.getSelectedItem().toString());
+
+                    insertstaff.setStaff_name(staffname.getText().toString());
+                    insertstaff.setShift_days1(spinnershift1.getSelectedItem().toString());
+                    insertstaff.setShift_days2(spinnershift2.getSelectedItem().toString());
+                    insertstaff.setShift_time1(spinnertime1.getSelectedItem().toString());
+                    insertstaff.setShift_time2(spinnertime2.getSelectedItem().toString());
+                    insertstaff.setStaff_startdate(started.getText().toString());
+                    insertstaff.setPrice_perhr(salary.getText().toString());
+                    insertstaff.setPriceType(spinnersal.getSelectedItem().toString());
+
                     dialog.dismiss();
+                    progressBar.setVisibility(View.VISIBLE);
+
+                    SessionManager sessionManager = new SessionManager(getActivity());
+                    RetrofitApi.getApi().AddStaff(sessionManager.getAuthToken(), addStaffRequest).enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                            progressBar.setVisibility(View.GONE);
+
+                            if (response.isSuccessful()) {
+
+                                db.addStaff(insertstaff);
+                                StaffFragment.adapt.add(insertstaff);
+                                StaffFragment.adapt.notifyDataSetChanged();
+
+                                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+
+//                                {
+//                                    "id":2,
+//                                        "name":"fff",
+//                                        "shift_day_from":"MON",
+//                                        "shift_day_to":"MON",
+//                                        "shift_time_from":"10:00",
+//                                        "shift_time_to":"10:00",
+//                                        "started":"2017-03-15",
+//                                        "salary":89.0,
+//                                        "salary_type":"per month",
+//                                        "profile_image":null,
+//                                        "created_at":"2017-03-15T07:39:00.139Z",
+//                                        "updated_at":"2017-03-15T07:39:00.139Z",
+//                                        "company_id":null,
+//                                        "status":1
+//                                }
+
+
+//                                Gson gson = new Gson();
+//                                try {
+//                                    CreateOrganisationResponse createOrganisationResponse = gson.fromJson(response.body().string(), CreateOrganisationResponse.class);
+////                                    SessionManager sessionManager = new SessionManager(getActivity());
+////                                    sessionManager.createLoginSession(loginResponse.getToken());
+//
+//                                    TangibleExpenseFragment fragmenttangibleexp = new TangibleExpenseFragment();
+//                                    getFragmentManager().beginTransaction().replace(R.id.content_frame, fragmenttangibleexp).commit();
+//
+//                                } catch (IOException e) {
+//                                    e.printStackTrace();
+//                                }
+
+                            } else {
+
+                                Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+
+
+
                 }
             }
         });

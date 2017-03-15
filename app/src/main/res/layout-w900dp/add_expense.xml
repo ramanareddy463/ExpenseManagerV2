@@ -9,19 +9,58 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/img_add_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/coin"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/title_add_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Todays Expense"
+            android:layout_alignTop="@id/img_add_expense"
+            android:layout_alignBottom="@id/img_add_expense"
+            android:textColor="@color/blue"
+            android:textSize="25dp"
+            android:layout_toRightOf="@+id/img_add_expense"
+            android:layout_gravity="center_vertical"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_below="@id/title_add_expense"
             android:padding="10dp">
 
             <RelativeLayout
                 android:layout_width="150dp"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/border">
+
+                <ImageView
+                    android:id="@+id/img_thumbnail"
+                    android:layout_width="150dp"
+                    android:layout_height="300dp" />
+
+                <ImageView
+                    android:id="@+id/img_rescan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@id/img_thumbnail"/>
 
             </RelativeLayout>
 
@@ -174,11 +213,11 @@
                             android:id="@+id/product_name"
                             android:layout_width="400dp"
                             android:layout_height="500dp"
-                            android:layout_toEndOf="@id/index"
-                            android:layout_toRightOf="@id/index"
                             android:padding="20dp"
                             android:paddingTop="20dp"
-                            android:text="Olive Oil" />
+                            android:text="Olive Oil"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/index" />
 
                         <TextView
                             android:id="@+id/qty"

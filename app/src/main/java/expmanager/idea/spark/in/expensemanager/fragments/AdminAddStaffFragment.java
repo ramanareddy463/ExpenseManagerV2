@@ -19,14 +19,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.adapters.MyStaffDetailsAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
+import expmanager.idea.spark.in.expensemanager.model.AddStaffRequest;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
+import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Haresh.Veldurty on 3/9/2017.
@@ -34,7 +42,7 @@ import expmanager.idea.spark.in.expensemanager.utils.Utils;
 
 public class AdminAddStaffFragment extends Fragment {
     Button addstaffbtn,cancelstaffdialog,addstafftoDb;
-    EditText staffname;
+    EditText staffname,started,salary;
     Spinner spinnershift1,spinnershift2,spinnertime1,spinnertime2,spinnersal;
     DatabaseHandler db;
     ListView stafflist;
@@ -102,6 +110,8 @@ public class AdminAddStaffFragment extends Fragment {
         spinnersal = (Spinner) dialog.findViewById(R.id.spinnersal);
         addstafftoDb  = (Button) dialog.findViewById(R.id.addstafftodb);
         staffname = (EditText) dialog.findViewById(R.id.staffname);
+        started = (EditText) dialog.findViewById(R.id.started);
+        salary = (EditText) dialog.findViewById(R.id.salary);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.weekArray, R.layout.simple_spinner_item);
@@ -142,11 +152,71 @@ public class AdminAddStaffFragment extends Fragment {
             public void onClick(View v) {
 
                 if(!staffname.getText().toString().isEmpty() ) {
-                    Staff insertstaff = new Staff(staffname.getText().toString());
-                    db.addStaff(insertstaff);
-                    AdminAddStaffFragment.adapt.add(insertstaff);
-                    AdminAddStaffFragment.adapt.notifyDataSetChanged();
+                   final  Staff insertstaff = new Staff();
+                    insertstaff.setStaff_name(staffname.getText().toString());
+                    insertstaff.setShift_days1(spinnershift1.getSelectedItem().toString());
+                    insertstaff.setShift_days2(spinnershift2.getSelectedItem().toString());
+                    insertstaff.setShift_time1(spinnertime1.getSelectedItem().toString());
+                    insertstaff.setShift_time2(spinnertime2.getSelectedItem().toString());
+                    insertstaff.setStaff_startdate(started.getText().toString());
+                    insertstaff.setPrice_perhr(salary.getText().toString());
+                    insertstaff.setPriceType(spinnersal.getSelectedItem().toString());
+
+                    AddStaffRequest addStaffRequest = new AddStaffRequest();
+
+                    addStaffRequest.setName(staffname.getText().toString());
+                    addStaffRequest.setShiftDayFrom(spinnershift1.getSelectedItem().toString());
+                    addStaffRequest.setShiftDayTo(spinnershift2.getSelectedItem().toString());
+                    addStaffRequest.setShiftTimeFrom(spinnertime1.getSelectedItem().toString());
+                    addStaffRequest.setShiftTimeTo(spinnertime2.getSelectedItem().toString());
+                    addStaffRequest.setStarted(started.getText().toString());
+                    addStaffRequest.setSalary(Integer.parseInt(salary.getText().toString()));
+                    addStaffRequest.setSalaryType(spinnersal.getSelectedItem().toString());
+
+
                     dialog.dismiss();
+
+
+                    SessionManager sessionManager = new SessionManager(getActivity());
+                    RetrofitApi.getApi().AddStaff(sessionManager.getAuthToken(), addStaffRequest).enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+
+
+                            if (response.isSuccessful()) {
+
+                                db.addStaff(insertstaff);
+                                AdminAddStaffFragment.adapt.add(insertstaff);
+                                AdminAddStaffFragment.adapt.notifyDataSetChanged();
+
+                                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+
+
+
+                            } else {
+
+                                Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+
+
+
+
+
+
+
+
                 }
             }
         });
