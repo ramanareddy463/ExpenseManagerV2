@@ -18,6 +18,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.StaffProfileFragment;
 import expmanager.idea.spark.in.expensemanager.model.LoginResponse;
 import expmanager.idea.spark.in.expensemanager.model.SignUpRequest;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
 import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
 import okhttp3.ResponseBody;
@@ -60,6 +61,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.btn_sign_up:
+
+                if (!NetworkUtils.getInstance().isNetworkAvailable(SignUpActivity.this)) {
+
+                    Toast.makeText(SignUpActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if((!userName.getText().toString().isEmpty())&&(!email.getText().toString().isEmpty())&&(!password.getText().toString().isEmpty())){
 

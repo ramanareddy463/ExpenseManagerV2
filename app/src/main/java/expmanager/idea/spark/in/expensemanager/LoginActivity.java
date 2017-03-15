@@ -16,6 +16,7 @@ import java.io.IOException;
 import expmanager.idea.spark.in.expensemanager.model.LoginRequest;
 import expmanager.idea.spark.in.expensemanager.model.LoginResponse;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
 import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
 import okhttp3.ResponseBody;
@@ -52,6 +53,12 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (!NetworkUtils.getInstance().isNetworkAvailable(LoginActivity.this)) {
+
+                    Toast.makeText(LoginActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if ((!userName.getText().toString().isEmpty()) && (!password.getText().toString().isEmpty())) {
 

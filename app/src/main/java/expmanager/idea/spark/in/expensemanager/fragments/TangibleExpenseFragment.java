@@ -27,6 +27,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.List;
 
+import expmanager.idea.spark.in.expensemanager.LoginActivity;
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.adapters.MyTanExpAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
@@ -35,6 +36,7 @@ import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationRequest;
 import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationResponse;
 import expmanager.idea.spark.in.expensemanager.model.TanExpenses;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
 import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
 import okhttp3.ResponseBody;
@@ -155,6 +157,12 @@ public class TangibleExpenseFragment extends Fragment {
         addtanexptoDb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (!NetworkUtils.getInstance().isNetworkAvailable(getActivity())) {
+
+                    Toast.makeText(getActivity(), "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if (!categoryval.getText().toString().isEmpty() && !whenval.getSelectedItem().toString().isEmpty() && !priceval.getText().toString().isEmpty()) {
                     final TanExpenses insertall = new TanExpenses(categoryval.getText().toString(), whenval.getSelectedItem().toString(), priceval.getText().toString());

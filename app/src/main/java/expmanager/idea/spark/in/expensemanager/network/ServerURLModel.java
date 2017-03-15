@@ -17,5 +17,12 @@ public class ServerURLModel {
     public static final String GET_TANGIBLE_EXPENSE = "get_tangible_expense";
     public static final String UPDATE_TANGIBLE_EXPENSE = "update_tangible_expense";
 
+    public static final String ADD_EXPENSE = "add_expense";
+    public static final String UPDATE_EXPENSE = "update_expense";
+    public static final String GET_EXPENSE = "get_expenses";
+    public static final String ADD_SALE = "add_sales";
+    public static final String UPDATE_SALE = "update_sale";
+    public static final String GET_SALE = "get_sales";
+
 
 }
