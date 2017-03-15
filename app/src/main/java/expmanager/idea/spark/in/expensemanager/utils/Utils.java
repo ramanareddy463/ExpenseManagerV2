@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -35,5 +36,22 @@ public class Utils {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         return dateFormat.format(date);
+    }
+
+    public static int[] getWeeksOfMonth(int month, int year)
+    {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+
+        int ndays = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+        int weeks[] = new int[ndays];
+        for (int i = 0; i < ndays; i++)
+        {
+            weeks[i] = cal.get(Calendar.WEEK_OF_YEAR);
+            cal.add(Calendar.DATE, 1);
+        }
+        return weeks;
     }
 }

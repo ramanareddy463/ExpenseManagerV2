@@ -6,12 +6,16 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.R;
@@ -28,6 +32,7 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
     public TodayExpenseAdapter adapter;
     public TodayExpenseAdapter weekAdapter;
     private ImageView imgAddExpense;
+    private TextView txtTitleWeek;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +41,7 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
                 container, false);
 
         imgAddExpense = (ImageView) rootView.findViewById(R.id.img_add_expense);
+        txtTitleWeek = (TextView) rootView.findViewById(R.id.title_week);
 
 
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);

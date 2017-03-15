@@ -3,6 +3,7 @@
 
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
         jumboMode="true"
         optimize="true"
@@ -207,6 +208,212 @@
         revision="25.0.2"
         sha1="b0a47284559cdd686750ca2fbf6fa3f46cf92eb7">
         <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_79523bc4260ec41ceb2bbdfaf9ac662a479969ca/classes.dex" />
+=======
+        jar="C:\Users\Ramana.reddy\.android\build-cache\7a0107f123da8ea95db7c35cee2eec230084bec1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f96c2ec09608f637016434eaac8442a0ace796a2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.2.0\a56f28d5b7fab623c6c1d2afa08dd496d873ac21\logging-interceptor-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.2.0_db6dbf8684076b4415274b0c4460ca3662c89e5d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_04a7d19936c5c4f2526dbd341b8944c0db86fde0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\2e8313883e57d12e0433e22ea3e6e7c708796403\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_91228736199faf178298e529071782b35679241a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\8c302e97a6e198a4a6da37cd268b094032fe213a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="921b1c4306b10e7de53574523eb7f7144bd0707f">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cc5c3f132ff4bebff37eb7b6a24b69bec931a4ca\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_ec562ebf025abe0822eeed69fd5e35d354c3008c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\bf2f20532be09ec155a690d5ff938712f49427ad\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2656989ac43c044d3789f6e995d291661047f91e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\00fee0415b378c0a0afe18e823ad27dd860b985e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="03918956d8b93c57537794c5893aecb53e3de7a4">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a8be07f6392658dcf4a6eb34e723facfb994966d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.1\2780d858273ce1bb90f6b12e1ef0d40f7741fca\converter-gson-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02780d858273ce1bb90f6b12e1ef0d40f7741fca">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.1_74cce9c2c6068eb778e79ec6d0080b4758979df8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\f2399a69bd27d30ededb4624260154701ba191dd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0545367ce655d5f014c6e33cd357150559011d99\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\c50cbcebf715112592b25497301e9a889513d305\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ee706b2d643822a83cb1ca36fdc43e9be35e11ed\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\24c0b9afe1c74238a69706da1dee52720a89838b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_86a2d2a5722b8b6802bc7528c4fb8528fd230afe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\215a1d18a316b43bdc34a36f820e0ec76a3103f9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7058e1d1fb7e0a7c2cd2bbf5c522a284937b7f86\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.1\27293c440d2085cde1d859528aff6e7d3b6ae40\retrofit-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.1_eec2426eb908bc636d5122ef2e1c94efa8476987\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.gradle\caches\modules-2\files-2.1\org.achartengine\achartengine\1.2.0\1bd51fadf0ff57472b9c0bb3955a28fc0fbc97b8\achartengine-1.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1bd51fadf0ff57472b9c0bb3955a28fc0fbc97b8">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\achartengine-1.2.0_3299c8c86f4fe0ce4e7d901ea1520f17c16c337b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\821c230100b7ffe7d7d7378554c6fd51551c712b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1a71aec1eccb91f34560c5bcff88d42da86f130d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_1249f2ca4feb1a3860e803b87c6622fe47fdcc1c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\cd8a3c5977e2732799c69c93a9ad62754001d9a2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4b472c67486a7640a01230f7f21e9b74e48355be\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\ec4d2dfee63939a02c396283a47eb902cd5c3bfb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a984a054e1cf43859066be35621b768708f3c298\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_7ba7acbccbda89cf4ac07ddcec308cc88edac3b8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\3a1d72ad9c36c9e1bb63b4625afd3295a871edea\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dbf5e900538acffe21d0120bd13c187247ca539b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\ef722abac768049e6ddd7233d5b6c1a61e571ff4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_df757114bc2279bb572509641f5515ad05e53af9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ramana.reddy\.android\build-cache\f7008ba987dd1f3a1e7cbcc294a8d365b462885c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Ramana\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_70f20e7b83f9de28ab39e67415b641a630458083\classes.dex" />
+>>>>>>> b96e3f620c35f6e9e48b67daf4962ed67b5d878e
     </item>
 
 </items>

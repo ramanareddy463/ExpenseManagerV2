@@ -18,6 +18,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.StaffProfileFragment;
 import expmanager.idea.spark.in.expensemanager.model.LoginResponse;
 import expmanager.idea.spark.in.expensemanager.model.SignUpRequest;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
 import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
 import okhttp3.ResponseBody;
@@ -61,6 +62,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btn_sign_up:
 
+                if (!NetworkUtils.getInstance().isNetworkAvailable(SignUpActivity.this)) {
+
+                    Toast.makeText(SignUpActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if((!userName.getText().toString().isEmpty())&&(!email.getText().toString().isEmpty())&&(!password.getText().toString().isEmpty())){
 
 
@@ -75,7 +82,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                                 try {
                                     LoginResponse loginResponse = gson.fromJson(response.body().string(), LoginResponse.class);
                                     SessionManager sessionManager = new SessionManager(SignUpActivity.this);
-                                    sessionManager.createLoginSession(loginResponse.getToken());
+                                    sessionManager.createLoginSession(loginResponse.getToken(),loginResponse.getUser().getUsername(),loginResponse.getUser().getEmail());
 
                                 } catch (IOException e) {
                                     e.printStackTrace();

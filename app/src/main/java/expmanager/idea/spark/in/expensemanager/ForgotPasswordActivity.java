@@ -12,6 +12,7 @@ import android.widget.Toast;
 import expmanager.idea.spark.in.expensemanager.model.ForgotPassword;
 import expmanager.idea.spark.in.expensemanager.model.LoginRequest;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,6 +47,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         btnForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (!NetworkUtils.getInstance().isNetworkAvailable(ForgotPasswordActivity.this)) {
+
+                    Toast.makeText(ForgotPasswordActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if((!email.getText().toString().isEmpty())){
 

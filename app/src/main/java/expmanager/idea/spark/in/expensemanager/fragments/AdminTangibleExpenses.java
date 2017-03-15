@@ -1,7 +1,6 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
 import android.app.Dialog;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
@@ -19,14 +18,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.adapters.MyTanExpAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
+import expmanager.idea.spark.in.expensemanager.model.AddTangibleExpenseRequest;
 import expmanager.idea.spark.in.expensemanager.model.TanExpenses;
+import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
+import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Haresh.Veldurty on 3/9/2017.
@@ -130,13 +138,62 @@ public class AdminTangibleExpenses extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(!categoryval.getText().toString().isEmpty() && !whenval.getSelectedItem().toString().isEmpty() && !priceval.getText().toString().isEmpty()) {
+               /* if(!categoryval.getText().toString().isEmpty() && !whenval.getSelectedItem().toString().isEmpty() && !priceval.getText().toString().isEmpty()) {
                     TanExpenses insertall = new TanExpenses(categoryval.getText().toString(), whenval.getSelectedItem().toString(), priceval.getText().toString());
                     db.addTanExpenses(insertall);
                     AdminTangibleExpenses.adapt.add(insertall);
                     AdminTangibleExpenses.adapt.notifyDataSetChanged();
                     dialog.dismiss();
+                }*/
+
+                if (!NetworkUtils.getInstance().isNetworkAvailable(getActivity())) {
+
+                    Toast.makeText(getActivity(), "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                if (!categoryval.getText().toString().isEmpty() && !whenval.getSelectedItem().toString().isEmpty() && !priceval.getText().toString().isEmpty()) {
+                    final TanExpenses insertall = new TanExpenses(categoryval.getText().toString(), whenval.getSelectedItem().toString(), priceval.getText().toString());
+                    dialog.dismiss();
+
+
+
+
+                    AddTangibleExpenseRequest addTangibleExpenseRequest = new AddTangibleExpenseRequest(insertall.getCategory(), insertall.getWhen(), insertall.getPrice());
+                    SessionManager sessionManager = new SessionManager(getActivity());
+                    RetrofitApi.getApi().AddTangibleExpense(sessionManager.getAuthToken(), addTangibleExpenseRequest).enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+
+
+                            if (response.isSuccessful()) {
+
+                                db.addTanExpenses(insertall);
+                                AdminTangibleExpenses.adapt.add(insertall);
+                                AdminTangibleExpenses.adapt.notifyDataSetChanged();
+
+                            } else {
+
+                                Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+
+                }
+
+
+
+
             }
         });
     }
