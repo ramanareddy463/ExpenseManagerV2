@@ -3,66 +3,210 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.1\27293c440d2085cde1d859528aff6e7d3b6ae40\retrofit-2.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
-        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.1_9ed58570869bd2a3f7e824f046d7f4b466c76f0a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_ffa9f47ebc258c0dc2c6c5fd137d6519a54a6399\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.2.0\a56f28d5b7fab623c6c1d2afa08dd496d873ac21\logging-interceptor-3.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
-        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.2.0_18e6ffad9d039f89db12d0b1aed2cf1e98154172\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
-        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_a2022ea7ff9f506b1d4ae907b6f8e47ffe9d706a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
-        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_4c47c17e0bfafe197c181081fefaf207c338a492\classes.dex" />
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_238eecb312915e479672f2345d7edc23d144735d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="/Users/RamanaRedddy/.android/build-cache/88bad944a4aa5b403d2ad38cddd492ec406db9ac/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="69be236032fc4f0aeb52176408498220d991aea3">
-        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5657ef4644572a8b2ee492dfe3bc82fa629af65a\classes.dex" />
+        sha1="03918956d8b93c57537794c5893aecb53e3de7a4">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a90574d996c541c0b850bfbd434a7713f6d9b496/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Haresh.Veldurty\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.1\2780d858273ce1bb90f6b12e1ef0d40f7741fca\converter-gson-2.0.1.jar"
+        jar="/Users/RamanaRedddy/.android/build-cache/47d9fa14cf8d269cfde693c3e6b799a7122f05ae/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4c5873d6892df9081c38151d486e325c71fd818b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/9a5b5c368c5b8a11be1668c177b3a7dc17ea7a60/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1cdf73cee2e9e45b0e16b674545efec512ce2032/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/a3bf23a845db006cb3aa1aa30b588c7393b6a078/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a8980ac817f429e67a0c753e41e523e83c484b75/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/42d328b9ed5ea55e1753903728f0defc577c8c65/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e9932b7a47d6dea101cefdaaa597457afbf6fc7c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.1/27293c440d2085cde1d859528aff6e7d3b6ae40/retrofit-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.1_e4fdb319083abcc82ce27d0b2b41341ce0367274/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/b6fc9c50a393afa74dc49b6c2a87f6f451f58582/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_268471c4caf5b66f4dde2134a1d9d53f54adc379/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.2.0/a56f28d5b7fab623c6c1d2afa08dd496d873ac21/logging-interceptor-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/logging-interceptor-3.2.0_b3eac32c54b250793bdd7bcb1ace1b5c70c90c54/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.2.0_7ab13efd83983529966ceab96fd404e8d09339f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/c76bea499f54618f52fb834a03a9d9314c10edc0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_aa1d2f685b92c3c3d9f679f51e354e2be1ce3ecb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/org.achartengine/achartengine/1.2.0/1bd51fadf0ff57472b9c0bb3955a28fc0fbc97b8/achartengine-1.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1bd51fadf0ff57472b9c0bb3955a28fc0fbc97b8">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/achartengine-1.2.0_1bbe1ffc03776c97685cfd316fefd2b70562cdda/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_35a515483fa596e59ff5b1982c46e857e9f98ee0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/cdaa35d650891b873d464f793ada609c2fea5e04/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_98db6499d18289e9292514ef7f26f9b460ca69e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/1abf0b30ce47d36ade972940be2c93454b24adb2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9ff821c5a92dd72ce778a32fa7a54bdbe646ea3e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a69e4f4fe8ced7be7d78fe0cbd49ca1f8cd90641/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/1821a5c8ca2210b4f42143bfb824430118bc2b3e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0ecd226df240ba7b8ede7b2bfb68330069d61704/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/80a9506416bcf34a692bc446a6316158acb0c726/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6fde829c4d8f8636f9c0defa3714bb70cf740340/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/fa8b144529d668d8d971a38ac9487958d088a79b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f5a231c34032c22df17786604273e7d3faf9b426/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.1/2780d858273ce1bb90f6b12e1ef0d40f7741fca/converter-gson-2.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="02780d858273ce1bb90f6b12e1ef0d40f7741fca">
-        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.1_382f191d693f135eacc10996cc01a4ffb36275bb\classes.dex" />
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.1_cd53511f7513efecf37e175ca4c83b236edd2c4a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.android/build-cache/66b9925e5d19c3946345b6f3f9212fea394b4c9e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_872a83fffc2a8ee825e0d37f5c26524a04b40398/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/RamanaRedddy/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_cee81ac9454b9549d91f1d7262d0bc3d20b68e7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b0a47284559cdd686750ca2fbf6fa3f46cf92eb7">
+        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_79523bc4260ec41ceb2bbdfaf9ac662a479969ca/classes.dex" />
     </item>
 
 </items>
