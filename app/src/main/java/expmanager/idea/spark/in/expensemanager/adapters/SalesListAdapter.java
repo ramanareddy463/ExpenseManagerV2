@@ -52,8 +52,8 @@ public class SalesListAdapter extends ArrayAdapter<Sales> {
 
 
         textView1.setText(current.getSaletype());
-        textView2.setText(current.getSaletype());
-        textView3.setText(current.getDate());
+        textView2.setText(current.getDate());
+        textView3.setText(current.getSameamount());
 
         return itemView;
     }

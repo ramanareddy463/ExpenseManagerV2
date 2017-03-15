@@ -1,5 +1,8 @@
 package expmanager.idea.spark.in.expensemanager.network;
 
+import expmanager.idea.spark.in.expensemanager.model.AddExpenseRequest;
+import expmanager.idea.spark.in.expensemanager.model.AddSaleRequest;
+import expmanager.idea.spark.in.expensemanager.model.AddStaffRequest;
 import expmanager.idea.spark.in.expensemanager.model.AddTangibleExpenseRequest;
 import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationRequest;
 import expmanager.idea.spark.in.expensemanager.model.ForgotPassword;
@@ -13,6 +16,7 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 
@@ -77,6 +81,12 @@ public class RetrofitApi {
         Call<ResponseBody> ForgotPasswordExpenseManager(@Body ForgotPassword requestModel);
 
         /*
+        * FORGOT_PIN
+        */
+        @POST(ServerURLModel.FORGOT_PIN)
+        Call<ResponseBody> ForgotPin(@Body ForgotPassword requestModel);
+
+        /*
          * CREATE_ORGANISATION
          */
         @POST(ServerURLModel.CREATE_ORGANISATION)
@@ -92,14 +102,70 @@ public class RetrofitApi {
          /*
           * GET_TANGIBLE_EXPENSE
          */
-        @POST(ServerURLModel.GET_TANGIBLE_EXPENSE)
+        @GET(ServerURLModel.GET_TANGIBLE_EXPENSE)
         Call<ResponseBody> GetTangibleExpense(@Header("Authtoken") String auth);
 
         /*
-         * ADD_TANGIBLE_EXPENSE
+         * UPDATE_TANGIBLE_EXPENSE
          */
         @POST(ServerURLModel.UPDATE_TANGIBLE_EXPENSE)
         Call<ResponseBody> UpdateTangibleExpense(@Header("Authtoken") String auth, @Body UpdateTangibleExpense requestModel);
+
+
+
+
+
+        /*
+      * ADD_EXPENSE
+      */
+        @POST(ServerURLModel.ADD_EXPENSE)
+        Call<ResponseBody> AddExpense(@Header("Authtoken") String auth, @Body AddExpenseRequest requestModel);
+
+
+        /*
+         * GET_EXPENSE
+        */
+        @GET(ServerURLModel.GET_EXPENSE)
+        Call<ResponseBody> GetExpense(@Header("Authtoken") String auth,@Body UpdateTangibleExpense requestModel);
+
+        /*
+         * UPDATE_EXPENSE
+         */
+        @POST(ServerURLModel.UPDATE_EXPENSE)
+        Call<ResponseBody> UpdateExpense(@Header("Authtoken") String auth, @Body UpdateTangibleExpense requestModel);
+
+
+
+
+
+
+
+        /*
+         * ADD_SALE
+         */
+        @POST(ServerURLModel.ADD_SALE)
+        Call<ResponseBody> AddSale(@Header("Authtoken") String auth, @Body AddSaleRequest requestModel);
+
+
+        /*
+         * GET_SALE
+        */
+        @GET(ServerURLModel.GET_SALE)
+        Call<ResponseBody> GetSale(@Header("Authtoken") String auth);
+
+        /*
+         * UPDATE_SALE
+         */
+        @POST(ServerURLModel.UPDATE_SALE)
+        Call<ResponseBody> UpdateSale(@Header("Authtoken") String auth, @Body UpdateTangibleExpense requestModel);
+
+        /*
+         * ADD_STAFF
+         */
+        @POST(ServerURLModel.ADD_STAFF)
+        Call<ResponseBody> AddStaff(@Header("Authtoken") String auth, @Body AddStaffRequest requestModel);
+
+
 
 
 //        /*

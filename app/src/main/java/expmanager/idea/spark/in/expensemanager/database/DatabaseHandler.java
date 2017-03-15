@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import expmanager.idea.spark.in.expensemanager.model.AddExpenseRequest;
 import expmanager.idea.spark.in.expensemanager.model.Sales;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
 import expmanager.idea.spark.in.expensemanager.model.TanExpenses;
@@ -30,7 +31,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Contacts table name
     private static final String TABLE_TANEXPENSE = "tanexpenses";
     private static final String TABLE_STAFFDETAILS = "staffdetails";
-    private static final String TABLE_SALES = "salesdetails";
+    private static final String TABLE_SALES = "sales";
+    private static final String TABLE_MANUAL_EXPENSE = "manualexpense";
 
 
     // Category  Table Columns names
@@ -52,6 +54,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String SALE_NAME = "saletype";
     private static final String SALE_DATE = "saledate";
     private static final String SALE_PRICE = "saleamount";
+
+    private static final String MEXPENSE_CATEGORY = "category";
+    private static final String MEXPENSE_INVOICEID = "invoiceid";
+    private static final String MEXPENSE_DATE = "mexpensedate";
+    private static final String MEXPENSE_DESCRIPTION = "description";
+    private static final String MEXPENSE_UNIT = "unit";
+    private static final String MEXPENSE_AMOUNT = "mexpenseamount";
+
 
 
     public DatabaseHandler(Context context) {
@@ -86,9 +96,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_STAFFPRICE + " TEXT"
                 + ")";
 
+        String CREATE_MEXPENSE_TABLE = "CREATE TABLE " + TABLE_MANUAL_EXPENSE + "("
+                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + MEXPENSE_CATEGORY + " TEXT,"
+                + MEXPENSE_INVOICEID + " TEXT,"
+                + MEXPENSE_DATE + " TEXT,"
+                + MEXPENSE_DESCRIPTION + " TEXT,"
+                + MEXPENSE_AMOUNT + " TEXT"
+                + ")";
+
+        // + MEXPENSE_UNIT + " TEXT,"
+
         db.execSQL(CREATE_TANEXPENSE_TABLE);
         db.execSQL(CREATE_STAFF_TABLE);
         db.execSQL(CREATE_SALE_TABLE);
+        db.execSQL(CREATE_MEXPENSE_TABLE);
 
     }
 
@@ -99,6 +121,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_TANEXPENSE);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_STAFFDETAILS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SALES);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MANUAL_EXPENSE);
 
         // Create tables again
         onCreate(db);
@@ -274,5 +297,53 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // return contact list
         return contactList;
     }
+
+
+    // Adding new products
+    public  void addManualExpenses(AddExpenseRequest contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(MEXPENSE_CATEGORY, contact.getCategory());
+        values.put(MEXPENSE_INVOICEID, contact.getInvoiceNumber());
+        values.put(MEXPENSE_DATE, contact.getDate());
+        values.put(MEXPENSE_DESCRIPTION, contact.getDescription());
+        //values.put(MEXPENSE_UNIT, contact.getSameamount());
+        values.put(MEXPENSE_AMOUNT, contact.getAmount());
+
+        // Inserting Row
+        db.insert(TABLE_SALES, null, values);
+        db.close(); // Closing database connection
+    }
+
+
+    // Getting All Expenses
+    public List<AddExpenseRequest> getAllExpenses() {
+        List<AddExpenseRequest> contactList = new ArrayList<AddExpenseRequest>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_MANUAL_EXPENSE;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                AddExpenseRequest contact = new AddExpenseRequest();
+                contact.setCategory(cursor.getString(1));
+                contact.setInvoiceNumber(cursor.getString(2));
+                contact.setDate(cursor.getString(3));
+                contact.setDescription(cursor.getString(4));
+                contact.setAmount(Integer.parseInt(cursor.getString(5)));
+
+                // Adding contact to list
+                contactList.add(contact);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return contactList;
+    }
+
 
 }
