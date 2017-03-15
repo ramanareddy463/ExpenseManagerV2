@@ -13,10 +13,16 @@ public class Staff {
     String shift_time2;
     String staff_startdate;
     String price_perhr;
+    String priceType;
 
-    public Staff(String s) {
-        this.staff_name = s;
+    public String getPriceType() {
+        return priceType;
     }
+
+    public void setPriceType(String priceType) {
+        this.priceType = priceType;
+    }
+
     public Staff() {
 
     }

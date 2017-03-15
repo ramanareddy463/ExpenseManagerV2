@@ -1,5 +1,7 @@
 package expmanager.idea.spark.in.expensemanager.network;
 
+import expmanager.idea.spark.in.expensemanager.model.AddSaleRequest;
+import expmanager.idea.spark.in.expensemanager.model.AddStaffRequest;
 import expmanager.idea.spark.in.expensemanager.model.AddTangibleExpenseRequest;
 import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationRequest;
 import expmanager.idea.spark.in.expensemanager.model.ForgotPassword;
@@ -78,6 +80,12 @@ public class RetrofitApi {
         Call<ResponseBody> ForgotPasswordExpenseManager(@Body ForgotPassword requestModel);
 
         /*
+        * FORGOT_PIN
+        */
+        @POST(ServerURLModel.FORGOT_PIN)
+        Call<ResponseBody> ForgotPin(@Body ForgotPassword requestModel);
+
+        /*
          * CREATE_ORGANISATION
          */
         @POST(ServerURLModel.CREATE_ORGANISATION)
@@ -135,7 +143,7 @@ public class RetrofitApi {
          * ADD_SALE
          */
         @POST(ServerURLModel.ADD_SALE)
-        Call<ResponseBody> AddSale(@Header("Authtoken") String auth, @Body AddTangibleExpenseRequest requestModel);
+        Call<ResponseBody> AddSale(@Header("Authtoken") String auth, @Body AddSaleRequest requestModel);
 
 
         /*
@@ -150,6 +158,11 @@ public class RetrofitApi {
         @POST(ServerURLModel.UPDATE_SALE)
         Call<ResponseBody> UpdateSale(@Header("Authtoken") String auth, @Body UpdateTangibleExpense requestModel);
 
+        /*
+         * ADD_STAFF
+         */
+        @POST(ServerURLModel.ADD_STAFF)
+        Call<ResponseBody> AddStaff(@Header("Authtoken") String auth, @Body AddStaffRequest requestModel);
 
 
 

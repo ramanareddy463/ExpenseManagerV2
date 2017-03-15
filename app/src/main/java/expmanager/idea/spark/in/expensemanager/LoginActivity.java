@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                                 try {
                                     LoginResponse loginResponse = gson.fromJson(response.body().string(), LoginResponse.class);
                                     SessionManager sessionManager = new SessionManager(LoginActivity.this);
-                                    sessionManager.createLoginSession(loginResponse.getToken());
+                                    sessionManager.createLoginSession(loginResponse.getToken(),loginResponse.getUser().getUsername(),loginResponse.getUser().getEmail());
 
                                 } catch (IOException e) {
                                     e.printStackTrace();

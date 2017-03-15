@@ -184,7 +184,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/gggfgg"
+                android:id="@+id/started"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -211,7 +211,7 @@
                 android:weightSum="1">
 
                 <EditText
-                    android:id="@+id/editTasrext4"
+                    android:id="@+id/salary"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_marginRight="10dp"
