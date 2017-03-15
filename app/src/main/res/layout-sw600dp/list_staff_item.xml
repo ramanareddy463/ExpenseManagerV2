@@ -57,7 +57,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/yy"
+                android:id="@+id/shiftdays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -66,7 +66,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/hhhh"
+                android:id="@+id/shifttime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -117,7 +117,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/hhoohh"
+            android:id="@+id/perhourdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
@@ -133,7 +133,7 @@
         android:layout_marginTop="6dp"
         android:background="#c3c3c3"
         android:text="TextView"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"

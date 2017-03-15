@@ -23,18 +23,13 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-
-import java.io.IOException;
 import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.AdminActivity;
 import expmanager.idea.spark.in.expensemanager.R;
-import expmanager.idea.spark.in.expensemanager.UsePinActivity;
 import expmanager.idea.spark.in.expensemanager.adapters.MyStaffDetailsAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
 import expmanager.idea.spark.in.expensemanager.model.AddStaffRequest;
-import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationResponse;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
 import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
@@ -134,9 +129,9 @@ public class StaffFragment extends Fragment {
         spinnertime2 = (Spinner) dialog.findViewById(R.id.spinnertime2);
         spinnersal = (Spinner) dialog.findViewById(R.id.spinnersal);
         addstafftoDb  = (Button) dialog.findViewById(R.id.addstafftodb);
-        staffname = (EditText) dialog.findViewById(R.id.staffname);
         started = (EditText) dialog.findViewById(R.id.started);
         salary = (EditText) dialog.findViewById(R.id.salary);
+        staffname= (EditText) dialog.findViewById(R.id.staff_name);
         started.setText(Utils.getDateTime());
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.weekArray, R.layout.simple_spinner_item);
@@ -217,36 +212,7 @@ public class StaffFragment extends Fragment {
 
                                 Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
 
-//                                {
-//                                    "id":2,
-//                                        "name":"fff",
-//                                        "shift_day_from":"MON",
-//                                        "shift_day_to":"MON",
-//                                        "shift_time_from":"10:00",
-//                                        "shift_time_to":"10:00",
-//                                        "started":"2017-03-15",
-//                                        "salary":89.0,
-//                                        "salary_type":"per month",
-//                                        "profile_image":null,
-//                                        "created_at":"2017-03-15T07:39:00.139Z",
-//                                        "updated_at":"2017-03-15T07:39:00.139Z",
-//                                        "company_id":null,
-//                                        "status":1
-//                                }
 
-
-//                                Gson gson = new Gson();
-//                                try {
-//                                    CreateOrganisationResponse createOrganisationResponse = gson.fromJson(response.body().string(), CreateOrganisationResponse.class);
-////                                    SessionManager sessionManager = new SessionManager(getActivity());
-////                                    sessionManager.createLoginSession(loginResponse.getToken());
-//
-//                                    TangibleExpenseFragment fragmenttangibleexp = new TangibleExpenseFragment();
-//                                    getFragmentManager().beginTransaction().replace(R.id.content_frame, fragmenttangibleexp).commit();
-//
-//                                } catch (IOException e) {
-//                                    e.printStackTrace();
-//                                }
 
                             } else {
 
