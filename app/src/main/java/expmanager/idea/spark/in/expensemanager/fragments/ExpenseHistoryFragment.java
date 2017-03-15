@@ -1,9 +1,7 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -52,6 +50,8 @@ public class ExpenseHistoryFragment extends Fragment {
         //If hardware acceleration is enabled, you should also remove
         // clipping on the pager for its children.
         pager.setClipChildren(false);
+
+
 
 
         return rootView;
