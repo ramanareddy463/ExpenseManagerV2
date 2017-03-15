@@ -61,22 +61,22 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-               int size = charSequence.length();
-                if(size!=4){
-                    return;
-                }
-                if(charSequence.toString().equalsIgnoreCase("1234")){
-
-                    Intent intent = new Intent(UsePinActivity.this, AdminActivity.class);
-                    startActivity(intent);
-                    finish();
-
-                }else if (charSequence.toString().equalsIgnoreCase("5678")){
-
-                    Intent intent = new Intent(UsePinActivity.this, StaffActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+//               int size = charSequence.length();
+//                if(size!=4){
+//                    return;
+//                }
+//                if(charSequence.toString().equalsIgnoreCase("1234")){
+//
+//                    Intent intent = new Intent(UsePinActivity.this, AdminActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//
+//                }else if (charSequence.toString().equalsIgnoreCase("5678")){
+//
+//                    Intent intent = new Intent(UsePinActivity.this, StaffActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
 
             }
 
@@ -106,6 +106,7 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.btn9).setOnClickListener(this);
         findViewById(R.id.btn0).setOnClickListener(this);
         findViewById(R.id.btn_clear).setOnClickListener(this);
+        findViewById(R.id.btn_ok).setOnClickListener(this);
 
     }
 
@@ -154,6 +155,22 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btn0 :
                 tvPin.setText(tvPin.getText()+"0");
+
+                break;
+
+            case R.id.btn_ok :
+                if(tvPin.getText().toString().equalsIgnoreCase("1234")){
+
+                    Intent intent = new Intent(UsePinActivity.this, AdminActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }else if (tvPin.getText().toString().equalsIgnoreCase("5678")){
+
+                    Intent intent = new Intent(UsePinActivity.this, StaffActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
 
                 break;
 
