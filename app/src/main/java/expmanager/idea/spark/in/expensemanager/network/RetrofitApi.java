@@ -1,5 +1,6 @@
 package expmanager.idea.spark.in.expensemanager.network;
 
+import expmanager.idea.spark.in.expensemanager.model.AddExpenseRequest;
 import expmanager.idea.spark.in.expensemanager.model.AddSaleRequest;
 import expmanager.idea.spark.in.expensemanager.model.AddStaffRequest;
 import expmanager.idea.spark.in.expensemanager.model.AddTangibleExpenseRequest;
@@ -118,7 +119,7 @@ public class RetrofitApi {
       * ADD_EXPENSE
       */
         @POST(ServerURLModel.ADD_EXPENSE)
-        Call<ResponseBody> AddExpense(@Header("Authtoken") String auth, @Body AddTangibleExpenseRequest requestModel);
+        Call<ResponseBody> AddExpense(@Header("Authtoken") String auth, @Body AddExpenseRequest requestModel);
 
 
         /*
