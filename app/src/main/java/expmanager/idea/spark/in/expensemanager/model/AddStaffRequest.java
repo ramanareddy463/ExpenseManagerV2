@@ -40,6 +40,72 @@ public class AddStaffRequest {
     @Expose
     private int salary;
 
+    @SerializedName("email")
+    @Expose
+    String staff_email;
+
+    @SerializedName("address")
+    @Expose
+    String staff_address;
+
+    @SerializedName("designation")
+    @Expose
+    String staff_designation;
+
+    @SerializedName("phone_number")
+    @Expose
+    String staff_phonenumber;
+
+    @SerializedName("profile_image")
+    @Expose
+    String staff_photo;
+
+
+
+
+    public String getStaff_email() {
+        return staff_email;
+    }
+
+    public void setStaff_email(String staff_email) {
+        this.staff_email = staff_email;
+    }
+
+    public String getStaff_address() {
+        return staff_address;
+    }
+
+    public void setStaff_address(String staff_address) {
+        this.staff_address = staff_address;
+    }
+
+    public String getStaff_designation() {
+        return staff_designation;
+    }
+
+    public void setStaff_designation(String staff_designation) {
+        this.staff_designation = staff_designation;
+    }
+
+    public String getStaff_phonenumber() {
+        return staff_phonenumber;
+    }
+
+    public void setStaff_phonenumber(String staff_phonenumber) {
+        this.staff_phonenumber = staff_phonenumber;
+    }
+
+    public String getStaff_photo() {
+        return staff_photo;
+    }
+
+    public void setStaff_photo(String staff_photo) {
+        this.staff_photo = staff_photo;
+    }
+
+
+
+
     public String getName() {
         return name;
     }

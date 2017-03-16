@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,20 +42,24 @@ public class AddExpenseFragment extends Fragment {
     private TessBaseAPI tessBaseApi;
     private static final int PHOTO_REQUEST_CODE = 1;
 
-    private static final String DATA_PATH = Environment.getExternalStorageDirectory().toString() + "/ExpenseManager/";
+    private static final String DATA_PATH = Environment.getExternalStorageDirectory().toString() + "/ExpenseManager/imgs";
     private static final String TESSDATA = "tessdata";
     private static final String lang = "eng";
 
     private static final String TAG = AddExpenseFragment.class.getSimpleName();
 
     private RequestPermissionsTool requestTool; //for API >=23 only
-
-
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.add_expense,
                 container, false);
+
 
         imageRescan = (ImageView) rootView.findViewById(R.id.img_rescan);
 
@@ -65,11 +70,17 @@ public class AddExpenseFragment extends Fragment {
             }
         });
 
+<<<<<<< HEAD
+        if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions();
+        }
+=======
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions();
         }
 
 
+>>>>>>> ed06dba8dc3df23eb17359c1dc5711510d0617a3
         return rootView;
     }
 
@@ -77,6 +88,7 @@ public class AddExpenseFragment extends Fragment {
      * to get high resolution image from camera
      */
     private void startCameraActivity() {
+        verifyStoragePermissions(getActivity());
         try {
             String IMGS_PATH = Environment.getExternalStorageDirectory().toString() + "/ExpenseManager/imgs";
             prepareDirectory(IMGS_PATH);
@@ -148,13 +160,13 @@ public class AddExpenseFragment extends Fragment {
             //textView.setText(result);
 
         } catch (Exception e) {
-            //Log.e(TAG, e.getMessage());
+            Log.e(TAG, e.getMessage());
         }
     }
 
 
     private String extractText(Bitmap bitmap) {
-        try {
+   /*     try {
             tessBaseApi = new TessBaseAPI();
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
@@ -182,7 +194,29 @@ public class AddExpenseFragment extends Fragment {
             Log.e(TAG, "Error in recognizing text.");
         }
         tessBaseApi.end();
+        return extractedText;*/
+
+        tessBaseApi = new TessBaseAPI();
+        tessBaseApi.init(DATA_PATH, "eng");
+        tessBaseApi.setImage(bitmap);
+        String extractedText = tessBaseApi.getUTF8Text();
+        tessBaseApi.end();
         return extractedText;
+    }
+
+
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
     }
 
     private void requestPermissions() {

@@ -33,6 +33,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String TABLE_STAFFDETAILS = "staffdetails";
     private static final String TABLE_SALES = "sales";
     private static final String TABLE_MANUAL_EXPENSE = "manualexpense";
+    private static final String TABLE_USERS = "users";
 
 
     // Category  Table Columns names
@@ -50,6 +51,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_TIME2 = "shift_time2";
     private static final String KEY_STAFFSTARTDATE = "staff_startdate";
     private static final String KEY_STAFFPRICE= "price_perhr";
+    private static final String KEY_STAFFEMAIL= "staff_email";
+    private static final String KEY_DESIGNATION= "staff_designation";
+    private static final String KEY_ADDRESS= "staff_address";
+    private static final String KEY_PHONE= "staff_phone";
+    private static final String KEY_PROFILEPIC= "staff_photo";
 
     private static final String SALE_NAME = "saletype";
     private static final String SALE_DATE = "saledate";
@@ -63,6 +69,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String MEXPENSE_AMOUNT = "mexpenseamount";
 
 
+    private static final String KEY_USERNAME = "user_name";
+    private static final String KEY_EMAIL = "user_email";
+    private static final String KEY_PIN = "user_pin";
+    private static final String KEY_ISADMIN = "user_isadmin";
+    private static final String KEY_ISAUTHORIZED = "user_isauthorized";
+    private static final String KEY_COMANYID = "user_comanyid";
+    private static final String KEY_STATUS= "user_status";
+    private static final String KEY_CUSTOMERID= "user_customerid";
+    private static final String KEY_CREATEDAT= "user_createdat";
+    private static final String KEY_UDATEDAT= "user_updatedat";
+
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -71,6 +88,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_USERS + "("
+                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_EMAIL + " TEXT,"
+                + KEY_PIN + " TEXT,"
+                + KEY_ISADMIN + " TEXT,"
+                + KEY_ISAUTHORIZED + " TEXT,"
+                + KEY_COMANYID + " TEXT,"
+                + KEY_STATUS + " TEXT,"
+                + KEY_CUSTOMERID + " TEXT,"
+                + KEY_CREATEDAT + " TEXT,"
+                + KEY_UDATEDAT + " TEXT"
+                + ")";
+
+
         String CREATE_TANEXPENSE_TABLE = "CREATE TABLE " + TABLE_TANEXPENSE + "("
                 + KEY_ID + " INTEGER PRIMARY KEY,"
                 + KEY_CATEGORY + " TEXT,"
@@ -93,6 +125,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_TIME1 + " TEXT,"
                 + KEY_TIME2 + " TEXT,"
                 + KEY_STAFFSTARTDATE + " TEXT,"
+                + KEY_STAFFEMAIL + " TEXT,"
+                + KEY_DESIGNATION + " TEXT,"
+                + KEY_ADDRESS + " TEXT,"
+                + KEY_PHONE + " TEXT,"
+                + KEY_PROFILEPIC + " TEXT,"
                 + KEY_STAFFPRICE + " TEXT"
                 + ")";
 
@@ -105,12 +142,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + MEXPENSE_AMOUNT + " TEXT"
                 + ")";
 
+
         // + MEXPENSE_UNIT + " TEXT,"
 
         db.execSQL(CREATE_TANEXPENSE_TABLE);
         db.execSQL(CREATE_STAFF_TABLE);
         db.execSQL(CREATE_SALE_TABLE);
         db.execSQL(CREATE_MEXPENSE_TABLE);
+        db.execSQL(CREATE_USERS_TABLE);
 
     }
 
@@ -122,43 +161,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_STAFFDETAILS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SALES);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MANUAL_EXPENSE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
 
         // Create tables again
         onCreate(db);
     }
 
 
-
-
-/*    // Adding new products
-    public  void UpdateQuoteStatus(QuoteModel quote) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String where="qnumber=?";
-        String[] whereArgs = new String[]{quote.getQuoteid()};
-        ContentValues values = new ContentValues();
-        values.put(Q_STATUS, quote.getStatus());
-
-
-
-        // Inserting Row
-        db.update(TABLE_QUOTES,values,where,whereArgs);
-        db.close(); // Closing database connection
-    }
-
-    // Adding new products
-    public  void addQuote(QuoteModel contact) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        //values.put(Q_EXPIRYDATE, contact.getExpiry_date());
-        values.put(Q_NAME, contact.getQuotename());
-        values.put(Q_CREATEDDATE, contact.getQuotedate());
-
-
-        // Inserting Row
-        db.insert(TABLE_QUOTES, null, values);
-        db.close(); // Closing database connection
-    }*/
 
     public  void addTanExpenses(TanExpenses texpense) {
         SQLiteDatabase db = this.getWritableDatabase();

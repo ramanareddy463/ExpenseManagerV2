@@ -42,7 +42,7 @@ import retrofit2.Response;
 
 public class AdminAddStaffFragment extends Fragment {
     Button addstaffbtn,cancelstaffdialog,addstafftoDb;
-    EditText staffname,started,salary;
+    EditText staffname,started,salary,staffemail,designation,staffaddress,staffphonenumber;
     Spinner spinnershift1,spinnershift2,spinnertime1,spinnertime2,spinnersal;
     DatabaseHandler db;
     ListView stafflist;
@@ -112,7 +112,10 @@ public class AdminAddStaffFragment extends Fragment {
         staffname = (EditText) dialog.findViewById(R.id.staffname);
         started = (EditText) dialog.findViewById(R.id.started);
         salary = (EditText) dialog.findViewById(R.id.salary);
-
+        staffemail = (EditText) dialog.findViewById(R.id.staffemail);
+        designation = (EditText) dialog.findViewById(R.id.designation);
+        staffaddress = (EditText) dialog.findViewById(R.id.staffaddress);
+        staffphonenumber = (EditText) dialog.findViewById(R.id.staffphonenumber);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.weekArray, R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
@@ -161,7 +164,10 @@ public class AdminAddStaffFragment extends Fragment {
                     insertstaff.setStaff_startdate(started.getText().toString());
                     insertstaff.setPrice_perhr(salary.getText().toString());
                     insertstaff.setPriceType(spinnersal.getSelectedItem().toString());
-
+                    insertstaff.setStaff_email(staffemail.getText().toString());
+                    insertstaff.setStaff_designation(designation.getText().toString());
+                    insertstaff.setStaff_address(staffaddress.getText().toString());
+                    insertstaff.setStaff_phonenumber(staffphonenumber.getText().toString());
                     AddStaffRequest addStaffRequest = new AddStaffRequest();
 
                     addStaffRequest.setName(staffname.getText().toString());
@@ -172,7 +178,10 @@ public class AdminAddStaffFragment extends Fragment {
                     addStaffRequest.setStarted(started.getText().toString());
                     addStaffRequest.setSalary(Integer.parseInt(salary.getText().toString()));
                     addStaffRequest.setSalaryType(spinnersal.getSelectedItem().toString());
-
+                    addStaffRequest.setStaff_email(staffemail.getText().toString());
+                    addStaffRequest.setStaff_designation(designation.getText().toString());
+                    addStaffRequest.setStaff_address(staffaddress.getText().toString());
+                    addStaffRequest.setStaff_phonenumber(staffphonenumber.getText().toString());
 
                     dialog.dismiss();
 

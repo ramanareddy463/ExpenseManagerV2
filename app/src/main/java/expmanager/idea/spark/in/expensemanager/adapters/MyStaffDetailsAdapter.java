@@ -43,6 +43,11 @@ public class MyStaffDetailsAdapter extends ArrayAdapter<Staff> {
         TextView textView2 = (TextView) v.findViewById(R.id.shiftdays);
         TextView textView3 = (TextView) v.findViewById(R.id.shifttime);
         TextView textView4 = (TextView) v.findViewById(R.id.perhourdetails);
+        TextView textView5 = (TextView) v.findViewById(R.id.designation);
+        TextView textView6 = (TextView) v.findViewById(R.id.phonenumber);
+        TextView textView7 = (TextView) v.findViewById(R.id.staffemail);
+        TextView textView8 = (TextView) v.findViewById(R.id.staffadress);
+        TextView textView9 = (TextView) v.findViewById(R.id.startdate);
 
         String s1 = qList.get(position).getShift_days1();
         String s2 = qList.get(position).getShift_days2();
@@ -64,6 +69,11 @@ public class MyStaffDetailsAdapter extends ArrayAdapter<Staff> {
         textView2.setText(s);
         textView3.setText(s8);
         textView4.setText(s11);
+        textView5.setText(qList.get(position).getStaff_designation());
+        textView6.setText(qList.get(position).getStaff_phonenumber());
+        textView7.setText(qList.get(position).getStaff_email());
+        textView8.setText(qList.get(position).getStaff_address());
+        textView9.setText(qList.get(position).getStaff_startdate());
 
 
         return v;
