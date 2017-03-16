@@ -3,74 +3,30 @@
 
     <item
         is-multidex="true"
-<<<<<<< HEAD
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="30d5700c6e0acfd66e33763397bd1ba962af4d43">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_44e0313ab80011eb2a6fb150cdff913f87ea1110/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_61a8cf098ba44e4131cff19bce7c264ace1ce4f7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kveldurty/.android/build-cache/5cc2f824f999b2e64f160b2c9f41e85e408c11b6/output/jars/classes.jar"
-=======
-        jar="/Users/RamanaRedddy/.android/build-cache/51a2c3c85592fd4b6df25f196cdcb22972add83b/output/jars/classes.jar"
+        jar="C:\Users\Haresh.Veldurty\.android\build-cache\07809446f81ce6b8fd783fdda76ac4529ee6a583\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5706ae77cb2447227f59b84c3cc11ba9ce6d619c/classes.dex" />
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bda5daf63f0ff7b6b49ce32c5b151695aa6a2f28\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/RamanaRedddy/.android/build-cache/5153da486ee2d794bae2a1376eb3474936a29f27/output/jars/classes.jar"
->>>>>>> 110a3d186bf35b089b9bb471370817f30f8219de
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="921b1c4306b10e7de53574523eb7f7144bd0707f">
-<<<<<<< HEAD
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4ad5c57e13290544145188cb1dab2b09a6a509fc/classes.dex" />
+        sha1="27ba2234769ad75245d78b3daf13448c986e993c">
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5657ef4644572a8b2ee492dfe3bc82fa629af65a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kveldurty/.android/build-cache/e6ca6de724066b241d0684c43c7d144176675f6c/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="/Users/kveldurty/Desktop/MyProjs/ExpenseManagerVersion2/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_862651a0ca9806d4ec64a5421dd7ef02cf8f2472/classes.dex" />
-=======
-        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_17c1486a4a02a1449abef0b9d75573d0e61acdc3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a69e4f4fe8ced7be7d78fe0cbd49ca1f8cd90641/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c43867a1a47003711dd850fa6d0a6875fbffe42d">
-        <dex dex="/Ramana/OtherAndroidProjects/ExpenseManagerV2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_79523bc4260ec41ceb2bbdfaf9ac662a479969ca/classes.dex" />
->>>>>>> 110a3d186bf35b089b9bb471370817f30f8219de
+        <dex dex="C:\Users\Haresh.Veldurty\Desktop\newonGoing\ExpManagerLatest\ExpenseManagerV2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_44bf899071c4b712ec7b4f6ef86258273e0213fb\classes.dex" />
     </item>
 
 </items>
