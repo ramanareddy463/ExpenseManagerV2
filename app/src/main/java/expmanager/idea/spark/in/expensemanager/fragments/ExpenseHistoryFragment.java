@@ -135,17 +135,22 @@ public class ExpenseHistoryFragment extends Fragment {
 
             Log.d("LOG","For Month :: "+ currentWeekNo);
 
-            currentWeekNo = currentWeekNo-5+position;
-
-            cal.set(Calendar.WEEK_OF_YEAR, currentWeekNo);
-            cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-            Date d = cal.getTime();
-            cal.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-            Date d1 = cal.getTime();
+           int weekNo = currentWeekNo-5+position;
+            Calendar cal1 = Calendar.getInstance();
+            cal1.clear();
+            cal1.set(Calendar.WEEK_OF_YEAR, weekNo);
+            cal1.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+            cal1.set(Calendar.YEAR, 2017);
+            Date d = cal1.getTime();
+            cal1.clear();
+            cal1.set(Calendar.WEEK_OF_YEAR, weekNo);
+            cal1.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
+            cal1.set(Calendar.YEAR, 2017);
+            Date d1 = cal1.getTime();
 
             Toast.makeText(getActivity(),"For Month ::"+position+" "+d.getDate()+" "+d1.getDate(),Toast.LENGTH_SHORT).show();
 
-            Log.d("LOG","For Month :: "+ currentWeekNo + " Num Week :: " + d.getDate());
+            Log.d("LOG","For Month :: "+ weekNo + " Num Week :: " + d.getDate());
 
             return ExpenseHistoryViewPagerFragment.newInstance(d.getDate(),d1.getDate());
         }
