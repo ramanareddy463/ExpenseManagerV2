@@ -39,24 +39,24 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
 
     }
 
-    public static ExpenseHistoryViewPagerFragment newInstance(int startDate,int endDate) {
+    public static ExpenseHistoryViewPagerFragment newInstance(String startDate,String endDate) {
         ExpenseHistoryViewPagerFragment f = new ExpenseHistoryViewPagerFragment();
 
         // Supply index input as an argument.
         Bundle args = new Bundle();
-        args.putInt("startDate", startDate);
-        args.putInt("endDate", endDate);
+        args.putString("startDate", startDate);
+        args.putString("endDate", endDate);
         f.setArguments(args);
 
         return f;
     }
 
-    public int getStartDate() {
-        return getArguments().getInt("startDate", 0);
+    public String getStartDate() {
+        return getArguments().getString("startDate", "");
     }
 
-    public int getEndDate() {
-        return getArguments().getInt("endDate", 0);
+    public String getEndDate() {
+        return getArguments().getString("endDate", "");
     }
 
     @Override

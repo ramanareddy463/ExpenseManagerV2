@@ -70,7 +70,10 @@ public class AddExpenseFragment extends Fragment {
             }
         });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ecab17dcb3aa0f42ae312ac3a7c9a5963e1da89f
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions();
         }

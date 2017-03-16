@@ -10,13 +10,13 @@ public class User {
     private String email;
     private String username;
     private String pin;
-    private boolean isAdmin;
-    private boolean isAuthorized;
-    private String companyId;
+    private boolean is_admin;
+    private boolean is_authorized;
+    private String company_id;
     private boolean status;
-    private String customerId;
-    private String createdAt;
-    private String updatedAt;
+    private String customer_id;
+    private String created_at;
+    private String updated_at;
 
     public int getId() {
         return id;
@@ -50,28 +50,28 @@ public class User {
         this.pin = pin;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public boolean is_admin() {
+        return is_admin;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setIs_admin(boolean is_admin) {
+        this.is_admin = is_admin;
     }
 
-    public boolean isAuthorized() {
-        return isAuthorized;
+    public boolean is_authorized() {
+        return is_authorized;
     }
 
-    public void setAuthorized(boolean authorized) {
-        isAuthorized = authorized;
+    public void setIs_authorized(boolean is_authorized) {
+        this.is_authorized = is_authorized;
     }
 
-    public String getCompanyId() {
-        return companyId;
+    public String getCompany_id() {
+        return company_id;
     }
 
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId;
+    public void setCompany_id(String company_id) {
+        this.company_id = company_id;
     }
 
     public boolean isStatus() {
@@ -82,27 +82,27 @@ public class User {
         this.status = status;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public String getCustomer_id() {
+        return customer_id;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setCustomer_id(String customer_id) {
+        this.customer_id = customer_id;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public String getCreated_at() {
+        return created_at;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
+    public String getUpdated_at() {
+        return updated_at;
     }
 
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 }

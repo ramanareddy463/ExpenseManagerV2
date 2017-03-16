@@ -75,39 +75,6 @@ public class ExpenseHistoryFragment extends Fragment {
             super(fragmentManager);
 
 
-
-
-
-
-//            int currentWeekNo = cal.get(Calendar.WEEK_OF_YEAR);
-//            cal.set(Calendar.YEAR, 2017);
-//            cal.set(Calendar.MONTH, 3);
-//            cal.set(Calendar.DAY_OF_MONTH, 1);
-//
-//            int ndays = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
-//            int weeks[] = new int[ndays];
-//            for (int i = 0; i < ndays; i++)
-//            {
-//                weeks[i] = cal.get(Calendar.WEEK_OF_YEAR);
-//                cal.add(Calendar.DATE, 1);
-//                Toast.makeText(getActivity(),"For Month :: "+weeks[i],Toast.LENGTH_SHORT).show();
-//                Log.d("LOG","For Month :: "+ i + " Num Week :: " + weeks[i]);
-//            }
-
-
-//            Calendar cal = Calendar.getInstance();
-//            for(int i = 0 ; i < 12;i++){
-//                cal.set(Calendar.YEAR, 2017);
-//                cal.set(Calendar.DAY_OF_MONTH, 1);
-//                cal.set(Calendar.MONTH, i);
-//                cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-//                 maxWeeknumber = cal.getActualMaximum(Calendar.WEEK_OF_MONTH);
-//                ramana = cal.get(Calendar.WEEK_OF_YEAR);
-//                // Month value starts from 0 to 11 for Jan to Dec
-//
-//                Toast.makeText(getActivity(),"For Month :: "+ ramana + " Num Week :: " + maxWeeknumber,Toast.LENGTH_SHORT).show();
-//                Log.d("LOG","For Month :: "+ i + " Num Week :: " + maxWeeknumber);
-//            }
         }
 
         // Returns total number of pages
@@ -135,19 +102,27 @@ public class ExpenseHistoryFragment extends Fragment {
 
             Log.d("LOG","For Month :: "+ currentWeekNo);
 
-            currentWeekNo = currentWeekNo-5+position;
+           int weekNo = currentWeekNo-5+position;
+            Calendar cal1 = Calendar.getInstance();
+            cal1.clear();
+            cal1.set(Calendar.WEEK_OF_YEAR, weekNo);
+            cal1.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+            cal1.set(Calendar.YEAR, 2017);
+            Date d = cal1.getTime();
+            cal1.clear();
+            cal1.set(Calendar.WEEK_OF_YEAR, weekNo);
+            cal1.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
+            cal1.set(Calendar.YEAR, 2017);
+            Date d1 = cal1.getTime();
 
-            cal.set(Calendar.WEEK_OF_YEAR, currentWeekNo);
-            cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-            Date d = cal.getTime();
-            cal.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-            Date d1 = cal.getTime();
+            Toast.makeText(getActivity(),"For Month ::"+position+" "+d+" "+d1.getDate(),Toast.LENGTH_SHORT).show();
 
-            Toast.makeText(getActivity(),"For Month ::"+position+" "+d.getDate()+" "+d1.getDate(),Toast.LENGTH_SHORT).show();
+            Log.d("LOG","For Month :: "+ weekNo + " Num Week :: " + d.getDate());
 
-            Log.d("LOG","For Month :: "+ currentWeekNo + " Num Week :: " + d.getDate());
+            int startMonth = d.getMonth()+1;
+            int endMonth = d1.getMonth()+1;
 
-            return ExpenseHistoryViewPagerFragment.newInstance(d.getDate(),d1.getDate());
+            return ExpenseHistoryViewPagerFragment.newInstance(d.getDate()+"   "+startMonth,d1.getDate()+"  "+endMonth);
         }
 
     }
