@@ -107,7 +107,7 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/ykoy"
+            android:id="@+id/phonenumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
@@ -133,7 +133,7 @@
         android:layout_marginTop="6dp"
         android:background="#c3c3c3"
         android:text="TextView"
-        android:visibility="gone"/>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -142,7 +142,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:visibility="gone">
+        >
 
         <ImageView
             android:id="@+id/imafffgeView3"
@@ -151,7 +151,7 @@
             app:srcCompat="@drawable/circular_view" />
 
         <TextView
-            android:id="@+id/hhojjjjohh"
+            android:id="@+id/staffemail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
@@ -169,7 +169,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:visibility="gone">
+        >
 
         <ImageView
             android:id="@+id/imafffgeVffiew3"
@@ -178,7 +178,7 @@
             app:srcCompat="@drawable/circular_view" />
 
         <TextView
-            android:id="@+id/hhojjfffjjohh"
+            android:id="@+id/staffadress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
@@ -196,7 +196,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:visibility="gone">
+        >
 
         <ImageView
             android:id="@+id/imaffffssffgeView3"
@@ -205,7 +205,7 @@
             app:srcCompat="@drawable/circular_view" />
 
         <TextView
-            android:id="@+id/hhojgjijjjohh"
+            android:id="@+id/startdate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"

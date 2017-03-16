@@ -45,7 +45,7 @@ import retrofit2.Response;
 
 public class StaffFragment extends Fragment {
    Button addstaffbtn,cancelstaffdialog,addstafftoDb;
-    EditText staffname,started,salary;
+    EditText staffname,started,salary, staffemail,designation,staffaddress,staffphonenumber;
     Spinner spinnershift1,spinnershift2,spinnertime1,spinnertime2,spinnersal;
     DatabaseHandler db;
     ListView stafflist;
@@ -132,6 +132,14 @@ public class StaffFragment extends Fragment {
         started = (EditText) dialog.findViewById(R.id.started);
         salary = (EditText) dialog.findViewById(R.id.salary);
         staffname= (EditText) dialog.findViewById(R.id.staff_name);
+        staffemail = (EditText) dialog.findViewById(R.id.staffemail);
+        designation = (EditText) dialog.findViewById(R.id.designation);
+        staffaddress = (EditText) dialog.findViewById(R.id.staffaddress);
+        staffphonenumber = (EditText) dialog.findViewById(R.id.staffphonenumber);
+
+
+
+
         started.setText(Utils.getDateTime());
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.weekArray, R.layout.simple_spinner_item);
@@ -184,6 +192,13 @@ public class StaffFragment extends Fragment {
                     addStaffRequest.setStarted(started.getText().toString());
                     addStaffRequest.setSalary(Integer.parseInt(salary.getText().toString()));
                     addStaffRequest.setSalaryType(spinnersal.getSelectedItem().toString());
+                    addStaffRequest.setStaff_email(staffemail.getText().toString());
+                    addStaffRequest.setStaff_designation(designation.getText().toString());
+                    addStaffRequest.setStaff_address(staffaddress.getText().toString());
+                    addStaffRequest.setStaff_phonenumber(staffphonenumber.getText().toString());
+
+
+
 
                     insertstaff.setStaff_name(staffname.getText().toString());
                     insertstaff.setShift_days1(spinnershift1.getSelectedItem().toString());
@@ -193,6 +208,11 @@ public class StaffFragment extends Fragment {
                     insertstaff.setStaff_startdate(started.getText().toString());
                     insertstaff.setPrice_perhr(salary.getText().toString());
                     insertstaff.setPriceType(spinnersal.getSelectedItem().toString());
+
+                    insertstaff.setStaff_email(staffemail.getText().toString());
+                    insertstaff.setStaff_designation(designation.getText().toString());
+                    insertstaff.setStaff_address(staffaddress.getText().toString());
+                    insertstaff.setStaff_phonenumber(staffphonenumber.getText().toString());
 
                     dialog.dismiss();
                     progressBar.setVisibility(View.VISIBLE);

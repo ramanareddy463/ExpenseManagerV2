@@ -36,6 +36,8 @@ public class SessionManager {
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
 
+    public static final String KEY_COMPANY_ID = "company_id";
+
     public static final String KEY_TOKEN = "token";
 
     // Constructor
@@ -48,7 +50,7 @@ public class SessionManager {
     /**
      * Create login session
      * */
-    public void createLoginSession(String token,String name,String email){
+    public void createLoginSession(String token,String name,String email,String companyId){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
@@ -60,6 +62,9 @@ public class SessionManager {
 
         // Storing name in pref
         editor.putString(KEY_EMAIL, email);
+
+        // Storing name in pref
+        editor.putString(KEY_COMPANY_ID, companyId);
         // commit changes
         editor.commit();
     }
@@ -131,6 +136,10 @@ public class SessionManager {
 
     public String getEmailId(){
         return pref.getString(KEY_EMAIL, "");
+    }
+
+    public String getCompanyId(){
+        return pref.getString(KEY_COMPANY_ID, "");
     }
 
 }

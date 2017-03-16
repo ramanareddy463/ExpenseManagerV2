@@ -73,15 +73,26 @@ public class LoginActivity extends AppCompatActivity {
                                 try {
                                     LoginResponse loginResponse = gson.fromJson(response.body().string(), LoginResponse.class);
                                     SessionManager sessionManager = new SessionManager(LoginActivity.this);
-                                    sessionManager.createLoginSession(loginResponse.getToken(),loginResponse.getUser().getUsername(),loginResponse.getUser().getEmail());
+                                    sessionManager.createLoginSession(loginResponse.getToken(),loginResponse.getUser().getUsername(),
+                                                                  loginResponse.getUser().getEmail(),loginResponse.getUser().getCompany_id());
+
+                                    if((loginResponse.getUser().getCompany_id()!=null)&&(!loginResponse.getUser().getCompany_id().isEmpty())) {
+
+                                        Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                                        startActivity(intent);
+
+                                    }else {
+
+                                        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                                        startActivity(i);
+
+                                    }
+
+                                    finish();
 
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
-
-                                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(i);
-                                finish();
 
                             } else {
 
