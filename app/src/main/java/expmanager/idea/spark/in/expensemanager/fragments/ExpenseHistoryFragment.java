@@ -122,7 +122,8 @@ public class ExpenseHistoryFragment extends Fragment {
             int startMonth = d.getMonth()+1;
             int endMonth = d1.getMonth()+1;
 
-            return ExpenseHistoryViewPagerFragment.newInstance(d.getDate()+"   "+startMonth,d1.getDate()+"  "+endMonth);
+            //return ExpenseHistoryViewPagerFragment.newInstance(d.getDate()+"   "+startMonth,d1.getDate()+"  "+endMonth);
+            return ExpenseHistoryViewPagerFragment.newInstance(d.getDate()+"   ",d1.getDate()+"  ");
         }
 
     }

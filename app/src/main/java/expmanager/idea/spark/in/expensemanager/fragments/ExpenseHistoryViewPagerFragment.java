@@ -69,7 +69,7 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
         txtTitleWeek = (TextView) rootView.findViewById(R.id.title_week);
 
 
-        txtTitleWeek.setText(getStartDate()+" "+getEndDate());
+        txtTitleWeek.setText("Week"+getStartDate()+"to"+getEndDate());
 
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
