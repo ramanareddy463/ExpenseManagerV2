@@ -107,7 +107,7 @@
         android:layout_marginStart="30dp"
         android:layout_toEndOf="@+id/recycler_view"
         android:background="@color/yellow"
-        android:src="@drawable/right_white" />
+        android:src="@drawable/right_arrow" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
