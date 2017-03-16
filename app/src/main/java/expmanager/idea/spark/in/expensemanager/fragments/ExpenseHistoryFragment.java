@@ -66,31 +66,17 @@ public class ExpenseHistoryFragment extends Fragment {
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
-        int maxWeeknumber,currentWeekNo,count = 0;
+        int maxWeeknumber = 6,currentWeekNo,count = 0;
+
+        String input = "20170316";
+        String format = "yyyyMMdd";
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
 
-            String input = "20170301";
-            String format = "yyyyMMdd";
-
-            SimpleDateFormat df = new SimpleDateFormat(format);
-            try {
-                Date date = df.parse(input);
-                Calendar cal = Calendar.getInstance();
-                cal.setTime(date);
-                maxWeeknumber = cal.getActualMaximum(Calendar.WEEK_OF_MONTH);
-                currentWeekNo = cal.get(Calendar.WEEK_OF_YEAR);
 
 
-                cal.set(Calendar.WEEK_OF_YEAR, currentWeekNo);
-                cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-                Date d = cal.getTime();
-               String s =  String.format("%02d", d.getDate());
-                Toast.makeText(getActivity(),"For Month :: "+d.getDate()+" "+currentWeekNo,Toast.LENGTH_SHORT).show();
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+
 
 
 //            int currentWeekNo = cal.get(Calendar.WEEK_OF_YEAR);
@@ -134,7 +120,34 @@ public class ExpenseHistoryFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
 
-            return new ExpenseHistoryViewPagerFragment();
+            SimpleDateFormat df = new SimpleDateFormat(format);
+            Calendar cal = Calendar.getInstance();
+
+            try {
+                Date date = df.parse(input);
+                cal.setTime(date);
+                // maxWeeknumber = cal.getActualMaximum(Calendar.WEEK_OF_MONTH);
+                currentWeekNo = cal.get(Calendar.WEEK_OF_YEAR);
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            Log.d("LOG","For Month :: "+ currentWeekNo);
+
+            currentWeekNo = currentWeekNo-5+position;
+
+            cal.set(Calendar.WEEK_OF_YEAR, currentWeekNo);
+            cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+            Date d = cal.getTime();
+            cal.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
+            Date d1 = cal.getTime();
+
+            Toast.makeText(getActivity(),"For Month ::"+position+" "+d.getDate()+" "+d1.getDate(),Toast.LENGTH_SHORT).show();
+
+            Log.d("LOG","For Month :: "+ currentWeekNo + " Num Week :: " + d.getDate());
+
+            return ExpenseHistoryViewPagerFragment.newInstance(d.getDate(),d1.getDate());
         }
 
     }

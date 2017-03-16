@@ -170,7 +170,7 @@ public class RetrofitApi {
        * LOGOUT
        */
         @POST(ServerURLModel.LOGOUT)
-        Call<ResponseBody> Logout(@Header("Authtoken") String auth, @Body AddStaffRequest requestModel);
+        Call<ResponseBody> Logout(@Header("Authtoken") String auth);
 
 
 

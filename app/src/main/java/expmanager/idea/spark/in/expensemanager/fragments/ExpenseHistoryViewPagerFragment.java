@@ -34,6 +34,31 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
     private ImageView imgAddExpense;
     private TextView txtTitleWeek;
 
+    public ExpenseHistoryViewPagerFragment(){
+
+
+    }
+
+    public static ExpenseHistoryViewPagerFragment newInstance(int startDate,int endDate) {
+        ExpenseHistoryViewPagerFragment f = new ExpenseHistoryViewPagerFragment();
+
+        // Supply index input as an argument.
+        Bundle args = new Bundle();
+        args.putInt("startDate", startDate);
+        args.putInt("endDate", endDate);
+        f.setArguments(args);
+
+        return f;
+    }
+
+    public int getStartDate() {
+        return getArguments().getInt("startDate", 0);
+    }
+
+    public int getEndDate() {
+        return getArguments().getInt("endDate", 0);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,6 +68,8 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
         imgAddExpense = (ImageView) rootView.findViewById(R.id.img_add_expense);
         txtTitleWeek = (TextView) rootView.findViewById(R.id.title_week);
 
+
+        txtTitleWeek.setText(getStartDate()+" "+getEndDate());
 
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
