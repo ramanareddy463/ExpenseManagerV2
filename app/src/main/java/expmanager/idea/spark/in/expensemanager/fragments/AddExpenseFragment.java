@@ -1,14 +1,17 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,10 +20,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.googlecode.tesseract.android.TessBaseAPI;
+
 import java.io.File;
 
 import expmanager.idea.spark.in.expensemanager.R;
-
+import expmanager.idea.spark.in.expensemanager.utils.RequestPermissionsTool;
+import expmanager.idea.spark.in.expensemanager.utils.RequestPermissionsToolImpl;
 
 
 /**
@@ -31,10 +37,16 @@ public class AddExpenseFragment extends Fragment {
 
     private ImageView imageRescan;
     private Uri outputFileUri;
+    private TessBaseAPI tessBaseApi;
     private static final int PHOTO_REQUEST_CODE = 1;
 
     private static final String DATA_PATH = Environment.getExternalStorageDirectory().toString() + "/ExpenseManager/";
     private static final String TESSDATA = "tessdata";
+    private static final String lang = "eng";
+
+    private static final String TAG = AddExpenseFragment.class.getSimpleName();
+
+    private RequestPermissionsTool requestTool; //for API >=23 only
 
 
     @Override
@@ -124,15 +136,73 @@ public class AddExpenseFragment extends Fragment {
             options.inSampleSize = 4; // 1 - means max size. 4 - means maxsize/4 size. Don't use value <4, because you need more memory in the heap to store your data.
             Bitmap bitmap = BitmapFactory.decodeFile(imgUri.getPath(), options);
 
-           // String result = extractText(bitmap);
+            String result = extractText(bitmap);
 
-           // Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
 
             //textView.setText(result);
 
         } catch (Exception e) {
             //Log.e(TAG, e.getMessage());
         }
+    }
+
+
+    private String extractText(Bitmap bitmap) {
+        try {
+            tessBaseApi = new TessBaseAPI();
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+            if (tessBaseApi == null) {
+                Log.e(TAG, "TessBaseAPI is null. TessFactory not returning tess object.");
+            }
+        }
+
+        tessBaseApi.init(DATA_PATH, lang);
+
+//       //EXTRA SETTINGS
+//        //For example if we only want to detect numbers
+//        tessBaseApi.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, "1234567890");
+//
+//        //blackList Example
+//        tessBaseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, "!@#$%^&*()_+=-qwertyuiop[]}{POIU" +
+//                "YTRWQasdASDfghFGHjklJKLl;L:'\"\\|~`xcvXCVbnmBNM,./<>?");
+
+        Log.d(TAG, "Training file loaded");
+        tessBaseApi.setImage(bitmap);
+        String extractedText = "empty result";
+        try {
+            extractedText = tessBaseApi.getUTF8Text();
+        } catch (Exception e) {
+            Log.e(TAG, "Error in recognizing text.");
+        }
+        tessBaseApi.end();
+        return extractedText;
+    }
+
+    private void requestPermissions() {
+        String[] permissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        requestTool = new RequestPermissionsToolImpl();
+        requestTool.requestPermissions(getActivity(), permissions);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        boolean grantedAllPermissions = true;
+        for (int grantResult : grantResults) {
+            if (grantResult != PackageManager.PERMISSION_GRANTED) {
+                grantedAllPermissions = false;
+            }
+        }
+
+        if (grantResults.length != permissions.length || (!grantedAllPermissions)) {
+
+            requestTool.onPermissionDenied();
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
     }
 
 }
