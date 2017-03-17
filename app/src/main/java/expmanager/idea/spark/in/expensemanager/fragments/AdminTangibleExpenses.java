@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -48,11 +49,11 @@ public class AdminTangibleExpenses extends Fragment {
     ListView tanexplist;
     List<TanExpenses> list,invoice_list;
     public static MyTanExpAdapter adapt;
+    private ProgressBar progressBar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
     }
 
@@ -74,6 +75,7 @@ public class AdminTangibleExpenses extends Fragment {
         addtanexpense = (Button) rootView.findViewById(R.id.addtanexpense);
         tanexplist = (ListView) rootView.findViewById(R.id.tanexplist);
 
+        progressBar = (ProgressBar) rootView.findViewById(R.id.progress_bar);
 
         list = db.getAllTanExpenses();
         if(list != null) {
@@ -86,10 +88,6 @@ public class AdminTangibleExpenses extends Fragment {
                 openAddtagibleExpDialog();
             }
         });
-
-
-
-
 
         return rootView;
     }
@@ -156,7 +154,7 @@ public class AdminTangibleExpenses extends Fragment {
                     final TanExpenses insertall = new TanExpenses(categoryval.getText().toString(), whenval.getSelectedItem().toString(), priceval.getText().toString());
                     dialog.dismiss();
 
-
+                    progressBar.setVisibility(View.VISIBLE);
 
 
                     AddTangibleExpenseRequest addTangibleExpenseRequest = new AddTangibleExpenseRequest(insertall.getCategory(), insertall.getWhen(), insertall.getPrice());
@@ -165,7 +163,7 @@ public class AdminTangibleExpenses extends Fragment {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-
+                            progressBar.setVisibility(View.GONE);
 
                             if (response.isSuccessful()) {
 
@@ -182,6 +180,8 @@ public class AdminTangibleExpenses extends Fragment {
 
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            progressBar.setVisibility(View.GONE);
 
                             Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
 

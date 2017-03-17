@@ -19,80 +19,12 @@
         android:textColor="@color/blue"
         android:textSize="25dp" />
 
-    <LinearLayout
-        android:id="@+id/linear_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Todays Expense"
-            android:textColor="@color/blue"
-            android:textSize="25dp" />
-
-        <ImageView
-            android:id="@+id/img_add_expense"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:src="@mipmap/ic_launcher" />
-
-    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/linear_header"
-        android:layout_alignRight="@id/linear_header"
-        android:layout_below="@id/linear_header" />
-
-    <LinearLayout
-        android:id="@+id/linear_week_expense"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recycler_view"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="This Week Expense"
-            android:textColor="@color/blue"
-            android:textSize="25dp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:src="@mipmap/ic_launcher" />
-
-    </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_week"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/linear_week_expense"
-        android:layout_alignRight="@id/linear_week_expense"
-        android:layout_below="@id/linear_week_expense" />
+        android:layout_below="@id/title_week" />
 
 </RelativeLayout>

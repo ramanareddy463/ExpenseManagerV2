@@ -7,9 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -34,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     private Button btnBack,btnSignUp;
     private EditText userName,email,password;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +51,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         email = (EditText) findViewById(R.id.email_sign_up);
         password = (EditText) findViewById(R.id.password_sign_up);
         btnSignUp = (Button) findViewById(R.id.btn_sign_up);
+
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         btnSignUp.setOnClickListener(this);
         btnBack.setOnClickListener(this);
@@ -68,13 +76,17 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     return;
                 }
 
+
                 if((!userName.getText().toString().isEmpty())&&(!email.getText().toString().isEmpty())&&(!password.getText().toString().isEmpty())){
 
+                    progressBar.setVisibility(View.VISIBLE);
 
                     SignUpRequest signUpRequest = new SignUpRequest(email.getText().toString(),userName.getText().toString(),password.getText().toString(), Utils.getDeviceId(SignUpActivity.this));
                     RetrofitApi.getApi().SignUpExpenseManager(signUpRequest).enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                            progressBar.setVisibility(View.GONE);
 
                             if (response.isSuccessful()) {
 
@@ -95,13 +107,28 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                             } else {
 
-                                Toast.makeText(SignUpActivity.this, "Oops something went wrong", Toast.LENGTH_SHORT).show();
-                            }
+                                try {
+                                    String errorBody = response.errorBody().string();
+                                    JSONObject jsonObject = new JSONObject(errorBody);
+                                    Toast.makeText(SignUpActivity.this, jsonObject.optString("message"), Toast.LENGTH_SHORT).show();
 
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+//                                {
+//                                    "status": "failed",
+//                                        "message": "Validation failed: Email has already been taken, Email has already been taken, Username has already been taken"
+//                                }
+                            }
                         }
 
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            progressBar.setVisibility(View.GONE);
 
                             Toast.makeText(SignUpActivity.this,"Oops something went wrong",Toast.LENGTH_SHORT).show();
 
