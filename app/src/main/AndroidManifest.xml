@@ -49,6 +49,10 @@
         <activity
             android:name=".UsePinActivity"
             android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ForgotPinActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

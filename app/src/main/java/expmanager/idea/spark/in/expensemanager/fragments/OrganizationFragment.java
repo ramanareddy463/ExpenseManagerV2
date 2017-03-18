@@ -117,6 +117,8 @@ public class OrganizationFragment extends Fragment {
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
 
+                            progressBar.setVisibility(View.GONE);
+
                             Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
 
                         }

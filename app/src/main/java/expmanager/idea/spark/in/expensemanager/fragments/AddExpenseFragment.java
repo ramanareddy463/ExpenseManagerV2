@@ -25,6 +25,10 @@ import android.widget.Toast;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.utils.RequestPermissionsTool;
@@ -35,18 +39,19 @@ import expmanager.idea.spark.in.expensemanager.utils.RequestPermissionsToolImpl;
  * Created by Ramana.Reddy on 2/28/2017.
  */
 
-public class AddExpenseFragment extends Fragment {
+public class AddExpenseFragment extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback {
 
     private ImageView imageRescan;
     private Uri outputFileUri;
     private TessBaseAPI tessBaseApi;
     private static final int PHOTO_REQUEST_CODE = 1;
 
-    private static final String DATA_PATH = Environment.getExternalStorageDirectory().toString() + "/ExpenseManager/imgs";
+    private static final String DATA_PATH = Environment.getExternalStorageDirectory().toString() + "/ExpenseManager/";
     private static final String TESSDATA = "tessdata";
     private static final String lang = "eng";
 
     private static final String TAG = AddExpenseFragment.class.getSimpleName();
+    String result = "empty";
 
     private RequestPermissionsTool requestTool; //for API >=23 only
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -81,7 +86,7 @@ public class AddExpenseFragment extends Fragment {
      * to get high resolution image from camera
      */
     private void startCameraActivity() {
-        verifyStoragePermissions(getActivity());
+       // verifyStoragePermissions(getActivity());
         try {
             String IMGS_PATH = Environment.getExternalStorageDirectory().toString() + "/ExpenseManager/imgs";
             prepareDirectory(IMGS_PATH);
@@ -137,7 +142,7 @@ public class AddExpenseFragment extends Fragment {
             e.printStackTrace();
         }
 
-       // copyTessDataFiles(TESSDATA);
+       copyTessDataFiles(TESSDATA);
     }
 
     private void startOCR(Uri imgUri) {
@@ -157,9 +162,48 @@ public class AddExpenseFragment extends Fragment {
         }
     }
 
+    /**
+     * Copy tessdata files (located on assets/tessdata) to destination directory
+     *
+     * @param path - name of directory with .traineddata files
+     */
+    private void copyTessDataFiles(String path) {
+        try {
+            String fileList[] = getActivity().getAssets().list(path);
+
+            for (String fileName : fileList) {
+
+                // open file within the assets folder
+                // if it is not already there copy it to the sdcard
+                String pathToDataFile = DATA_PATH + path + "/" + fileName;
+                if (!(new File(pathToDataFile)).exists()) {
+
+                    InputStream in = getActivity().getAssets().open(path + "/" + fileName);
+
+                    OutputStream out = new FileOutputStream(pathToDataFile);
+
+                    // Transfer bytes from in to out
+                    byte[] buf = new byte[1024];
+                    int len;
+
+                    while ((len = in.read(buf)) > 0) {
+                        out.write(buf, 0, len);
+                    }
+                    in.close();
+                    out.close();
+
+                    Log.d(TAG, "Copied " + fileName + "to tessdata");
+                }
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "Unable to copy files to tessdata " + e.toString());
+        }
+    }
+
 
     private String extractText(Bitmap bitmap) {
-   /*     try {
+
+        try {
             tessBaseApi = new TessBaseAPI();
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
@@ -187,30 +231,23 @@ public class AddExpenseFragment extends Fragment {
             Log.e(TAG, "Error in recognizing text.");
         }
         tessBaseApi.end();
-        return extractedText;*/
-
-        tessBaseApi = new TessBaseAPI();
-        tessBaseApi.init(DATA_PATH, "eng");
-        tessBaseApi.setImage(bitmap);
-        String extractedText = tessBaseApi.getUTF8Text();
-        tessBaseApi.end();
         return extractedText;
     }
 
 
-    public static void verifyStoragePermissions(Activity activity) {
-        // Check if we have write permission
-        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            // We don't have permission so prompt the user
-            ActivityCompat.requestPermissions(
-                    activity,
-                    PERMISSIONS_STORAGE,
-                    REQUEST_EXTERNAL_STORAGE
-            );
-        }
-    }
+//    public static void verifyStoragePermissions(Activity activity) {
+//        // Check if we have write permission
+//        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+//
+//        if (permission != PackageManager.PERMISSION_GRANTED) {
+//            // We don't have permission so prompt the user
+//            ActivityCompat.requestPermissions(
+//                    activity,
+//                    PERMISSIONS_STORAGE,
+//                    REQUEST_EXTERNAL_STORAGE
+//            );
+//        }
+//    }
 
     private void requestPermissions() {
         String[] permissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
