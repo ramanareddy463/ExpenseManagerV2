@@ -13,4 +13,30 @@
     <string name="today_expense_text">3 products were bought extra this month, your profit will be reduced by $40.00 from last month</string>
     <string name="checkout">Check out the in tangible expenses for this month</string>
 
+
+    <string name="ion_bag">&#xf110;</string>
+    <string name="ion_clock">&#xf26e;</string>
+    <string name="ion_cube">&#xf318;</string>
+    <string name="ion_ios_arrow_right">&#xf3d3;</string>
+    <string name="ion_card">&#xf119;</string>
+    <string name="ion_ios_calendar_outline">&#xf3f3;</string>
+    <string name="ion_android_search">&#xf2f5;</string>
+    <string name="ion_person_add">&#xf211;</string>
+    <string name="ion_ios_close_outline">&#xf405;</string>
+    <string name="ion_ios_close_empty">&#xf404;</string>
+    <string name="ion_ios_arrow_down">&#xf3d0;</string>
+    <string name="ion_ios_checkmark_empty">&#xf3fd;</string>
+    <string name="ion_ios_plus_empty">&#xf489;</string>
+    <string name="ion_ios_plus_outline">&#xf48a;</string>
+    <string name="ion_ios_plus">&#xf48b;</string>
+
+
+    <string name="ion_ios_loop_strong">&#xf459;</string>
+    <string name="ion_person_stalker">&#xf212;</string>
+    <string name="ion_person">&#xf213;</string>
+    <string name="ion_clipboard">&#xf127;</string>
+    <string name="ion_gear_b">&#xf13e;</string>
+
+
+
 </resources>

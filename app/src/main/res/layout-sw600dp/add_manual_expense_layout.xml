@@ -6,6 +6,7 @@
     android:layout_margin="10dp"
 
     >
+
     <LinearLayout
         android:id="@+id/addExpenseForm"
         android:layout_width="match_parent"
@@ -13,16 +14,15 @@
         android:layout_margin="10dp"
         android:background="@color/blue"
         android:orientation="vertical"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activityverticalmargin"
-            android:textColor="@android:color/white"
             android:text="Category"
-            android:textSize="18sp"/>
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteCatId"
@@ -31,14 +31,14 @@
             android:layout_height="45dp"
             android:layout_margin="@dimen/activityverticalmargin"
             android:background="@color/greytext"
+            android:ems="10"
             android:hint="Category"
             android:imeOptions="actionNext"
             android:maxLength="26"
             android:maxLines="1"
-            android:singleLine="true"
             android:padding="10dp"
-            android:textColorHint="@android:color/darker_gray"
-            android:ems="10" />
+            android:singleLine="true"
+            android:textColorHint="@android:color/darker_gray" />
 
 
         <AutoCompleteTextView
@@ -48,22 +48,22 @@
             android:layout_height="45dp"
             android:layout_margin="@dimen/activityverticalmargin"
             android:background="@color/greytext"
+            android:ems="10"
             android:hint="Invoice Id"
             android:imeOptions="actionNext"
             android:maxLength="26"
             android:maxLines="1"
-            android:singleLine="true"
             android:padding="10dp"
-            android:textColorHint="@android:color/darker_gray"
-            android:ems="10" />
+            android:singleLine="true"
+            android:textColorHint="@android:color/darker_gray" />
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activityverticalmargin"
-            android:textColor="@android:color/white"
             android:text="Date"
-            android:textSize="18sp"/>
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/exp_date"
@@ -76,17 +76,17 @@
             android:imeOptions="actionNext"
             android:maxLength="26"
             android:maxLines="1"
-            android:singleLine="true"
             android:padding="10dp"
+            android:singleLine="true"
             android:textColorHint="@android:color/darker_gray" />
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activityverticalmargin"
-            android:textColor="@android:color/white"
             android:text="Description"
-            android:textSize="18sp"/>
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/exp_descrip"
@@ -99,17 +99,17 @@
             android:imeOptions="actionNext"
             android:maxLength="26"
             android:maxLines="1"
-            android:singleLine="true"
             android:padding="10dp"
+            android:singleLine="true"
             android:textColorHint="@android:color/darker_gray" />
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activityverticalmargin"
-            android:textColor="@android:color/white"
             android:text="Unit"
-            android:textSize="18sp"/>
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/exp_unit"
@@ -123,17 +123,17 @@
             android:inputType="numberDecimal"
             android:maxLength="3"
             android:maxLines="1"
-            android:singleLine="true"
             android:padding="10dp"
+            android:singleLine="true"
             android:textColorHint="@android:color/darker_gray" />
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activityverticalmargin"
-            android:textColor="@android:color/white"
             android:text="Amount"
-            android:textSize="18sp"/>
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/exp_amount"
@@ -147,8 +147,8 @@
             android:inputType="numberDecimal"
             android:maxLength="26"
             android:maxLines="1"
-            android:singleLine="true"
             android:padding="10dp"
+            android:singleLine="true"
             android:textColorHint="@android:color/darker_gray" />
 
         <CheckBox
@@ -159,21 +159,21 @@
             android:layout_marginRight="@dimen/activityverticalmargin"
             android:padding="10dp"
             android:text="Is Recursive"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/lnrRecursiveLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <TextView
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activityverticalmargin"
-                android:textColor="@android:color/white"
-                android:text="Recursive Type"/>
+                android:text="Recursive Type"
+                android:textColor="@android:color/white" />
 
             <Spinner
                 android:id="@+id/spnrecursivetype"
@@ -181,7 +181,7 @@
                 android:layout_height="45dp"
                 android:layout_margin="@dimen/activityverticalmargin"
                 android:background="@color/greytext"
-                android:spinnerMode="dropdown"/>
+                android:spinnerMode="dropdown" />
 
         </LinearLayout>
 
@@ -189,11 +189,11 @@
             android:id="@+id/btnexpAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@color/grey05"
             android:padding="5dp"
-            android:text="Add"
-            android:layout_gravity="center"/>
+            android:text="Add" />
 
 
     </LinearLayout>

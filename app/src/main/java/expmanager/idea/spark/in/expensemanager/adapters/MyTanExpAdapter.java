@@ -12,6 +12,7 @@ import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.model.TanExpenses;
+import expmanager.idea.spark.in.expensemanager.utils.CustomFonts;
 
 
 /**
@@ -41,9 +42,9 @@ public class MyTanExpAdapter extends ArrayAdapter<TanExpenses> {
         View v = convertView;
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v = inflater.inflate(R.layout.list_tanexp_item, null);
-        TextView textView1 = (TextView) v.findViewById(R.id.category);
-        TextView textView2 = (TextView) v.findViewById(R.id.when);
-        TextView textView3 = (TextView) v.findViewById(R.id.price);
+        TextView textView1 = (CustomFonts) v.findViewById(R.id.category);
+        TextView textView2 = (CustomFonts) v.findViewById(R.id.when);
+        TextView textView3 = (CustomFonts) v.findViewById(R.id.price);
 
         textView1.setText(qList.get(position).getCategory());
         textView2.setText(qList.get(position).getWhen());

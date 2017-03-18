@@ -22,7 +22,7 @@
             android:src="@drawable/coin"
             android:layout_gravity="center_vertical"/>
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:id="@+id/title_add_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:id="@+id/shop_name_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -92,12 +92,12 @@
                         android:layout_toEndOf="@+id/shop_name_label"
                         android:layout_toRightOf="@+id/shop_name_label" />
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="" />
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
                     android:layout_below="@id/name_date_layout"
                     android:layout_marginTop="10dp">
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:id="@+id/address_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -156,14 +156,14 @@
                         android:background="@drawable/table_border"
                         android:layout_height="wrap_content">
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/index_label"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:text="NO" />
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/product_label"
                             android:layout_width="400dp"
                             android:layout_height="50dp"
@@ -173,7 +173,7 @@
                             android:gravity="center"
                             android:text="Product" />
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/qty_label"
                             android:layout_width="80dp"
                             android:layout_height="50dp"
@@ -182,7 +182,7 @@
                             android:gravity="center"
                             android:text="QTY" />
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:layout_width="80dp"
                             android:layout_height="50dp"
                             android:layout_toEndOf="@id/qty_label"
@@ -200,7 +200,7 @@
                         android:layout_below="@id/table_heading"
                         android:background="@drawable/table_border">
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/index"
                             android:layout_width="50dp"
                             android:layout_height="500dp"
@@ -209,7 +209,7 @@
                             android:paddingTop="20dp"
                             android:text="1" />
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/product_name"
                             android:layout_width="400dp"
                             android:layout_height="500dp"
@@ -219,7 +219,7 @@
                             android:layout_alignParentTop="true"
                             android:layout_toEndOf="@+id/index" />
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/qty"
                             android:layout_width="80dp"
                             android:layout_height="500dp"
@@ -230,7 +230,7 @@
                             android:paddingTop="20dp"
                             android:text="1" />
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:layout_width="80dp"
                             android:layout_height="500dp"
                             android:layout_toEndOf="@id/qty"
@@ -249,7 +249,7 @@
                         android:layout_below="@id/main_table_layout"
                         android:layout_marginTop="20dp">
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/expense_label"
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
@@ -274,7 +274,7 @@
                         android:layout_below="@id/expense_layout"
                         android:layout_marginTop="15dp">
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:id="@+id/note_label"
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
@@ -317,7 +317,7 @@
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:tint="#fff" />
 
-                        <TextView
+                        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"

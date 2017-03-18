@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="5dp"
-    android:layout_marginTop="5dp"
+    android:orientation="horizontal"
+    android:padding="5dp"
     android:background="@color/blue">
 
-    <TextView
+    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:text="Grocery Today"
+        android:layout_weight="0.7"
+        android:textStyle="bold"
         android:textColor="@color/editTextBackgroundWhite"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
-    <TextView
+    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
         android:id="@+id/quantity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/name"
-        android:layout_toRightOf="@id/name"
-        android:ems="10"
         android:text="3 items"
+        android:layout_weight="1"
         android:textColor="@color/editTextBackgroundWhite"
         android:textSize="18dp" />
 
-    <TextView
+    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
         android:id="@+id/cost"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/name"
-        android:layout_toRightOf="@id/quantity"
-        android:ems="10"
         android:text="$40.00"
+        android:layout_weight="1"
+        android:textColor="@color/editTextBackgroundWhite"
+        android:textSize="18dp" />
+
+    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:textColor="@color/editTextBackgroundWhite"
         android:textSize="18dp" />
 
 
-</RelativeLayout>
+</LinearLayout>

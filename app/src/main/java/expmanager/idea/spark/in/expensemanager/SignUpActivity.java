@@ -130,7 +130,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                             progressBar.setVisibility(View.GONE);
 
-                            Toast.makeText(SignUpActivity.this,"Oops something went wrong",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this,"Oops something went wrong"+t.getMessage(),Toast.LENGTH_SHORT).show();
 
                         }
                     });

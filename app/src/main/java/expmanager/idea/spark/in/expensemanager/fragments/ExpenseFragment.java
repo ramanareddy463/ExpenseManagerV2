@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +20,7 @@ import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.adapters.TodayExpenseAdapter;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseGroup;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
+import expmanager.idea.spark.in.expensemanager.utils.FontManager;
 
 /**
  * Created by Ramana.Reddy on 2/24/2017.
@@ -27,6 +31,10 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
     public TodayExpenseAdapter adapter;
     public TodayExpenseAdapter weekAdapter;
     private Button imgAddocrExpense, addexpbtn;
+    private ImageView imgArrow;
+    RelativeLayout main_layout;
+
+    int flag;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,8 +45,31 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
         imgAddocrExpense = (Button) rootView.findViewById(R.id.img_ocr_expense);
         imgAddocrExpense.setOnClickListener(this);
 
+        //drawableInitialasation(rootView);
+
         addexpbtn = (Button) rootView.findViewById(R.id.img_add_expense);
         addexpbtn.setOnClickListener(this);
+
+        imgArrow = (ImageView) rootView.findViewById(R.id.img_arrow);
+
+        main_layout = (RelativeLayout) rootView.findViewById(R.id.parent_main_layout);
+
+        imgArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (flag == 0) {
+                    main_layout.getLayoutParams().width = 850;
+                    main_layout.requestLayout();
+                    flag = 1;
+                } else {
+                    main_layout.getLayoutParams().width = RelativeLayout.LayoutParams.MATCH_PARENT;
+                    main_layout.requestLayout();
+                    flag = 0;
+                }
+
+            }
+        });
 
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -65,6 +96,14 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
 
         return rootView;
     }
+
+//    private void drawableInitialasation(View rootView) {
+//
+//
+//        TextView textView = (TextView) rootView.findViewById(R.id.doller_img);
+//
+//       textView.setTypeface(FontManager.getTypeface(getActivity(),FontManager.FONTAWESOME));
+//    }
 
     public static List<ExpanseItem> makeExpanseItems() {
         ExpanseItem item1 = new ExpanseItem("Olive oil", "2 lt", "$10.00");

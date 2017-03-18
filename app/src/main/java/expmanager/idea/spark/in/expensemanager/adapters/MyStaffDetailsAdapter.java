@@ -12,6 +12,7 @@ import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
+import expmanager.idea.spark.in.expensemanager.utils.CustomFonts;
 
 /**
  * Created by Haresh.Veldurty on 2/24/2017.
@@ -39,15 +40,15 @@ public class MyStaffDetailsAdapter extends ArrayAdapter<Staff> {
         View v = convertView;
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v = inflater.inflate(R.layout.list_staff_item, null);
-        TextView textView1 = (TextView) v.findViewById(R.id.staffname);
-        TextView textView2 = (TextView) v.findViewById(R.id.shiftdays);
-        TextView textView3 = (TextView) v.findViewById(R.id.shifttime);
-        TextView textView4 = (TextView) v.findViewById(R.id.perhourdetails);
-        TextView textView5 = (TextView) v.findViewById(R.id.designation);
-        TextView textView6 = (TextView) v.findViewById(R.id.phonenumber);
-        TextView textView7 = (TextView) v.findViewById(R.id.staffemail);
-        TextView textView8 = (TextView) v.findViewById(R.id.staffadress);
-        TextView textView9 = (TextView) v.findViewById(R.id.startdate);
+        TextView textView1 = (CustomFonts) v.findViewById(R.id.staffname);
+        TextView textView2 = (CustomFonts) v.findViewById(R.id.shiftdays);
+        TextView textView3 = (CustomFonts) v.findViewById(R.id.shifttime);
+        TextView textView4 = (CustomFonts) v.findViewById(R.id.perhourdetails);
+        TextView textView5 = (CustomFonts) v.findViewById(R.id.designation);
+        TextView textView6 = (CustomFonts) v.findViewById(R.id.phonenumber);
+        TextView textView7 = (CustomFonts) v.findViewById(R.id.staffemail);
+        TextView textView8 = (CustomFonts) v.findViewById(R.id.staffadress);
+        TextView textView9 = (CustomFonts) v.findViewById(R.id.startdate);
 
         String s1 = qList.get(position).getShift_days1();
         String s2 = qList.get(position).getShift_days2();

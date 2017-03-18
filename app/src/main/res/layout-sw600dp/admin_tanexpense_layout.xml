@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    >
+    android:background="#ffffff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +21,7 @@
             android:paddingLeft="30dp"
             android:paddingTop="30dp">
 
-            <TextView
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,7 +77,7 @@
             android:layout_weight="0.3"
             android:background="@color/yellow">
 
-            <TextView
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                 android:id="@+id/txt_hi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -88,7 +87,7 @@
                 android:textColor="@color/greenTextColor"
                 android:textSize="25dp" />
 
-            <TextView
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                 android:id="@+id/txt_product_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -114,8 +113,8 @@
                 android:id="@+id/recycler_view_today_products"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:layout_below="@+id/txt_product_desc"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/txt_product_desc" />
 
             <View
                 android:id="@+id/view_below_recycler_view"
@@ -138,23 +137,19 @@
 
             </RelativeLayout>
 
-            <TextView
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                 android:id="@+id/txt_add_to_tangible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="124dp"
                 android:background="#f3fe7b"
                 android:gravity="center_vertical|center"
                 android:paddingBottom="50dp"
                 android:paddingTop="50dp"
-                android:text="All above expensesadded to Tangible."
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="124dp"
-                android:layout_alignParentEnd="true" />
-
-
-
-
+                android:text="All above expensesadded to Tangible." />
 
 
         </RelativeLayout>
@@ -166,7 +161,7 @@
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
 </RelativeLayout>

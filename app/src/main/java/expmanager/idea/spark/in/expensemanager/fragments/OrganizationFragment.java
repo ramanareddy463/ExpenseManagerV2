@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -25,6 +26,7 @@ import expmanager.idea.spark.in.expensemanager.model.CreateOrganisationResponse;
 import expmanager.idea.spark.in.expensemanager.model.LoginResponse;
 import expmanager.idea.spark.in.expensemanager.model.SignUpRequest;
 import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.FontManager;
 import expmanager.idea.spark.in.expensemanager.utils.NetworkUtils;
 import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
 import expmanager.idea.spark.in.expensemanager.utils.Utils;
@@ -68,6 +70,10 @@ public class OrganizationFragment extends Fragment {
         setupexp = (ImageView) rootView.findViewById(R.id.setupexp);
         etOrganizationName = (EditText) rootView.findViewById(R.id.et_organization);
         progressBar = (ProgressBar) rootView.findViewById(R.id.progress_bar);
+
+//        TextView  textView = (TextView) rootView.findViewById(R.id.textView5);
+//
+//        textView.setTypeface(FontManager.getTypeface(getActivity(),FontManager.FONTAWESOME));
 
         setupexp.setOnClickListener(new View.OnClickListener() {
             @Override

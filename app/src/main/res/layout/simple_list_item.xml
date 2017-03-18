@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
         android:id="@+id/listtxtitem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

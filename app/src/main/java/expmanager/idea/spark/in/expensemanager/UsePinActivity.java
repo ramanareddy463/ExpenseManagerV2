@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import expmanager.idea.spark.in.expensemanager.utils.CustomFonts;
+
 /**
  * Created by Ramana.Reddy on 2/22/2017.
  */
@@ -29,7 +31,7 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.use_pin_activity);
 
         signUp = (Button) findViewById(R.id.sign_up);
-        tvPin = (TextView) findViewById(R.id.tv_enter_pin);
+        tvPin = (CustomFonts) findViewById(R.id.tv_enter_pin);
         usePassword = (Button) findViewById(R.id.use_password);
         forgotPin = (Button) findViewById(R.id.forgot_pin);
 

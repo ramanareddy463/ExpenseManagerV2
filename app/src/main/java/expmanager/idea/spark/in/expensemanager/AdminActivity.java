@@ -19,9 +19,6 @@ import expmanager.idea.spark.in.expensemanager.fragments.SalesFragment;
  */
 
 
-
-
-
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
     ImageButton btnexpense,btntanexpense,btnhistory,btndashboard,btnstaff,btnprofile,btnsales;
 

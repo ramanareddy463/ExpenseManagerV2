@@ -22,6 +22,7 @@ import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.adapters.TodayExpenseAdapter;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseGroup;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
+import expmanager.idea.spark.in.expensemanager.utils.CustomFonts;
 
 /**
  * Created by Ramana.Reddy on 3/9/2017.
@@ -65,7 +66,7 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
                 container, false);
 
         imgAddExpense = (ImageView) rootView.findViewById(R.id.img_add_expense);
-        txtTitleWeek = (TextView) rootView.findViewById(R.id.title_week);
+        txtTitleWeek = (CustomFonts) rootView.findViewById(R.id.title_week);
 
 
         txtTitleWeek.setText("Week "+getStartDate()+"to "+getEndDate());

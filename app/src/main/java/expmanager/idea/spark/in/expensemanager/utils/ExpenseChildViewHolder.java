@@ -13,13 +13,13 @@ import expmanager.idea.spark.in.expensemanager.R;
 
 public class ExpenseChildViewHolder extends ChildViewHolder {
 
-    private TextView childName;
+    private CustomFonts childName;
     private TextView childQuantity;
     private TextView childCost;
 
     public ExpenseChildViewHolder(View itemView) {
         super(itemView);
-        childName = (TextView) itemView.findViewById(R.id.name);
+        childName = (CustomFonts) itemView.findViewById(R.id.name);
         childQuantity = (TextView) itemView.findViewById(R.id.quantity);
         childCost = (TextView) itemView.findViewById(R.id.cost);
     }
