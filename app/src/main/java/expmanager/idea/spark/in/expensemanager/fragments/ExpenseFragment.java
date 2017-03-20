@@ -1,10 +1,14 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +46,12 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.expense,
                 container, false);
 
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+
+        int width = display.getWidth();
+
+        final int convertWidth = (int) (width*0.65);
+
         imgAddocrExpense = (Button) rootView.findViewById(R.id.img_ocr_expense);
         imgAddocrExpense.setOnClickListener(this);
 
@@ -59,7 +69,7 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
             public void onClick(View view) {
 
                 if (flag == 0) {
-                    main_layout.getLayoutParams().width = 850;
+                    main_layout.getLayoutParams().width = convertWidth;
                     main_layout.requestLayout();
                     flag = 1;
                 } else {
@@ -137,4 +147,5 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
 
         }
     }
+
 }

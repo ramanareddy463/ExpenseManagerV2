@@ -1,112 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tangiblelinear"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:paddingBottom="20dp"
-    android:paddingTop="20dp">
+    android:layout_height="match_parent">
+
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:id="@+id/tangiblelinear"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.9"
-        android:background="@drawable/edit_text_border"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
 
-        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
-            android:id="@+id/textView3"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Add Tangible Expenses"
-            android:textColor="#1fb598"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Category"
-            android:textColor="#1fb598"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/categoryval"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
             android:background="@drawable/edit_text_border"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
 
-        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="When"
-            android:textColor="#1fb598"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Add Tangible Expenses"
+                android:textColor="#1fb598"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Spinner
-            android:id="@+id/whenval"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edit_text_border"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView3"
+                android:layout_marginTop="20dp"
+                android:text="Category"
+                android:textColor="#1fb598"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
-            android:id="@+id/dddd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Price"
-            android:textColor="#1fb598"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <EditText
+                android:id="@+id/categoryval"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/textView4"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
 
-        <EditText
-            android:id="@+id/priceval"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edit_text_border"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/categoryval"
+                android:layout_marginTop="20dp"
+                android:text="When"
+                android:textColor="#1fb598"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/whenval"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/textView5"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
+                android:id="@+id/dddd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/whenval"
+                android:layout_marginTop="20dp"
+                android:text="Price"
+                android:textColor="#1fb598"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/priceval"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/dddd"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <Button
+                android:id="@+id/addtanexptoDb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/priceval"
+                android:layout_marginTop="25dp"
+                android:background="#1fb598"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Add"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <Button
-            android:id="@+id/addtanexptoDb"
-            android:layout_width="wrap_content"
+            android:id="@+id/canceltandialog"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:background="#1fb598"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="Add"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="0.9"
+            android:background="#d4e15f"
+            android:text="X"
             android:textColor="#fff"
-            android:textStyle="bold" />
+            android:textSize="30sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/canceltandialog"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="30dp"
-        android:layout_weight="0.1"
-        android:background="#d4e15f"
-        android:text="X"
-        android:textColor="#fff"
-        android:textSize="30sp" />
-</LinearLayout>
+</RelativeLayout>
+
