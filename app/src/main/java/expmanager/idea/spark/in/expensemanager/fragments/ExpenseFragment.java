@@ -1,13 +1,10 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
-import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +20,6 @@ import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.adapters.TodayExpenseAdapter;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseGroup;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
-import expmanager.idea.spark.in.expensemanager.utils.FontManager;
 
 /**
  * Created by Ramana.Reddy on 2/24/2017.
@@ -142,9 +137,10 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
 
         } else if(view.getId() == R.id.img_add_expense){
 
-            AddExpenseManualFragment fragmentorg = new AddExpenseManualFragment();
+           // AddExpenseManualFragment fragmentorg = new AddExpenseManualFragment();
+            //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
+            InvoiceEntryFragment fragmentorg = new InvoiceEntryFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.admin_content_frame, fragmentorg).commit();
-
         }
     }
 
