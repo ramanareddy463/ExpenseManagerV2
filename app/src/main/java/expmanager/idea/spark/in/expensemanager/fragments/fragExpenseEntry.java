@@ -1,4 +1,3 @@
-/*
 package expmanager.idea.spark.in.expensemanager.fragments;
 
 import android.app.Dialog;
@@ -33,12 +32,20 @@ import java.io.File;
 import java.util.ArrayList;
 
 import expmanager.idea.spark.in.expensemanager.R;
+import expmanager.idea.spark.in.expensemanager.adapters.expenseAdapter;
+import expmanager.idea.spark.in.expensemanager.adapters.expenseListAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
 import expmanager.idea.spark.in.expensemanager.model.Expense;
 
 
-
-
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link fragExpenseEntry.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link fragExpenseEntry#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -93,18 +100,16 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
         // Required empty public constructor
     }
 
-    */
-/**
+    /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
      * @return A new instance of fragment fragExpenseEntry.
-     *//*
-
+     */
     // TODO: Rename and change types and number of parameters
-    public static fragExpenseEntry newInstance(int param1, double param2, String param3, String param4, String param5) {
+    public static fragExpenseEntry newInstance(int param1, double param2, String param3, String param4,String param5) {
         fragExpenseEntry fragment = new fragExpenseEntry();
         Bundle args = new Bundle();
         args.putInt(ARG_PARAM1, param1);
@@ -133,8 +138,8 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_frag_expense_entry, container, false);
 
-        mainLayParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        mainLayParams.setMargins(Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()));
+       // mainLayParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+      //  mainLayParams.setMargins(Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()));
 
         weekindex = mParam1;
 
@@ -175,8 +180,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
-                intent.setDataAndType(Uri.fromFile(new File(mParam5)), "image*/
-/*");
+                intent.setDataAndType(Uri.fromFile(new File(mParam5)), "image/*");
                 startActivity(intent);
             }
         });
@@ -199,7 +203,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
                     myDbHelper.openConnection();
                     int catId = myDbHelper.getCatId(autoCatId.getText().toString());
                     if (catId == 0) {
-                        myDbHelper.insetCategory(autoCatId.getText().toString(), "", SharedPref.getCurUserId(getContext()));
+                        myDbHelper.insetCategory(autoCatId.getText().toString(), "",0);
                         catId = myDbHelper.getCatId(autoCatId.getText().toString());
                     }
                     int invId=0;
@@ -212,17 +216,15 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
                     expAmtSofar = expAmtSofar + Double.parseDouble(expAmt.getText().toString());
 
                     if(!isEditFlag){
-                        myDbHelper.insetExpense(new Expense(expDate.getText().toString(), expDesc.getText().toString(), catId, invId, Integer.parseInt(expUnit.getText().toString()), (SharedPref.getIsUserUnlocked(getContext()) ? 1 : 0), 0, Double.parseDouble(expAmt.getText().toString()), SharedPref.getCurUserId(getContext()), "",0,weekindex,0));
+                        myDbHelper.insetExpense(new Expense(expDate.getText().toString(), expDesc.getText().toString(), catId, invId, Integer.parseInt(expUnit.getText().toString()), 0, 0, Double.parseDouble(expAmt.getText().toString()), 0, "",0,weekindex,0));
                     }else{
-                        myDbHelper.updateExpense(new Expense(expDate.getText().toString(), expDesc.getText().toString(), catId, invId, Integer.parseInt(expUnit.getText().toString()), (SharedPref.getIsUserUnlocked(getContext()) ? 1 : 0), 0, Double.parseDouble(expAmt.getText().toString()), SharedPref.getCurUserId(getContext()), "",0,weekindex,editedExpId));
+                        myDbHelper.updateExpense(new Expense(expDate.getText().toString(), expDesc.getText().toString(), catId, invId, Integer.parseInt(expUnit.getText().toString()), 0, 0, Double.parseDouble(expAmt.getText().toString()), 0, "",0,weekindex,editedExpId));
                         isEditFlag =false;
                     }
 
-                    */
-/*if (chkexpIsRecursive.isChecked()) {
+                    /*if (chkexpIsRecursive.isChecked()) {
                         myDbHelper.insetRecursiveExpense(myDbHelper.getMaxExpenseId(), spnrecursivetype.getSelectedItem().toString(), Util.getCurrentDate(), "", Util.getCurrentDate(), SharedPref.getCurUserId(getContext()));
-                    }*//*
-
+                    }*/
                     myDbHelper.closeConnection();
 
                     refreshAdapter();
@@ -300,7 +302,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
                         myDbHelper.openConnection();
                         myDbHelper.deleteExpenseIsnotSaved();
                         myDbHelper.closeConnection();
-                        mListener.openWeekView();
+                       // mListener.openWeekView();
                     }
                 });
                 alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -348,8 +350,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
-                intent.setDataAndType(Uri.fromFile(new File(mParam5)), "image*/
-/*");
+                intent.setDataAndType(Uri.fromFile(new File(mParam5)), "image/*");
                 startActivity(intent);
             }
         });
@@ -363,7 +364,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
 
                 expAmtSofar =0.0;
                 Toast.makeText(getContext(), "All Expense Saved Successfully", Toast.LENGTH_SHORT).show();
-                mListener.openWeekView();
+               // mListener.openWeekView();
                 dialog.cancel();
             }
         });
@@ -469,15 +470,13 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
 
     private void loadDetails(){
         lnrExpHeader.setVisibility(View.GONE);
-*/
 /*
         File imgFile = new File(mParam5);
         if(imgFile.exists()){
             Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
             imginvprev.setImageBitmap(myBitmap);
         }
-*//*
-
+*/
         lblinvTotAmt.setText("Invoice:" + invAmt);
         lblExpTotAmt.setText("Expense:" + expAmtSofar);
     }
@@ -486,7 +485,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
         editedExpId = 0;
         lblExpTotAmt.setText("Expense:" + expAmtSofar);
         myDbHelper.openConnection();
-        expenseListAdapter adapter=new expenseListAdapter(getActivity(), myDbHelper.getExpenses(0),lstExpItems);
+        expenseListAdapter adapter=new expenseListAdapter(getActivity(), myDbHelper.getExpenses(0,0),lstExpItems);
         lstExpItems.setAdapter(adapter);
         if(adapter.getCount()>0){
             lnrExpHeader.setVisibility(View.VISIBLE);
@@ -585,8 +584,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
         }
     }
 
-    */
-/**
+    /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
@@ -595,11 +593,9 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
-     *//*
-
+     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void openWeekView();
+       // void openWeekView();
     }
 }
-*/

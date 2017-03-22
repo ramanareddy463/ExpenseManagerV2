@@ -1,6 +1,8 @@
 package expmanager.idea.spark.in.expensemanager;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -13,6 +15,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.ExpenseFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseHistoryFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.InvoiceEntryFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.SalesFragment;
+import expmanager.idea.spark.in.expensemanager.fragments.fragExpenseEntry;
 
 
 /**
@@ -20,7 +23,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.SalesFragment;
  */
 
 
-public class AdminActivity extends AppCompatActivity implements View.OnClickListener, InvoiceEntryFragment.OnFragmentInteractionListener {
+public class AdminActivity extends AppCompatActivity implements View.OnClickListener, InvoiceEntryFragment.OnFragmentInteractionListener, fragExpenseEntry.OnFragmentInteractionListener {
     ImageButton btnexpense,btntanexpense,btnhistory,btndashboard,btnstaff,btnprofile,btnsales;
 
     @Override
@@ -104,6 +107,9 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void openExpenseEntry(String invid, String invDate, double invAmt, int weekIndex, String filePath) {
-
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment fragExpenseEntrys = fragExpenseEntry.newInstance(weekIndex, invAmt, invid, invDate,filePath);
+        ft.replace(R.id.admin_content_frame, fragExpenseEntrys);
+        ft.commit();
     }
 }

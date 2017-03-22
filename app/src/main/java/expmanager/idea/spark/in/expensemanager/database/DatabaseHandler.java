@@ -5,11 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.model.AddExpenseRequest;
+import expmanager.idea.spark.in.expensemanager.model.Expense;
 import expmanager.idea.spark.in.expensemanager.model.Invoice;
 import expmanager.idea.spark.in.expensemanager.model.Sales;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
@@ -26,7 +28,7 @@ import expmanager.idea.spark.in.expensemanager.utils.Utils;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-
+    SQLiteDatabase db;
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "expensemanagerv2";
 
@@ -162,6 +164,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_USERS_TABLE);
 
     }
+
+
+    public void openConnection() {
+        try {
+            db = this.getWritableDatabase();
+        } catch (Exception x) {
+            x.printStackTrace();
+        }
+    }
+
+    public void closeConnection() {
+        try {
+            db.close();
+        } catch (Exception x) {
+            x.printStackTrace();
+        }
+    }
+
 
     // Upgrading database
     @Override
@@ -388,5 +408,252 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.insert("invoices", null, cv);
     }
 
+    public void deleteExpenseIsnotSaved() {
+        String query = "delete from expenses where is_saved =0";
+        Cursor catCursor = db.rawQuery(query, null);
+        catCursor.moveToFirst();
+        catCursor.close();
+    }
+
+    public int getCatId(String name) {
+        String query = "SELECT id FROM categories where name =?";
+        Cursor catCursor = db.rawQuery(query, new String[]{name});
+
+        if (catCursor.getCount() > 0) {
+            catCursor.moveToFirst();
+            return catCursor.getInt(catCursor.getColumnIndex("id"));
+
+        } else {
+            return 0;
+        }
+    }
+
+    public void insetCategory(String catName, String catDesc, int catCreatedBy) {
+        ContentValues cv = new ContentValues();
+        cv.put("name", catName);
+        cv.put("description", catDesc);
+        cv.put("created_at", catCreatedBy);
+        cv.put("created_by", Utils.getDateTime());
+        db.insert("categories", null, cv);
+    }
+
+    public int getInvId(String name) {
+        String query = "SELECT id FROM invoices where bill_number =?";
+        Cursor catCursor = db.rawQuery(query, new String[]{name});
+
+        if (catCursor.getCount() > 0) {
+            catCursor.moveToFirst();
+            return catCursor.getInt(catCursor.getColumnIndex("id"));
+
+        } else {
+            return 0;
+        }
+    }
+
+    public void insetExpense(Expense exp) {
+        ContentValues cv = new ContentValues();
+        cv.put("category_id", exp.getExpCatId());
+        cv.put("invoice_id", exp.getExpInvId());
+        cv.put("date", exp.getExpDate());
+        cv.put("description", exp.getExpDescription());
+        cv.put("unit", exp.getExpUnit());
+        cv.put("amount", exp.getExpAmt());
+        cv.put("is_approved", exp.getExpIsApproved());
+        cv.put("is_recurssive", exp.getExpIsRecursive());
+        cv.put("created_at", Utils.getDateTime());
+        cv.put("created_by", exp.getExpCreateBy());
+        cv.put("is_saved", exp.getIsSaved());
+        cv.put("week_index", exp.getExpWeekIndex());
+        long val = db.insert("expenses", null, cv);
+    }
+
+    public void updateExpense(Expense exp){
+        ContentValues cv = new ContentValues();
+        cv.put("category_id", exp.getExpCatId());
+        cv.put("invoice_id", exp.getExpInvId());
+        cv.put("date", exp.getExpDate());
+        cv.put("description", exp.getExpDescription());
+        cv.put("unit", exp.getExpUnit());
+        cv.put("amount", exp.getExpAmt());
+        cv.put("is_approved", exp.getExpIsApproved());
+        cv.put("is_recurssive", exp.getExpIsRecursive());
+        cv.put("created_at", Utils.getDateTime());
+        cv.put("created_by", exp.getExpCreateBy());
+        cv.put("is_saved", exp.getIsSaved());
+        cv.put("week_index", exp.getExpWeekIndex());
+
+        db.update("expenses",
+                cv,
+                "id= ?",
+                new String[]{String.valueOf(exp.getExpid())});
+    }
+
+
+    public double getUnSaveExpAmt() {
+        String query = "SELECT sum(amount) as tot FROM expenses where is_saved =0";
+        Cursor catCursor = db.rawQuery(query, null);
+
+        if (catCursor.getCount() > 0) {
+            catCursor.moveToFirst();
+            return catCursor.getDouble(catCursor.getColumnIndex("tot"));
+        } else {
+            return 0;
+        }
+    }
+
+    public void updateExpenseSaved() {
+        String query = "update expenses set is_saved = 1 where is_saved =0";
+        Cursor catCursor = db.rawQuery(query, null);
+        catCursor.moveToFirst();
+        catCursor.close();
+    }
+
+    public int[] getExpCatId() {
+        String query = "SELECT distinct category_id FROM expenses where is_saved=0";
+        Cursor catCursor = db.rawQuery(query, null);
+
+        if (catCursor.getCount() > 0) {
+            int[] str = new int[catCursor.getCount()];
+            int i = 0;
+            while (catCursor.moveToNext()) {
+                str[i] = catCursor.getInt(0);
+                i++;
+            }
+            return str;
+        } else {
+            return new int[]{};
+        }
+    }
+
+    public ArrayList<Expense> getExpensesload(int id){
+        ArrayList<Expense> expList=new ArrayList<Expense>();
+        Cursor expListCursor;
+        try{
+            expListCursor = db.rawQuery("SELECT * FROM expenses where is_saved = 0 and category_id=? order by created_at DESC", new String[]{String.valueOf(id)});
+
+            while(expListCursor.moveToNext()){
+                String expDate = expListCursor.getString(expListCursor.getColumnIndex("date"));
+                String expDesc = expListCursor.getString(expListCursor.getColumnIndex("description"));
+                int expcreatedby = expListCursor.getInt(expListCursor.getColumnIndex("created_by"));
+                int expUnit = expListCursor.getInt(expListCursor.getColumnIndex("unit"));
+                String expcreatedAt = expListCursor.getString(expListCursor.getColumnIndex("created_at"));
+                int expcatId = expListCursor.getInt(expListCursor.getColumnIndex("category_id"));
+                int expInvId = expListCursor.getInt(expListCursor.getColumnIndex("invoice_id"));
+                int expIsApproved = expListCursor.getInt(expListCursor.getColumnIndex("is_approved"));
+                int expIsRecursive = expListCursor.getInt(expListCursor.getColumnIndex("is_recurssive"));
+                double expAmt = expListCursor.getDouble(expListCursor.getColumnIndex("amount"));
+                int isSaved = expListCursor.getInt(expListCursor.getColumnIndex("is_saved"));
+                int weekindex1 = expListCursor.getInt(expListCursor.getColumnIndex("week_index"));
+                int idw =  expListCursor.getInt(expListCursor.getColumnIndex("id"));
+
+                Expense cat = new Expense(expDate,expDesc,expcatId, expInvId,expUnit,expIsApproved,expIsRecursive,expAmt,expcreatedby,expcreatedAt,isSaved,weekindex1,idw);
+                expList.add(cat);
+            }
+        }catch(Exception e){
+            Log.i("DB", "Exception While Get Categories:" + e.getMessage());
+        }
+        return expList;
+    }
+
+    public String getCatName(int id) {
+        String query = "SELECT name FROM categories where id =" + id;
+        Cursor catCursor = db.rawQuery(query, null);
+
+        if (catCursor.getCount() > 0) {
+            catCursor.moveToFirst();
+            return catCursor.getString(catCursor.getColumnIndex("name"));
+        } else {
+            return "";
+        }
+    }
+
+
+    public ArrayList<Expense> getExpenses(int catId, int weekindex){
+        ArrayList<Expense> expList=new ArrayList<Expense>();
+        Cursor expListCursor;
+        try{
+            if(weekindex==0){
+                expListCursor = db.rawQuery("SELECT * FROM expenses where is_saved >0 and category_id = ? order by created_at DESC" ,new String[]{String.valueOf(catId)});
+            }else{
+                expListCursor = db.rawQuery("SELECT * FROM expenses where is_saved >0 and category_id = ? and week_index= ?  order by created_at DESC" ,new String[]{String.valueOf(catId),String.valueOf(weekindex)});
+            }
+
+            while(expListCursor.moveToNext()){
+                String expDate = expListCursor.getString(expListCursor.getColumnIndex("date"));
+                String expDesc = expListCursor.getString(expListCursor.getColumnIndex("description"));
+                int expcreatedby = expListCursor.getInt(expListCursor.getColumnIndex("created_by"));
+                int expUnit = expListCursor.getInt(expListCursor.getColumnIndex("unit"));
+                String expcreatedAt = expListCursor.getString(expListCursor.getColumnIndex("created_at"));
+                int expcatId = expListCursor.getInt(expListCursor.getColumnIndex("category_id"));
+                int expInvId = expListCursor.getInt(expListCursor.getColumnIndex("invoice_id"));
+                int expIsApproved = expListCursor.getInt(expListCursor.getColumnIndex("is_approved"));
+                int expIsRecursive = expListCursor.getInt(expListCursor.getColumnIndex("is_recurssive"));
+                double expAmt = expListCursor.getDouble(expListCursor.getColumnIndex("amount"));
+                int isSaved = expListCursor.getInt(expListCursor.getColumnIndex("is_saved"));
+                int weekindex1 = expListCursor.getInt(expListCursor.getColumnIndex("week_index"));
+                int id =  expListCursor.getInt(expListCursor.getColumnIndex("id"));
+
+                Expense cat = new Expense(expDate,expDesc,expcatId, expInvId,expUnit,expIsApproved,expIsRecursive,expAmt,expcreatedby,expcreatedAt,isSaved,weekindex,id);
+                expList.add(cat);
+            }
+        }catch(Exception e){
+            Log.i("DB", "Exception While Get Categories:" + e.getMessage());
+        }
+        return expList;
+    }
+
+    public ArrayList<Expense> getExpensesEdit(int expId){
+        ArrayList<Expense> expList=new ArrayList<Expense>();
+        Cursor expListCursor;
+        try{
+
+            expListCursor = db.rawQuery("SELECT * FROM expenses where id=?", new String[]{String.valueOf(expId)});
+
+            while(expListCursor.moveToNext()){
+                String expDate = expListCursor.getString(expListCursor.getColumnIndex("date"));
+                String expDesc = expListCursor.getString(expListCursor.getColumnIndex("description"));
+                int expcreatedby = expListCursor.getInt(expListCursor.getColumnIndex("created_by"));
+                int expUnit = expListCursor.getInt(expListCursor.getColumnIndex("unit"));
+                String expcreatedAt = expListCursor.getString(expListCursor.getColumnIndex("created_at"));
+                int expcatId = expListCursor.getInt(expListCursor.getColumnIndex("category_id"));
+                int expInvId = expListCursor.getInt(expListCursor.getColumnIndex("invoice_id"));
+                int expIsApproved = expListCursor.getInt(expListCursor.getColumnIndex("is_approved"));
+                int expIsRecursive = expListCursor.getInt(expListCursor.getColumnIndex("is_recurssive"));
+                double expAmt = expListCursor.getDouble(expListCursor.getColumnIndex("amount"));
+                int isSaved = expListCursor.getInt(expListCursor.getColumnIndex("is_saved"));
+                int weekindex1 = expListCursor.getInt(expListCursor.getColumnIndex("week_index"));
+                int id =  expListCursor.getInt(expListCursor.getColumnIndex("id"));
+
+                Expense cat = new Expense(expDate,expDesc,expcatId, expInvId,expUnit,expIsApproved,expIsRecursive,expAmt,expcreatedby,expcreatedAt,isSaved,weekindex1,id);
+                expList.add(cat);
+            }
+        }catch(Exception e){
+            Log.i("DB", "Exception While Get Categories:" + e.getMessage());
+        }
+        return expList;
+    }
+
+    public String[] getCatname() {
+        String query = "SELECT name FROM categories";
+        Cursor catCursor = db.rawQuery(query, null);
+
+        if (catCursor.getCount() > 0) {
+            String[] str = new String[catCursor.getCount()];
+            int i = 0;
+            while (catCursor.moveToNext()) {
+                str[i] = catCursor.getString(catCursor.getColumnIndex("name"));
+                i++;
+            }
+            return str;
+        } else {
+            return new String[]{};
+        }
+    }
+    public void deleteExpense(int id) {
+        String query = "delete from expenses where id=?";
+        Cursor catCursor = db.rawQuery(query, new String[]{String.valueOf(id)});
+        catCursor.moveToFirst();
+        catCursor.close();
+    }
 
 }
