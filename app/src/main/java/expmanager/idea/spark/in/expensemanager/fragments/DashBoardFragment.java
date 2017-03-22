@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
@@ -23,6 +24,12 @@ import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
 import expmanager.idea.spark.in.expensemanager.R;
+import expmanager.idea.spark.in.expensemanager.network.RetrofitApi;
+import expmanager.idea.spark.in.expensemanager.utils.SessionManager;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Haresh.Veldurty on 3/7/2017.
@@ -66,7 +73,44 @@ public class DashBoardFragment extends Fragment {
         mothspinner.setAdapter(adapter);
         openChart();
 
+        callServiceApi();
+
         return rootView;
+    }
+
+    private void callServiceApi() {
+
+//        SessionManager sessionManager = new SessionManager(getActivity());
+//        RetrofitApi.getApi().GetDashboard(sessionManager.getAuthToken(), " ").enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//
+//                if (response.isSuccessful()) {
+//
+////                    db.addStaff(insertstaff);
+////                    StaffFragment.adapt.add(insertstaff);
+////                    StaffFragment.adapt.notifyDataSetChanged();
+////
+////                    Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+//
+//
+//
+//                } else {
+//
+//                    Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//
+//                Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+
+
     }
 
 

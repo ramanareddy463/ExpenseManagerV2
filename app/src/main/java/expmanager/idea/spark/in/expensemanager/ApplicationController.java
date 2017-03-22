@@ -1,6 +1,7 @@
 package expmanager.idea.spark.in.expensemanager;
 
 import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.instabug.library.Instabug;
 import com.instabug.library.invocation.InstabugInvocationEvent;
@@ -9,7 +10,7 @@ import com.instabug.library.invocation.InstabugInvocationEvent;
  * Created by RamanaRedddy on 3/19/17.
  */
 
-public class ApplicationController extends Application {
+public class ApplicationController extends MultiDexApplication {
 
     @Override
     public void onCreate() {
