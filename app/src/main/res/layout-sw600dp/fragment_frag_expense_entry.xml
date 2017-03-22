@@ -1,15 +1,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:id="@+id/addExpenseForm"
@@ -23,8 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Invoice Id"
-                />
+                android:text="Invoice Id" />
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteInvId"
@@ -37,8 +34,8 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
@@ -58,8 +55,8 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
@@ -80,8 +77,8 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
@@ -101,15 +98,14 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Unit"
-                />
+                android:text="Unit" />
 
             <EditText
                 android:id="@+id/exp_unit"
@@ -122,15 +118,14 @@
                 android:inputType="numberDecimal"
                 android:maxLength="3"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Amount"
-               />
+                android:text="Amount" />
 
             <EditText
                 android:id="@+id/exp_amount"
@@ -143,8 +138,8 @@
                 android:inputType="numberDecimal"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <LinearLayout
@@ -157,8 +152,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Recursive Type"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="Recursive Type" />
 
                 <Spinner
                     android:id="@+id/spnrecursivetype"
@@ -225,9 +220,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:background="@android:color/white"
                     android:padding="5dp"
                     android:text="Image Preview"
-                    android:background="@android:color/white"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -236,8 +231,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:padding="5dp"
                     android:background="@android:color/white"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -246,8 +241,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:padding="5dp"
                     android:background="@android:color/white"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
 
@@ -258,60 +253,60 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/ashcolor"
-                android:weightSum="6"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="6">
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Category"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Description"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="Unit"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="Amount"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -320,7 +315,7 @@
             <ListView
                 android:id="@+id/lstExpItems"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>
