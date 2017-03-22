@@ -1,0 +1,331 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <LinearLayout
+            android:id="@+id/addExpenseForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Invoice Id"
+                />
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteInvId"
+                style="@style/editTextClassic"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/greytext"
+                android:ems="10"
+                android:hint="Invoice Id"
+                android:imeOptions="actionNext"
+                android:maxLength="26"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date"
+
+                />
+
+            <EditText
+                android:id="@+id/exp_date"
+                style="@style/editTextClassic"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/greytext"
+                android:hint="Date"
+                android:imeOptions="actionNext"
+                android:maxLength="26"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+
+                />
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteCatId"
+                style="@style/editTextClassic"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/greytext"
+                android:ems="10"
+                android:hint="Category"
+                android:imeOptions="actionNext"
+                android:maxLength="26"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+
+                />
+
+            <EditText
+                android:id="@+id/exp_descrip"
+                style="@style/editTextClassic"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/greytext"
+                android:hint="Description"
+                android:imeOptions="actionNext"
+                android:maxLength="26"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unit"
+                />
+
+            <EditText
+                android:id="@+id/exp_unit"
+                style="@style/editTextClassic"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/greytext"
+                android:hint="Unit"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:maxLength="3"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+               />
+
+            <EditText
+                android:id="@+id/exp_amount"
+                style="@style/editTextClassic"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/greytext"
+                android:hint="Amount"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:maxLength="26"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:id="@+id/lnrRecursiveLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recursive Type"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+                <Spinner
+                    android:id="@+id/spnrecursivetype"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="@dimen/appbar_padding_top"
+                    android:background="@color/greytext"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnexpCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:text="Cancel"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/btnexpAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:text="Add"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/btnexpSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:text="Save"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/lblpreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Image Preview"
+                    android:background="@android:color/white"
+                    android:textColor="@color/colorAccent" />
+
+                <Button
+                    android:id="@+id/lblinvTotAmt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:background="@android:color/white"
+                    android:textColor="@color/colorAccent" />
+
+                <Button
+                    android:id="@+id/lblExpTotAmt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:background="@android:color/white"
+                    android:textColor="@color/colorAccent" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnrExpHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ashcolor"
+                android:weightSum="6"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Category"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Description"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Unit"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Amount"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+            <ListView
+                android:id="@+id/lstExpItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

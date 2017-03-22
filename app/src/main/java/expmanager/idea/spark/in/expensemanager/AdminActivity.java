@@ -11,6 +11,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.AdminTangibleExpenses;
 import expmanager.idea.spark.in.expensemanager.fragments.DashBoardFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.ExpenseHistoryFragment;
+import expmanager.idea.spark.in.expensemanager.fragments.InvoiceEntryFragment;
 import expmanager.idea.spark.in.expensemanager.fragments.SalesFragment;
 
 
@@ -19,7 +20,7 @@ import expmanager.idea.spark.in.expensemanager.fragments.SalesFragment;
  */
 
 
-public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
+public class AdminActivity extends AppCompatActivity implements View.OnClickListener, InvoiceEntryFragment.OnFragmentInteractionListener {
     ImageButton btnexpense,btntanexpense,btnhistory,btndashboard,btnstaff,btnprofile,btnsales;
 
     @Override
@@ -98,6 +99,11 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
         }
+
+    }
+
+    @Override
+    public void openExpenseEntry(String invid, String invDate, double invAmt, int weekIndex, String filePath) {
 
     }
 }
