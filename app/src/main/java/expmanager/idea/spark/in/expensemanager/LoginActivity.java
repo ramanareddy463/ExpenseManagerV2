@@ -7,9 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -35,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button usePin;
     private Button signUp;
     private EditText userName, password;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -50,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
         userName = (EditText) findViewById(R.id.username_login);
         password = (EditText) findViewById(R.id.password_login);
 
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,12 +67,16 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
+
                 if ((!userName.getText().toString().isEmpty()) && (!password.getText().toString().isEmpty())) {
 
+                    progressBar.setVisibility(View.VISIBLE);
                     LoginRequest loginRequest = new LoginRequest(userName.getText().toString(), password.getText().toString(), Utils.getDeviceId(LoginActivity.this));
                     RetrofitApi.getApi().loginExpenseManager(loginRequest).enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                            progressBar.setVisibility(View.GONE);
 
                             if (response.isSuccessful()) {
 
@@ -96,13 +107,24 @@ public class LoginActivity extends AppCompatActivity {
 
                             } else {
 
-                                Toast.makeText(LoginActivity.this, "Oops something went wrong", Toast.LENGTH_SHORT).show();
+                                try {
+                                    String errorBody = response.errorBody().string();
+                                    JSONObject jsonObject = new JSONObject(errorBody);
+                                    Toast.makeText(LoginActivity.this, jsonObject.optString("message"), Toast.LENGTH_SHORT).show();
+
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
                         }
 
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            progressBar.setVisibility(View.GONE);
 
                             Toast.makeText(LoginActivity.this, "Oops something went wrong", Toast.LENGTH_SHORT).show();
 

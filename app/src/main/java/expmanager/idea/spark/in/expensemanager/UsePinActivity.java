@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import expmanager.idea.spark.in.expensemanager.utils.CustomFonts;
+
 /**
  * Created by Ramana.Reddy on 2/22/2017.
  */
@@ -20,6 +22,7 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
     private TextView tvPin;
     private Button signUp;
     private Button usePassword;
+    private Button forgotPin;
 
 
     @Override
@@ -28,8 +31,9 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.use_pin_activity);
 
         signUp = (Button) findViewById(R.id.sign_up);
-        tvPin = (TextView) findViewById(R.id.tv_enter_pin);
+        tvPin = (CustomFonts) findViewById(R.id.tv_enter_pin);
         usePassword = (Button) findViewById(R.id.use_password);
+        forgotPin = (Button) findViewById(R.id.forgot_pin);
 
         KeyboardInitUI();
 
@@ -49,6 +53,17 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
                 Intent i = new Intent(UsePinActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
+            }
+        });
+
+        forgotPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(UsePinActivity.this, ForgotPinActivity.class);
+                startActivity(i);
+                finish();
+
             }
         });
 
@@ -159,18 +174,18 @@ public class UsePinActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.btn_ok :
-                if(tvPin.getText().toString().equalsIgnoreCase("1234")){
-
-                    Intent intent = new Intent(UsePinActivity.this, AdminActivity.class);
-                    startActivity(intent);
-                    finish();
-
-                }else if (tvPin.getText().toString().equalsIgnoreCase("5678")){
-
-                    Intent intent = new Intent(UsePinActivity.this, StaffActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+//                if(tvPin.getText().toString().equalsIgnoreCase("1234")){
+//
+//                    Intent intent = new Intent(UsePinActivity.this, AdminActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//
+//                }else if (tvPin.getText().toString().equalsIgnoreCase("5678")){
+//
+//                    Intent intent = new Intent(UsePinActivity.this, StaffActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
 
                 break;
 

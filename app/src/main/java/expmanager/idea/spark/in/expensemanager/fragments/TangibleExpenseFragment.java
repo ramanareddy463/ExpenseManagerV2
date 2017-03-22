@@ -1,13 +1,11 @@
 package expmanager.idea.spark.in.expensemanager.fragments;
 
-import android.app.Dialog;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +87,7 @@ public class TangibleExpenseFragment extends Fragment {
         addtanexpense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openAddtagibleExpDialog();
+                openAddtagibleExpDialog1();
             }
         });
 
@@ -109,48 +107,59 @@ public class TangibleExpenseFragment extends Fragment {
     }
 
 
-    public void openAddtagibleExpDialog() {
-        final Dialog dialog = new Dialog(getActivity());
+
+
+    private void openAddtagibleExpDialog1() {
+
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.addtanexpensedailog_layout, null);
+
+
+        alertDialog.setView(dialogView);
+        final AlertDialog dialog = alertDialog.create();
+
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.addtanexpensedailog_layout);
-        canceltandialog = (Button) dialog.findViewById(R.id.canceltandialog);
-        addtanexptoDb = (Button) dialog.findViewById(R.id.addtanexptoDb);
+        canceltandialog = (Button) dialogView.findViewById(R.id.canceltandialog);
+        addtanexptoDb = (Button) dialogView.findViewById(R.id.addtanexptoDb);
 
-        categoryval = (EditText) dialog.findViewById(R.id.categoryval);
-        whenval = (Spinner) dialog.findViewById(R.id.whenval);
-        priceval = (EditText) dialog.findViewById(R.id.priceval);
+        categoryval = (EditText) dialogView.findViewById(R.id.categoryval);
+        whenval = (Spinner) dialogView.findViewById(R.id.whenval);
+        priceval = (EditText) dialogView.findViewById(R.id.priceval);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         lp.gravity = Gravity.CENTER;
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
         dialog.getWindow().setAttributes(lp);
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.getWindow().getAttributes().width = (int) (Utils.getDeviceMetrics(getActivity()).widthPixels * 0.55);
+
         ArrayAdapter<CharSequence> adapterper = ArrayAdapter.createFromResource(getActivity(),
                 R.array.perWhen, R.layout.simple_spinner_item);
         adapterper.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         whenval.setAdapter(adapterper);
-        dialog.show();
 
-        dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
-            @Override
-            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-                // Prevent dialog close on back press button
-                return keyCode == KeyEvent.KEYCODE_BACK;
-            }
-        });
+
         canceltandialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
+
+
         addtanexptoDb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+               /* if(!categoryval.getText().toString().isEmpty() && !whenval.getSelectedItem().toString().isEmpty() && !priceval.getText().toString().isEmpty()) {
+                    TanExpenses insertall = new TanExpenses(categoryval.getText().toString(), whenval.getSelectedItem().toString(), priceval.getText().toString());
+                    db.addTanExpenses(insertall);
+                    AdminTangibleExpenses.adapt.add(insertall);
+                    AdminTangibleExpenses.adapt.notifyDataSetChanged();
+                    dialog.dismiss();
+                }*/
 
                 if (!NetworkUtils.getInstance().isNetworkAvailable(getActivity())) {
 
@@ -160,10 +169,10 @@ public class TangibleExpenseFragment extends Fragment {
 
                 if (!categoryval.getText().toString().isEmpty() && !whenval.getSelectedItem().toString().isEmpty() && !priceval.getText().toString().isEmpty()) {
                     final TanExpenses insertall = new TanExpenses(categoryval.getText().toString(), whenval.getSelectedItem().toString(), priceval.getText().toString());
-                    dialog.dismiss();
-
+                    dialog.cancel();
 
                     progressBar.setVisibility(View.VISIBLE);
+
 
                     AddTangibleExpenseRequest addTangibleExpenseRequest = new AddTangibleExpenseRequest(insertall.getCategory(), insertall.getWhen(), insertall.getPrice());
                     SessionManager sessionManager = new SessionManager(getActivity());
@@ -189,6 +198,8 @@ public class TangibleExpenseFragment extends Fragment {
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
 
+                            progressBar.setVisibility(View.GONE);
+
                             Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
 
                         }
@@ -196,8 +207,16 @@ public class TangibleExpenseFragment extends Fragment {
 
 
                 }
+
+
             }
         });
+
+
+        dialog.getWindow().getAttributes().width = (int) (Utils.getDeviceMetrics(getActivity()).widthPixels * 0.55);
+        dialog.show();
+
+
     }
 
     public static TangibleExpenseFragment newInstance(String itemID) {

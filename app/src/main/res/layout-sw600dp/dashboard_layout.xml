@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:text="DashBoard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,15 +30,15 @@
             android:orientation="horizontal"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
-            android:layout_marginTop="20dp"
-           >
+            android:layout_marginTop="20dp">
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:background="#4a148c">
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="Profit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                     android:paddingLeft="25dp"
                     android:textColor="#fff"
                     android:textSize="24sp"/>
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text=""
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:orientation="vertical"
                 android:layout_weight="0.6"
                 android:background="#1e967d" >
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="DEC 2016"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                     android:paddingLeft="25dp"
                     android:textColor="#fff"
                     android:textSize="20sp"/>
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text=""
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 android:orientation="vertical"
                 android:layout_weight="0.6"
                 android:background="#1eb696">
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="JAN 2017"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                     android:paddingLeft="25dp"
                     android:textColor="#fff"
                     android:textSize="20sp"/>
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                 android:orientation="vertical"
                 android:layout_weight="0.6"
                 android:background="#1fb598">
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="FEB 2017"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                     android:paddingLeft="25dp"
                     android:textColor="#fff"
                     android:textSize="20sp"/>
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -152,7 +152,7 @@
                 android:layout_weight="1"
                 android:background="#4a148c"
                 android:paddingBottom="20dp">
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="MAR 2017"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
                     android:paddingLeft="25dp"
                     android:textColor="#fff"
                     android:textSize="20sp"/>
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="$ 0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -180,7 +180,7 @@
                 android:layout_weight="0.6"
                 android:background="#1e967d"
                 android:paddingBottom="20dp">
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="$ 4000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
                 android:layout_weight="0.6"
                 android:background="#1eb696"
                 android:paddingBottom="20dp">
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="$ 4000"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -218,7 +218,7 @@
                 android:layout_weight="0.6"
                 android:background="#1fb598"
                 android:paddingBottom="20dp">
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="$ 3800"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -248,7 +248,7 @@
                 android:background="#1fb598"
                 android:layout_marginRight="3dp">
 
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="Income"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -261,7 +261,7 @@
                     android:layout_marginTop="21dp"
                     android:textSize="22sp"/>
 
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="$ 15000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -283,7 +283,7 @@
                 android:layout_marginRight="3dp"
                 android:layout_marginLeft="3dp">
 
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="Tangible Expenses"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -296,7 +296,7 @@
                     android:layout_marginTop="23dp"
                     android:textSize="22sp"/>
 
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="$ 1000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -315,7 +315,7 @@
                 android:background="#1fb598"
                 android:layout_marginLeft="3dp">
 
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="In Tangible Expenses"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -328,7 +328,7 @@
                     android:layout_marginTop="23dp"
                     android:textSize="22sp"/>
 
-                <TextView
+                <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:text="$ 9000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -371,7 +371,7 @@
                     android:background="#26bed5"
                     android:layout_marginLeft="3dp">
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="Profit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -384,7 +384,7 @@
                         android:layout_marginTop="21dp"
                         android:textSize="22sp"/>
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="$ 4600"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -404,7 +404,7 @@
                     android:background="#26bed5"
                     android:layout_marginLeft="3dp">
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="Income"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -417,7 +417,7 @@
                         android:layout_marginTop="24dp"
                         android:textSize="22sp"/>
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="$ 14000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -436,7 +436,7 @@
                     android:background="#26bed5"
                     android:layout_marginLeft="3dp">
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="Tangible Expenses"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -449,7 +449,7 @@
                         android:layout_marginTop="25dp"
                         android:textSize="22sp"/>
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="$ 9000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -468,7 +468,7 @@
                     android:background="#26bed5"
                     android:layout_marginLeft="3dp">
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="In Tangible Expenses"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -481,7 +481,7 @@
                         android:layout_marginTop="23dp"
                         android:textSize="22sp" />
 
-                    <TextView
+                    <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                         android:text="$ 400"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -496,7 +496,7 @@
         </LinearLayout>
 
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:text="Profit Graph"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

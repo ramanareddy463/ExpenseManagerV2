@@ -31,7 +31,7 @@
             android:textColor="@color/editTextBackgroundWhite"
             android:textStyle="bold" />
 
-        <TextView
+        <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -45,10 +45,12 @@
             android:layout_height="40dp"
             android:layout_marginTop="30dip"
             android:background="@drawable/edit_text_background"
-            android:ems="10"
+            android:ems="12"
             android:hint="@string/username"
+            android:inputType="text"
             android:maxLines="1"
-            android:paddingLeft="5dip" />
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
 
 
         <EditText
@@ -57,9 +59,12 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dip"
             android:background="@drawable/edit_text_background"
-            android:ems="10"
+            android:ems="12"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
             android:hint="@string/email"
-            android:paddingLeft="5dip" />
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
 
 
         <EditText
@@ -68,10 +73,11 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dip"
             android:background="@drawable/edit_text_background"
-            android:ems="10"
+            android:ems="12"
             android:inputType="textPassword"
             android:hint="@string/password"
-            android:paddingLeft="5dip" />
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
 
 
         <Button
@@ -89,5 +95,12 @@
 
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

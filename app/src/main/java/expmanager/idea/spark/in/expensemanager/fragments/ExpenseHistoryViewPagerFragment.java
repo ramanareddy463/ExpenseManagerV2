@@ -22,6 +22,7 @@ import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.adapters.TodayExpenseAdapter;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseGroup;
 import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
+import expmanager.idea.spark.in.expensemanager.utils.CustomFonts;
 
 /**
  * Created by Ramana.Reddy on 3/9/2017.
@@ -30,7 +31,6 @@ import expmanager.idea.spark.in.expensemanager.model.ExpanseItem;
 public class ExpenseHistoryViewPagerFragment extends Fragment {
 
     public TodayExpenseAdapter adapter;
-    public TodayExpenseAdapter weekAdapter;
     private ImageView imgAddExpense;
     private TextView txtTitleWeek;
 
@@ -66,16 +66,14 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
                 container, false);
 
         imgAddExpense = (ImageView) rootView.findViewById(R.id.img_add_expense);
-        txtTitleWeek = (TextView) rootView.findViewById(R.id.title_week);
+        txtTitleWeek = (CustomFonts) rootView.findViewById(R.id.title_week);
 
 
-        txtTitleWeek.setText(getStartDate()+" "+getEndDate());
+        txtTitleWeek.setText("Week "+getStartDate()+"to "+getEndDate());
 
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
-        RecyclerView recyclerViewWeek = (RecyclerView)rootView.findViewById(R.id.recycler_view_week);
-        LinearLayoutManager layoutManagerWeek = new LinearLayoutManager(getActivity());
 
         // RecyclerView has some built in animations to it, using the DefaultItemAnimator.
         // Specifically when you call notifyItemChanged() it does a fade animation for the changing
@@ -89,9 +87,6 @@ public class ExpenseHistoryViewPagerFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        weekAdapter = new TodayExpenseAdapter(makeExpansesList());
-        recyclerViewWeek.setLayoutManager(layoutManagerWeek);
-        recyclerViewWeek.setAdapter(weekAdapter);
 
 
         return rootView;

@@ -48,4 +48,6 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 
+    compile 'com.instabug.library:instabug:4.0.2'
+
 }

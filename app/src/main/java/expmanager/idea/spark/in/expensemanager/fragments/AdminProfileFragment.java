@@ -10,7 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 import expmanager.idea.spark.in.expensemanager.LoginActivity;
 import expmanager.idea.spark.in.expensemanager.R;
@@ -30,6 +36,7 @@ public class AdminProfileFragment extends Fragment {
 
     private EditText username,email;
     private Button logout;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -58,6 +65,7 @@ public class AdminProfileFragment extends Fragment {
          username = (EditText) rootView.findViewById(R.id.et_user_name);
          email = (EditText) rootView.findViewById(R.id.et_email);
         logout = (Button) rootView.findViewById(R.id.btn_logout);
+        progressBar = (ProgressBar) rootView.findViewById(R.id.progress_bar);
 
 
         final SessionManager sessionManager = new SessionManager(getActivity());
@@ -69,11 +77,12 @@ public class AdminProfileFragment extends Fragment {
             public void onClick(View view) {
 
 
+                progressBar.setVisibility(View.VISIBLE);
                 RetrofitApi.getApi().Logout(sessionManager.getAuthToken()).enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-                        // progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
 
                         if (response.isSuccessful()) {
 
@@ -85,7 +94,16 @@ public class AdminProfileFragment extends Fragment {
 
                         } else {
 
-                            Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+                            try {
+                                String errorBody = response.errorBody().string();
+                                JSONObject jsonObject = new JSONObject(errorBody);
+                                Toast.makeText(getActivity(), jsonObject.optString("message"), Toast.LENGTH_SHORT).show();
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
 
                     }
@@ -93,7 +111,9 @@ public class AdminProfileFragment extends Fragment {
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-                        Toast.makeText(getActivity(), "Oops something went wrong", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+
+                        Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });

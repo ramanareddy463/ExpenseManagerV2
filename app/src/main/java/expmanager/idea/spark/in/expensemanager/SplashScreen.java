@@ -40,16 +40,16 @@ DatabaseHandler db;
                     finish();
                 }else {
 
-                    //if(sessionManager.getCompanyId().isEmpty()||sessionManager.getCompanyId()==null) {
+                    if(sessionManager.getCompanyId().isEmpty()||sessionManager.getCompanyId()==null) {
 
                         Intent i = new Intent(SplashScreen.this, MainActivity.class);
                         startActivity(i);
 
-                  //  }else {
+                    }else {
 
-                      //  Intent intent = new Intent(SplashScreen.this, AdminActivity.class);
-                      //  startActivity(intent);
-                   // }
+                        Intent intent = new Intent(SplashScreen.this, AdminActivity.class);
+                        startActivity(intent);
+                    }
 
                     // close this activity
                     finish();

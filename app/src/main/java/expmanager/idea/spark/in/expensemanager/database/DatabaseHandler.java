@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.model.AddExpenseRequest;
+import expmanager.idea.spark.in.expensemanager.model.Invoice;
 import expmanager.idea.spark.in.expensemanager.model.Sales;
 import expmanager.idea.spark.in.expensemanager.model.Staff;
 import expmanager.idea.spark.in.expensemanager.model.TanExpenses;
+import expmanager.idea.spark.in.expensemanager.utils.Utils;
 
 /**
  * Created by kveldurty on 12/17/16.
@@ -143,7 +145,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + ")";
 
 
-        // + MEXPENSE_UNIT + " TEXT,"
+        db.execSQL("CREATE TABLE `categories` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `description` TEXT, `created_at` TEXT, `created_by` INTEGER )");
+
+        db.execSQL("CREATE TABLE `expenses` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `category_id` INTEGER, `invoice_id` INTEGER, `date` TEXT, `description` TEXT,`unit` INTEGER, `amount` NUMERIC, `is_approved` INTEGER, `is_recurssive` INTEGER, `created_at` TEXT, `created_by` INTEGER, `is_saved` INTEGER, 'week_index' INTEGER)");
+
+        db.execSQL("CREATE TABLE `income_types` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `description` TEXT, `created_at` TEXT, `created_by` INTEGER )");
+
+        db.execSQL("CREATE TABLE `incomes` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `income_type_id` INTEGER, `date` TEXT, `weekid` INTEGER , `amount` INTEGER, `created_at` TEXT, `created_by` INTEGER )");
+
+        db.execSQL("CREATE TABLE `invoices` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `date` TEXT, `image_path` TEXT, `description` TEXT, `amount` NUMERIC, `discount` NUMERIC, `payment_mode` TEXT, `bill_number` TEXT, `created_at` TEXT, `created_by` INTEGER )");
 
         db.execSQL(CREATE_TANEXPENSE_TABLE);
         db.execSQL(CREATE_STAFF_TABLE);
@@ -162,6 +172,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SALES);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MANUAL_EXPENSE);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
+
+        db.execSQL("drop table IF EXISTS categories");
+        db.execSQL("drop table IF EXISTS expenses");
+        db.execSQL("drop table IF EXISTS income_types");
+        db.execSQL("drop table IF EXISTS incomes");
+        db.execSQL("drop table IF EXISTS invoices");
 
         // Create tables again
         onCreate(db);
@@ -352,6 +368,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         // return contact list
         return contactList;
+    }
+
+
+    public void insetInvoice(Invoice inv) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("description", inv.getInvDesc());
+        cv.put("date", inv.getInvDate());
+        cv.put("image_path", inv.getInvImgPath());
+        cv.put("amount", inv.getInvAmt());
+        cv.put("discount", inv.getInvDisc());
+        cv.put("amount", inv.getInvAmt());
+        cv.put("payment_mode", inv.getInvPayMode());
+        cv.put("bill_number", inv.getInvNo());
+        cv.put("created_at", Utils.getDateTime());
+        cv.put("created_by", inv.getInvCreateBy());
+        db.insert("invoices", null, cv);
     }
 
 

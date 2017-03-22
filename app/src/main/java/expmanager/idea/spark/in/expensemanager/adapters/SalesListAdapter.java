@@ -12,6 +12,7 @@ import java.util.List;
 
 import expmanager.idea.spark.in.expensemanager.R;
 import expmanager.idea.spark.in.expensemanager.model.Sales;
+import expmanager.idea.spark.in.expensemanager.utils.CustomFonts;
 
 /**
  * Created by Haresh.Veldurty on 3/14/2017.
@@ -46,9 +47,9 @@ public class SalesListAdapter extends ArrayAdapter<Sales> {
         }
 
         Sales current = taskList.get(position);
-        TextView textView1 = (TextView) itemView.findViewById(R.id.saletype);
-        TextView textView2 = (TextView) itemView.findViewById(R.id.saledate);
-        TextView textView3 = (TextView) itemView.findViewById(R.id.saleampunt);
+        TextView textView1 = (CustomFonts) itemView.findViewById(R.id.saletype);
+        TextView textView2 = (CustomFonts) itemView.findViewById(R.id.saledate);
+        TextView textView3 = (CustomFonts) itemView.findViewById(R.id.saleampunt);
 
 
         textView1.setText(current.getSaletype());
