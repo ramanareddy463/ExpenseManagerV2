@@ -135,7 +135,11 @@ public class RetrofitApi {
         Call<ResponseBody> UpdateExpense(@Header("Authtoken") String auth, @Body UpdateTangibleExpense requestModel);
 
 
-
+          /*
+           * GET_DASHBOARD
+           */
+        @POST(ServerURLModel.GET_DASHBOARD)
+        Call<ResponseBody> GetDashboard(@Header("Authtoken") String auth, @Body UpdateTangibleExpense requestModel);
 
 
 

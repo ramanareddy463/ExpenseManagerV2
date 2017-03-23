@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-<ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ffffff"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
+
 
 
         <LinearLayout
@@ -16,14 +14,15 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:orientation="vertical"
-            android:padding="10dp"
-            >
+            android:padding="15dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Invoice Id"
-                />
+                android:textSize="18sp"/>
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteInvId"
@@ -36,15 +35,15 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Date"
-
+                android:textSize="18sp"
                 />
 
             <EditText
@@ -57,15 +56,16 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
-                android:textColorHint="@android:color/darker_gray" />
+                android:singleLine="true"
+                android:textColorHint="@android:color/darker_gray"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Category"
-
+                android:textSize="18sp"
                 />
 
             <AutoCompleteTextView
@@ -79,15 +79,15 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Description"
-
+                android:textSize="18sp"
                 />
 
             <EditText
@@ -100,15 +100,15 @@
                 android:imeOptions="actionNext"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Unit"
-                />
+                android:textSize="18sp"/>
 
             <EditText
                 android:id="@+id/exp_unit"
@@ -121,15 +121,15 @@
                 android:inputType="numberDecimal"
                 android:maxLength="3"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Amount"
-               />
+                android:textSize="18sp"/>
 
             <EditText
                 android:id="@+id/exp_amount"
@@ -142,8 +142,8 @@
                 android:inputType="numberDecimal"
                 android:maxLength="26"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:padding="10dp"
+                android:singleLine="true"
                 android:textColorHint="@android:color/darker_gray" />
 
             <LinearLayout
@@ -156,8 +156,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:text="Recursive Type"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+                    android:textSize="18sp"/>
 
                 <Spinner
                     android:id="@+id/spnrecursivetype"
@@ -224,9 +225,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:background="@android:color/white"
                     android:padding="5dp"
                     android:text="Image Preview"
-                    android:background="@android:color/white"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -235,8 +236,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:padding="5dp"
                     android:background="@android:color/white"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -245,8 +246,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:padding="5dp"
                     android:background="@android:color/white"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
 
@@ -255,75 +256,78 @@
             <LinearLayout
                 android:id="@+id/lnrExpHeader"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/ashcolor"
-                android:weightSum="6"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="6">
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Category"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Description"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="Unit"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="Amount"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
 
-
             <ListView
                 android:id="@+id/lstExpItems"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="300dp"
+                android:background="@drawable/edit_text_border"/>
 
 
         </LinearLayout>
 
 
+
 </ScrollView>
-</LinearLayout>
+
+
+

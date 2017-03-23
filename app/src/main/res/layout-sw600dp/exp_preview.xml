@@ -16,20 +16,25 @@
 
         <ImageView
             android:id="@+id/imgprev"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginTop="24dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/activity_vertical_margin" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp" />
 
 
         <LinearLayout
             android:id="@+id/hdr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgprev"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:layout_alignTop="@+id/imgprev"
+            android:layout_toEndOf="@+id/imgprev"
+            android:layout_alignBottom="@+id/imgprev">
 
             <TextView
                 android:id="@+id/lblinvid"

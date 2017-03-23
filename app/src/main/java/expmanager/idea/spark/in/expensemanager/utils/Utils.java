@@ -26,7 +26,7 @@ public class Utils {
         return metrics;
     }
 
-    public static String getDeviceId(Context context){
+    public static String getDeviceId(Context context) {
 
         return Settings.Secure.getString(context.getContentResolver(),
                 Settings.Secure.ANDROID_ID);
@@ -38,8 +38,7 @@ public class Utils {
         return dateFormat.format(date);
     }
 
-    public static int[] getWeeksOfMonth(int month, int year)
-    {
+    public static int[] getWeeksOfMonth(int month, int year) {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.MONTH, month);
@@ -47,11 +46,16 @@ public class Utils {
 
         int ndays = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         int weeks[] = new int[ndays];
-        for (int i = 0; i < ndays; i++)
-        {
+        for (int i = 0; i < ndays; i++) {
             weeks[i] = cal.get(Calendar.WEEK_OF_YEAR);
             cal.add(Calendar.DATE, 1);
         }
         return weeks;
+    }
+
+    public static int dpConverter(int val, Context ctx) {
+     float di = ctx.getResources().getDisplayMetrics().density;
+     int margin = (int) (val * di);
+      return margin;
     }
 }

@@ -1,29 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     >
 
-    <RelativeLayout
-        android:id="@+id/activity_invoice_entry"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
-        <ImageView
-            android:id="@+id/invpreview"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/activity_vertical_margin" />
-
-        <ScrollView
-            android:layout_width="match_parent"
+    <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/invpreview">
+        android:layout_alignTop="@+id/invpreview"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/invpreview">
 
             <LinearLayout
                 android:id="@+id/lnrInvForm"
@@ -31,109 +18,114 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:layout_marginLeft="100dp"
-                android:layout_marginRight="100dp">
+
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp">
 
                 <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Invoice Number"
-                    />
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/input_invno"
                     style="@style/editTextClassic"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-android:layout_marginTop="15dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/greytext"
                     android:hint="Invoice Number"
                     android:imeOptions="actionNext"
                     android:maxLength="26"
                     android:maxLines="1"
-                    android:singleLine="true"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:textColorHint="@android:color/darker_gray" />
 
                 <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:text="Invoice Date"
-                    android:layout_marginTop="20dp"/>
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/input_invdate"
                     style="@style/editTextClassic"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/greytext"
                     android:hint="Invoice Date"
                     android:imeOptions="actionNext"
                     android:maxLength="26"
                     android:maxLines="1"
-                    android:singleLine="true"
                     android:padding="10dp"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:layout_marginTop="15dp"/>
+                    android:singleLine="true"
+                    android:textColorHint="@android:color/darker_gray" />
 
                 <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:text="Invoice Description"
-                    android:layout_marginTop="20dp"/>
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/input_desc"
                     style="@style/editTextClassic"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/greytext"
                     android:hint="Invoice Description"
-                    android:singleLine="true"
                     android:imeOptions="actionNext"
                     android:maxLength="26"
                     android:maxLines="1"
                     android:padding="10dp"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:layout_marginTop="15dp"/>
+                    android:singleLine="true"
+                    android:textColorHint="@android:color/darker_gray" />
 
                 <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Invoice Amount"
+                    android:layout_marginTop="20dp"
 
-                    android:layout_marginTop="20dp"/>
+                    android:text="Invoice Amount"
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/input_amount"
                     style="@style/editTextClassic"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/greytext"
                     android:hint="Invoice Amount"
-                    android:singleLine="true"
                     android:imeOptions="actionDone"
                     android:inputType="numberDecimal"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:padding="10dp"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:layout_marginTop="15dp"/>
+                    android:singleLine="true"
+                    android:textColorHint="@android:color/darker_gray" />
 
                 <expmanager.idea.spark.in.expensemanager.utils.CustomFonts
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:text="Payment Mode"
-                    android:layout_marginTop="20dp"/>
+                    android:textSize="18sp"/>
 
                 <Spinner
                     android:id="@+id/spnpaymentmode"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/greytext"
-                    android:spinnerMode="dropdown"
-                    android:layout_marginTop="15dp">
+                    android:spinnerMode="dropdown">
 
                 </Spinner>
 
@@ -142,14 +134,27 @@ android:layout_marginTop="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="25dp"
                     android:background="@color/colorPrimary"
                     android:text="ADD"
-                    android:textColor="@android:color/white"
-                    android:layout_marginTop="20dp"/>
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
 
         </ScrollView>
-    </RelativeLayout>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/invpreview"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY"/>
+
+
+</RelativeLayout>

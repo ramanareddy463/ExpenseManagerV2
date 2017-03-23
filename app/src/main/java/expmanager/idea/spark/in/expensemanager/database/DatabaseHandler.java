@@ -390,6 +390,42 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contactList;
     }
 
+    public ArrayList<Expense> getExpenses(int expId){
+        ArrayList<Expense> expList=new ArrayList<Expense>();
+        Cursor expListCursor;
+        try{
+
+            if(expId==0){
+                expListCursor = db.rawQuery("SELECT * FROM expenses where is_saved =0  order by created_at DESC", null);
+            }else {
+                expListCursor = db.rawQuery("SELECT * FROM expenses where is_saved >0 and id=? order by created_at DESC", new String[]{String.valueOf(expId)});
+            }
+
+
+            while(expListCursor.moveToNext()){
+                String expDate = expListCursor.getString(expListCursor.getColumnIndex("date"));
+                String expDesc = expListCursor.getString(expListCursor.getColumnIndex("description"));
+                int expcreatedby = expListCursor.getInt(expListCursor.getColumnIndex("created_by"));
+                int expUnit = expListCursor.getInt(expListCursor.getColumnIndex("unit"));
+                String expcreatedAt = expListCursor.getString(expListCursor.getColumnIndex("created_at"));
+                int expcatId = expListCursor.getInt(expListCursor.getColumnIndex("category_id"));
+                int expInvId = expListCursor.getInt(expListCursor.getColumnIndex("invoice_id"));
+                int expIsApproved = expListCursor.getInt(expListCursor.getColumnIndex("is_approved"));
+                int expIsRecursive = expListCursor.getInt(expListCursor.getColumnIndex("is_recurssive"));
+                double expAmt = expListCursor.getDouble(expListCursor.getColumnIndex("amount"));
+                int isSaved = expListCursor.getInt(expListCursor.getColumnIndex("is_saved"));
+                int weekindex1 = expListCursor.getInt(expListCursor.getColumnIndex("week_index"));
+                int id =  expListCursor.getInt(expListCursor.getColumnIndex("id"));
+
+                Expense cat = new Expense(expDate,expDesc,expcatId, expInvId,expUnit,expIsApproved,expIsRecursive,expAmt,expcreatedby,expcreatedAt,isSaved,weekindex1,id);
+                expList.add(cat);
+            }
+        }catch(Exception e){
+            Log.i("DB", "Exception While Get Categories:" + e.getMessage());
+        }
+        return expList;
+    }
+
 
     public void insetInvoice(Invoice inv) {
         SQLiteDatabase db = this.getWritableDatabase();

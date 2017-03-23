@@ -3,13 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="6"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp">
 
     <TextView
         android:id="@+id/lblcat"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:layout_height="wrap_content" />
 
@@ -17,7 +21,7 @@
         android:id="@+id/lbldesc"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:layout_height="wrap_content" />
 
@@ -25,7 +29,7 @@
         android:id="@+id/lblunit"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:layout_height="wrap_content" />
 
@@ -33,7 +37,7 @@
         android:id="@+id/lblamt"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:layout_height="wrap_content" />
 
@@ -41,7 +45,7 @@
         android:id="@+id/btnexpedit"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:text="Edit"
         android:textColor="@color/colorAccent"
@@ -51,7 +55,7 @@
         android:id="@+id/btnexpdelete"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:gravity="center"
         android:text="Delete"
         android:textColor="@color/colorAccent"

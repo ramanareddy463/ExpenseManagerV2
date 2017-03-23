@@ -39,6 +39,7 @@ import expmanager.idea.spark.in.expensemanager.adapters.expenseAdapter;
 import expmanager.idea.spark.in.expensemanager.adapters.expenseListAdapter;
 import expmanager.idea.spark.in.expensemanager.database.DatabaseHandler;
 import expmanager.idea.spark.in.expensemanager.model.Expense;
+import expmanager.idea.spark.in.expensemanager.utils.Utils;
 
 
 /**
@@ -141,8 +142,8 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_frag_expense_entry, container, false);
 
-       // mainLayParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-      //  mainLayParams.setMargins(Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()), Util.dpConverter(10, getContext()));
+        mainLayParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        mainLayParams.setMargins(Utils.dpConverter(10, getContext()), Utils.dpConverter(10, getContext()), Utils.dpConverter(10, getContext()), Utils.dpConverter(10, getContext()));
 
         weekindex = mParam1;
 
@@ -374,7 +375,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
 
                 expAmtSofar =0.0;
                 Toast.makeText(getContext(), "All Expense Saved Successfully", Toast.LENGTH_SHORT).show();
-               // mListener.openWeekView();
+                //mListener.openWeekView();
                 dialog.cancel();
             }
         });
@@ -479,7 +480,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
 
 
     private void loadDetails(){
-        lnrExpHeader.setVisibility(View.GONE);
+        lnrExpHeader.setVisibility(View.VISIBLE);
 /*
         File imgFile = new File(mParam5);
         if(imgFile.exists()){
@@ -495,7 +496,7 @@ public class fragExpenseEntry extends Fragment implements AdapterView.OnItemSele
         editedExpId = 0;
         lblExpTotAmt.setText("Expense:" + expAmtSofar);
         myDbHelper.openConnection();
-        expenseListAdapter adapter=new expenseListAdapter(getActivity(), myDbHelper.getExpenses(0,0),lstExpItems);
+        expenseListAdapter adapter=new expenseListAdapter(getActivity(), myDbHelper.getExpenses(0),lstExpItems);
         lstExpItems.setAdapter(adapter);
         if(adapter.getCount()>0){
             lnrExpHeader.setVisibility(View.VISIBLE);
