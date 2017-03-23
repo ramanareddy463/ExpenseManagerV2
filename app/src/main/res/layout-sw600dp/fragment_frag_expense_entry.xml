@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent" >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="#ffffff"
     android:orientation="vertical"
     >
 
-    <LinearLayout
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:orientation="vertical"
-
-        >
         <LinearLayout
             android:id="@+id/addExpenseForm"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:orientation="vertical"
             android:padding="10dp"
@@ -328,6 +324,6 @@
 
         </LinearLayout>
 
-</LinearLayout>
-</ScrollView>
 
+</ScrollView>
+</LinearLayout>
