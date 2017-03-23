@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+    <color name="ashcolor">#b2beb5</color>
 
     <color name="editTextBackgroundWhite">#F5F5F5</color>
     <color name="yellow">#D4e056</color>
@@ -16,4 +16,6 @@
     <color name="grey05">#ACA899</color>
     <color name="greytext">#F1EDEE</color>
     <color name="greenlay">#167e5d</color>
+
+    <color name="bluelay">#3179c3</color>
 </resources>
